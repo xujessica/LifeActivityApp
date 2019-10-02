@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="titleLeftMargin">140dp</dimen>
+    <dimen name="titleTopMargin">60dp</dimen>
+    <dimen name="descLeftMargin">140dp</dimen>
+    <dimen name="descTopMargin">180dp</dimen>
+</resources>
