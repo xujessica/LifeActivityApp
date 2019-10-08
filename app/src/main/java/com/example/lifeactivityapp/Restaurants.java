@@ -19,6 +19,7 @@ public class Restaurants {
             new Restaurants("Einstein Bros. Bagels", "", 0),
             new Restaurants("Dunkin Donuts", "",0),
             new Restaurants("Mcdonalds", "",0),
-            new Restaurants("Wildberry Pancakes & Cafe", "", 1)
+            new Restaurants("Wildberry Pancakes & Cafe", "", 1),
+            
     };
 }
