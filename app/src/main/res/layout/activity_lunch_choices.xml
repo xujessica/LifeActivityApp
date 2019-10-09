@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".LunchChoicesActivity">
 
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="490dp"
+        android:layout_height="852dp"
+        app:srcCompat="@drawable/blueGradient"
+        tools:layout_editor_absoluteX="-40dp"
+        tools:layout_editor_absoluteY="-7dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
