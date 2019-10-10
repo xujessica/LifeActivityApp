@@ -10,7 +10,7 @@
         android:id="@+id/background"
         android:layout_width="490dp"
         android:layout_height="852dp"
-        app:srcCompat="@drawable/blueGradient"
+        app:srcCompat="@drawable/blue_gradient"
         tools:layout_editor_absoluteX="-40dp"
         tools:layout_editor_absoluteY="-7dp" />
 

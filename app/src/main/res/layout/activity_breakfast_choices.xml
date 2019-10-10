@@ -10,7 +10,7 @@
         android:id="@+id/background"
         android:layout_width="490dp"
         android:layout_height="852dp"
-        app:srcCompat="@drawable/blueGradient"
+        app:srcCompat="@drawable/blue_gradient"
         tools:layout_editor_absoluteX="-40dp"
         tools:layout_editor_absoluteY="-7dp" />
 
@@ -27,42 +27,33 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/breakfastChoiceSubText"
-        android:layout_width="408dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="128dp"
-        android:fontFamily="@font/roboto_medium"
-        android:gravity="center_horizontal"
-        android:text="WHAT TYPE OF FOOD WOULD YOU LIKE TO EAT"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/breakfastFiltersButton"
         android:layout_width="253dp"
         android:layout_height="87dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="100dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="FILTERS"
         android:textColor="@color/white"
-        android:textSize="40sp"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="342dp" />
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/breakfastRandomButton"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/breakfastRandomButton"
         android:layout_width="256dp"
         android:layout_height="84dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginBottom="236dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="RANDOM"
         android:textColor="@color/white"
         android:textSize="50sp"
-        tools:layout_editor_absoluteX="76dp"
-        tools:layout_editor_absoluteY="513dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
