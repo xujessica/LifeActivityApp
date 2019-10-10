@@ -39,6 +39,7 @@
         android:text="FILTERS"
         android:textColor="@color/white"
         android:textSize="50sp"
+        android:onClick="onBreakfastFilterClick"
         app:layout_constraintBottom_toTopOf="@+id/breakfastRandomButton"
         app:layout_constraintStart_toStartOf="parent" />
 

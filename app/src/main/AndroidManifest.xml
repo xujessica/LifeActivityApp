@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OtherChoicesActivity"></activity>
+        <activity android:name=".BreakfastFilterDisplayActivity"></activity>
+        <activity android:name=".DinnerFilterChoices" />
+        <activity android:name=".LunchFilterChoices" />
+        <activity android:name=".BreakfastFilterChoices" />
+        <activity android:name=".OtherChoicesActivity" />
         <activity android:name=".ConcertsChoicesActivity" />
         <activity android:name=".MoviesChoicesActivity" />
         <activity android:name=".DinnerChoicesActivity" />

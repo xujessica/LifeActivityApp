@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/gradient1" />
 
     <Button
-        android:id="@+id/breakfastButton"
+        android:id="@+id/eatButton"
         android:layout_width="201dp"
         android:layout_height="90dp"
         android:layout_marginStart="104dp"
@@ -27,11 +27,12 @@
         android:text="EAT"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/lunchButton"
+        android:onClick="onEatClick"
+        app:layout_constraintBottom_toTopOf="@+id/entertainmentButton"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/lunchButton"
+        android:id="@+id/entertainmentButton"
         android:layout_width="289dp"
         android:layout_height="89dp"
         android:layout_marginStart="60dp"
@@ -41,11 +42,12 @@
         android:text="ENTERTAINMENT"
         android:textColor="@color/white"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/dinnerButton"
+        android:onClick="onEntertainmentClick"
+        app:layout_constraintBottom_toTopOf="@+id/eatButton"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/dinnerButton"
+        android:id="@+id/randomButton"
         android:layout_width="289dp"
         android:layout_height="89dp"
         android:layout_marginStart="60dp"
