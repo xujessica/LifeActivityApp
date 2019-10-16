@@ -4,74 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient1">
 
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gradient1" />
 
     <Button
-        android:id="@+id/eatButton"
+        android:id="@+id/breakfastButton"
         android:layout_width="201dp"
         android:layout_height="90dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="EAT"
         android:textColor="@color/white"
         android:textSize="60sp"
-        android:onClick="onEatClick"
-        app:layout_constraintBottom_toTopOf="@+id/entertainmentButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/mainPageSubText" />
 
     <Button
-        android:id="@+id/entertainmentButton"
+        android:id="@+id/lunchButton"
         android:layout_width="289dp"
         android:layout_height="89dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="45dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="ENTERTAINMENT"
         android:textColor="@color/white"
         android:textSize="30sp"
-        android:onClick="onEntertainmentClick"
-        app:layout_constraintBottom_toTopOf="@+id/eatButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/breakfastButton" />
 
     <Button
-        android:id="@+id/randomButton"
+        android:id="@+id/dinnerButton"
         android:layout_width="289dp"
         android:layout_height="89dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="95dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="RANDOM"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/lunchButton" />
 
     <TextView
         android:id="@+id/mainPageSubText"
         android:layout_width="414dp"
         android:layout_height="97dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center_horizontal"
         android:text="CHOOSE WHAT YOU WOULD LIKE TO DO"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/mainPageTitle" />
 
     <TextView
         android:id="@+id/mainPageTitle"
