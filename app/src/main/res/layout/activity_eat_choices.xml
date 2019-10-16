@@ -4,6 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blue_gradient"
     tools:context=".EatChoicesActivity">
+
+
+    <Button
+        android:id="@+id/breakfastButton"
+        android:layout_width="253dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:onClick="onBreakfastClick"
+        android:text="BREAKFAST"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/lunchButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/lunchButton"
+        android:layout_width="256dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:text="LUNCH"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/breakfastButton"
+        android:onClick="onLunchClick"
+        app:layout_constraintBottom_toTopOf="@+id/dinnerButton"/>
+
+
+    <Button
+        android:id="@+id/dinnerButton"
+        android:layout_width="273dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:text="DINNER"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchButton"
+        android:onClick="onDinnerClick"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <TextView
+        android:id="@+id/eatChoiceTitle"
+        android:layout_width="410dp"
+        android:layout_height="143dp"
+        android:fontFamily="@font/geostar"
+        android:gravity="center"
+        android:text="EAT"
+        android:textColor="@color/white"
+        android:textSize="@dimen/titleFontSize"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="408dp"
+        android:layout_height="120dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_horizontal"
+        android:text="WHAT TYPE OF FOOD WOULD YOU LIKE TO EAT"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eatChoiceTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

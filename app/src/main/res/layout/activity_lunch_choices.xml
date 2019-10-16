@@ -4,6 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blue_gradient"
     tools:context=".LunchChoicesActivity">
+
+    <Button
+        android:id="@+id/lunchFiltersButton"
+        android:layout_width="253dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="FILTERS"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchChoiceTitle" />
+
+    <Button
+        android:id="@+id/lunchRandomButton"
+        android:layout_width="256dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:text="RANDOM"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lunchFiltersButton" />
+
+    <TextView
+        android:id="@+id/lunchChoiceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="143dp"
+        android:fontFamily="@font/geostar"
+        android:gravity="center"
+        android:text="LUNCH"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

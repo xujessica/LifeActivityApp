@@ -4,6 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/red_gradient"
     tools:context=".EntertainmentChoicesActivity">
+
+    <Button
+        android:id="@+id/moviesButton"
+        android:layout_width="253dp"
+        android:layout_height="87dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="MOVIES"
+        android:textColor="@color/white"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entertainmentChoiceSubHeading" />
+
+    <Button
+        android:id="@+id/concertsButton"
+        android:layout_width="256dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:text="CONCERTS"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activitiesButton" />
+
+    <Button
+        android:id="@+id/activitiesButton"
+        android:layout_width="273dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
+        android:text="ACTIVITIES"
+        android:textColor="@color/white"
+        android:textSize="45sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moviesButton" />
+
+    <TextView
+        android:id="@+id/entertainmentChoiceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="143dp"
+        android:fontFamily="@font/geostar"
+        android:gravity="center"
+        android:text="ENTERTAINMENT"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/entertainmentChoiceSubHeading"
+        android:layout_width="408dp"
+        android:layout_height="120dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_horizontal"
+        android:text="WHAT FORM OF ENTERTAINMENT WOULD YOU LIKE TO DO"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entertainmentChoiceTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

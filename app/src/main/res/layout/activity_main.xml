@@ -4,82 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient1">
 
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/gradient1" />
 
     <Button
-        android:id="@+id/eatButton"
+        android:id="@+id/breakfastButton"
         android:layout_width="201dp"
         android:layout_height="90dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="EAT"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/entertainmentButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/mainPageSubText" />
 
     <Button
-        android:id="@+id/entertainmentButton"
+        android:id="@+id/lunchButton"
         android:layout_width="289dp"
         android:layout_height="89dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="ENTERTAINMENT"
         android:textColor="@color/white"
+<<<<<<< HEAD
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+=======
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/randomButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
+>>>>>>> origin/master
+        app:layout_constraintTop_toBottomOf="@+id/breakfastButton" />
 
     <Button
-        android:id="@+id/randomButton"
+        android:id="@+id/dinnerButton"
         android:layout_width="289dp"
         android:layout_height="89dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="RANDOM"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
+        app:layout_constraintTop_toBottomOf="@+id/lunchButton" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="414dp"
+        android:id="@+id/mainPageSubText"
+        android:layout_width="match_parent"
         android:layout_height="97dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center_horizontal"
         android:text="CHOOSE WHAT YOU WOULD LIKE TO DO"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/mainPageTitle" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="410dp"
+        android:id="@+id/mainPageTitle"
+        android:layout_width="match_parent"
         android:layout_height="115dp"
         android:fontFamily="@font/geostar"
         android:gravity="center"
         android:text="LIFE"
-        android:textColor="#FFFFFF"
-        android:textSize="70sp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/titleFontSize"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
