@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient1"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient1">
+
 
 
     <Button
@@ -19,9 +20,8 @@
         android:text="EAT"
         android:textColor="@color/white"
         android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/mainPageSubText" />
 
     <Button
@@ -33,10 +33,16 @@
         android:fontFamily="@font/roboto_medium"
         android:text="ENTERTAINMENT"
         android:textColor="@color/white"
+<<<<<<< HEAD
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+=======
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
+>>>>>>> origin/master
         app:layout_constraintTop_toBottomOf="@+id/breakfastButton" />
 
     <Button
@@ -49,9 +55,8 @@
         android:text="RANDOM"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/background"
         app:layout_constraintTop_toBottomOf="@+id/lunchButton" />
 
     <TextView
@@ -64,8 +69,6 @@
         android:text="CHOOSE WHAT YOU WOULD LIKE TO DO"
         android:textColor="@color/white"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainPageTitle" />
 
@@ -79,8 +82,6 @@
         android:textColor="@color/white"
         android:textSize="@dimen/titleFontSize"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
