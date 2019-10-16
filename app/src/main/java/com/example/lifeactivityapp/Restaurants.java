@@ -22,4 +22,5 @@ public class Restaurants {
             new Restaurants("Wildberry Pancakes & Cafe", "", 1),
             
     };
+
 }
