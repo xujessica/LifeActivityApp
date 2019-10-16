@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/mainPageSubText"
-        android:layout_width="414dp"
+        android:layout_width="match_parent"
         android:layout_height="97dp"
         android:layout_marginTop="2dp"
         android:fontFamily="@font/roboto_medium"
@@ -71,7 +71,7 @@
 
     <TextView
         android:id="@+id/mainPageTitle"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="115dp"
         android:fontFamily="@font/geostar"
         android:gravity="center"
