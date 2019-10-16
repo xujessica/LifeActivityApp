@@ -11,13 +11,13 @@
         android:id="@+id/moviesButton"
         android:layout_width="253dp"
         android:layout_height="87dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
         android:text="MOVIES"
         android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,29 +27,31 @@
         android:id="@+id/concertsButton"
         android:layout_width="256dp"
         android:layout_height="84dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="CONCERTS"
         android:textColor="@color/white"
-        android:textSize="50sp"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="564dp" />
+        app:layout_constraintTop_toBottomOf="@+id/activitiesButton" />
 
     <Button
         android:id="@+id/activitiesButton"
         android:layout_width="273dp"
         android:layout_height="80dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="ACTIVITIES"
         android:textColor="@color/white"
-        android:textSize="50sp"
+        android:textSize="45sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="431dp" />
+        app:layout_constraintTop_toBottomOf="@+id/moviesButton" />
 
     <TextView
         android:id="@+id/entertainmentChoiceTitle"
