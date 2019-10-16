@@ -4,34 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blue_gradient"
     tools:context=".BreakfastChoicesActivity">
-
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="490dp"
-        android:layout_height="852dp"
-        app:srcCompat="@drawable/blue_gradient"
-        tools:layout_editor_absoluteX="-40dp"
-        tools:layout_editor_absoluteY="-7dp" />
-
-    <TextView
-        android:id="@+id/breakfastChoiceTitle"
-        android:layout_width="410dp"
-        android:layout_height="143dp"
-        android:fontFamily="@font/geostar"
-        android:gravity="center"
-        android:text="BREAKFAST"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/breakfastFiltersButton"
         android:layout_width="253dp"
         android:layout_height="87dp"
-        android:layout_marginStart="84dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
@@ -41,20 +20,37 @@
         android:textSize="50sp"
         android:onClick="onBreakfastFilterClick"
         app:layout_constraintBottom_toTopOf="@+id/breakfastRandomButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/breakfastRandomButton"
         android:layout_width="256dp"
         android:layout_height="84dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginBottom="236dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="RANDOM"
         android:textColor="@color/white"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="525dp" />
+
+    <TextView
+        android:id="@+id/breakfastChoiceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="143dp"
+        android:fontFamily="@font/geostar"
+        android:gravity="center"
+        android:text="BREAKFAST"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
