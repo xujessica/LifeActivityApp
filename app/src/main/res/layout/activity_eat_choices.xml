@@ -7,6 +7,7 @@
     android:background="@drawable/blue_gradient"
     tools:context=".EatChoicesActivity">
 
+
     <Button
         android:id="@+id/breakfastButton"
         android:layout_width="253dp"
@@ -15,19 +16,15 @@
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
+        android:onClick="onBreakfastClick"
         android:text="BREAKFAST"
         android:textColor="@color/white"
         android:textSize="40sp"
-<<<<<<< HEAD
+        app:layout_constraintBottom_toTopOf="@+id/lunchButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-=======
-        android:onClick="onBreakfastClick"
-        app:layout_constraintBottom_toTopOf="@+id/lunchButton"
-        app:layout_constraintStart_toStartOf="parent" />
->>>>>>> origin/master
 
     <Button
         android:id="@+id/lunchButton"
@@ -39,16 +36,13 @@
         android:text="LUNCH"
         android:textColor="@color/white"
         android:textSize="50sp"
-<<<<<<< HEAD
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breakfastButton" />
-=======
+        app:layout_constraintTop_toBottomOf="@+id/breakfastButton"
         android:onClick="onLunchClick"
-        app:layout_constraintBottom_toTopOf="@+id/dinnerButton"
-        app:layout_constraintStart_toStartOf="parent" />
->>>>>>> origin/master
+        app:layout_constraintBottom_toTopOf="@+id/dinnerButton"/>
+
 
     <Button
         android:id="@+id/dinnerButton"
@@ -60,16 +54,14 @@
         android:text="DINNER"
         android:textColor="@color/white"
         android:textSize="50sp"
-<<<<<<< HEAD
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lunchButton" />
-=======
+        app:layout_constraintTop_toBottomOf="@+id/lunchButton"
         android:onClick="onDinnerClick"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
->>>>>>> origin/master
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 
     <TextView
         android:id="@+id/eatChoiceTitle"
