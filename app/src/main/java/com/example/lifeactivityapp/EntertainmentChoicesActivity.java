@@ -12,3 +12,5 @@ public class EntertainmentChoicesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_entertainment_choices);
     }
 }
+
+
