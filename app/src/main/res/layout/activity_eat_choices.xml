@@ -29,6 +29,7 @@
         android:id="@+id/lunchButton"
         android:layout_width="256dp"
         android:layout_height="84dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:onClick="onLunchClick"
@@ -45,7 +46,7 @@
         android:id="@+id/dinnerButton"
         android:layout_width="273dp"
         android:layout_height="80dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:onClick="onDinnerClick"
@@ -67,7 +68,7 @@
         android:textSize="@dimen/titleFontSize"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
