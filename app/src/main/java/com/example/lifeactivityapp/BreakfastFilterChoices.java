@@ -16,6 +16,14 @@ public class BreakfastFilterChoices extends AppCompatActivity {
         setContentView(R.layout.activity_breakfast_filter_choices);
     }
 
+    public void onClick (View v) {
+        Intent intent = new Intent(this, BreakfastFilterDisplayActivity.class);
+        onServiceTypeRadioButtonClick(v, intent);
+        onPriceRadioButtonClick(v, intent);
+        startActivity(intent);
+    }
+
+
     public void onServiceTypeRadioButtonClick(View v, Intent intent) {
         RadioGroup radioGroup = (RadioGroup)findViewById(R.id.serviceTypeChoices);
         int radioButtonID = radioGroup.getCheckedRadioButtonId();

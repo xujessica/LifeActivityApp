@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/eatButton"
+        android:id="@+id/breakfastButton"
         android:layout_width="253dp"
         android:layout_height="87dp"
         android:layout_marginTop="45dp"
@@ -20,48 +20,42 @@
         android:text="BREAKFAST"
         android:textColor="@color/white"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/lunchButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/entertainmentButton"
+        android:id="@+id/lunchButton"
         android:layout_width="256dp"
         android:layout_height="84dp"
         android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
+        android:onClick="onLunchClick"
         android:text="LUNCH"
         android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/breakfastButton"
-        android:onClick="onLunchClick"
-        app:layout_constraintBottom_toTopOf="@+id/dinnerButton"/>
+        app:layout_constraintTop_toBottomOf="@+id/breakfastButton" />
 
 
     <Button
-        android:id="@+id/randomButton"
+        android:id="@+id/dinnerButton"
         android:layout_width="273dp"
         android:layout_height="80dp"
         android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
+        android:onClick="onDinnerClick"
         android:text="DINNER"
         android:textColor="@color/white"
         android:textSize="50sp"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lunchButton"
-        android:onClick="onDinnerClick"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
+        app:layout_constraintTop_toBottomOf="@+id/lunchButton" />
 
     <TextView
         android:id="@+id/eatChoiceTitle"
@@ -74,7 +68,7 @@
         android:textSize="@dimen/titleFontSize"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
