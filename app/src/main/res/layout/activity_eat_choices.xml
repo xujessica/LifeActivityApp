@@ -60,7 +60,6 @@
         android:id="@+id/eatChoiceTitle"
         android:layout_width="410dp"
         android:layout_height="143dp"
-        android:layout_marginTop="84dp"
         android:fontFamily="@font/geostar"
         android:gravity="center"
         android:text="EAT"
@@ -68,7 +67,7 @@
         android:textSize="@dimen/titleFontSize"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

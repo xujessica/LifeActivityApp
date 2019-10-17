@@ -16,7 +16,7 @@ public class BreakfastFilterChoices extends AppCompatActivity {
         setContentView(R.layout.activity_breakfast_filter_choices);
     }
 
-    public void onClick (View v) {
+    public void onApplyBreakfastFilterClick (View v) {
         Intent intent = new Intent(this, BreakfastFilterDisplayActivity.class);
         onServiceTypeRadioButtonClick(v, intent);
         onPriceRadioButtonClick(v, intent);
