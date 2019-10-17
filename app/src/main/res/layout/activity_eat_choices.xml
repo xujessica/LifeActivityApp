@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/breakfastButton"
+        android:id="@+id/eatButton"
         android:layout_width="253dp"
         android:layout_height="87dp"
         android:layout_marginTop="45dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/lunchButton"
+        android:id="@+id/entertainmentButton"
         android:layout_width="256dp"
         android:layout_height="84dp"
         android:layout_marginTop="45dp"
@@ -45,7 +45,7 @@
 
 
     <Button
-        android:id="@+id/dinnerButton"
+        android:id="@+id/randomButton"
         android:layout_width="273dp"
         android:layout_height="80dp"
         android:layout_marginTop="45dp"
