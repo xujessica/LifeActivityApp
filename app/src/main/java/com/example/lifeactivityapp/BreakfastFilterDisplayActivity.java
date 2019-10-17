@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 public class BreakfastFilterDisplayActivity extends AppCompatActivity {
 
+    public static final String MY_SERVICE_TYPE = "serviceType";
+    public static final String MY_PRICE_PREFERENCE = "pricePreference";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

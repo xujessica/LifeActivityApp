@@ -6,62 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".BreakfastFilterChoices">
 
+    <TextView
+        android:id="@+id/serviceType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="68dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/serviceType"
+        android:id="@+id/serviceTypeChoices"
         android:layout_width="122dp"
         android:layout_height="129dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/serviceType">
 
         <RadioButton
             android:id="@+id/fastFood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Fast Food" />
 
         <RadioButton
             android:id="@+id/sitDown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Sit Down" />
 
         <RadioButton
             android:id="@+id/noPreferenceType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="No Preference" />
 
     </RadioGroup>
 
-    <RadioGroup
+    <TextView
         android:id="@+id/pricePreference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="44dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/serviceTypeChoices" />
+
+    <RadioGroup
+        android:id="@+id/pricePreferenceChoices"
         android:layout_width="122dp"
         android:layout_height="129dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="72dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serviceType">
+        app:layout_constraintTop_toBottomOf="@+id/pricePreference">
 
         <RadioButton
             android:id="@+id/lowPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Low Price" />
 
         <RadioButton
             android:id="@+id/highPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="High Price" />
 
         <RadioButton
             android:id="@+id/noPreferencePrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="No Preference" />
 
     </RadioGroup>
 
@@ -71,18 +90,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="132dp"
         android:layout_marginTop="24dp"
-        android:text="Button"
+        android:text="Apply"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pricePreference" />
+        app:layout_constraintTop_toBottomOf="@+id/pricePreferenceChoices" />
 
-    <Button
-        android:id="@+id/clearButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="32dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/applyButton" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
