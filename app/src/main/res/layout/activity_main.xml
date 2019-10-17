@@ -20,6 +20,7 @@
         android:text="EAT"
         android:textColor="@color/white"
         android:textSize="60sp"
+        android:onClick="onEatClick"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
