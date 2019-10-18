@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+<string-array name="breakfastChoices">
+    <item>Einstein Bros. Bagels</item>
+    <item>Dunkin Donuts</item>
+    <item>Mcdonalds</item>
+    <item>Wildberry Pancakes and Cafe</item>
+    <item>Dennys</item>
+    <item>IHOP</item>
+    <item>Egg Harbor Cafe</item>
+    <item>Walker Bros. Original Pancake House</item>
+    <item>Annas Red Apple</item>
+    <item>Bread and Butter Cafe</item>
+    <item>Gus Diner</item>
+    <item>Jelly Cafe</item>
+    <item>Southern Belles</item>
+    <item>Honey-Jam Cafe</item>
+    <item>Billys Pancake House</item>
+    <item>Golden Brunch</item>
+
+</string-array>
+
+</resources>
