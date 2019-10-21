@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DinnerSpinner"></activity>
+        <activity android:name=".DinnerFilterDisplayActivity"></activity>
+        <activity android:name=".LunchFilterDisplayActivity" />
+        <activity android:name=".DinnerSpinner" />
         <activity android:name=".LunchSpinner" />
         <activity android:name=".BreakfastSpinner" />
         <activity android:name=".BreakfastFilterDisplayActivity" />

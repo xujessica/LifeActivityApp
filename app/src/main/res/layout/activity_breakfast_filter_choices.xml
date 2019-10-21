@@ -29,13 +29,13 @@
             android:id="@+id/fastFood"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fast Food" />
+            android:text="Chain" />
 
         <RadioButton
             android:id="@+id/sitDown"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sit Down" />
+            android:text="Local" />
 
         <RadioButton
             android:id="@+id/noPreferenceType"
