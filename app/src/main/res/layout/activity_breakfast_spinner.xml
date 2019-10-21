@@ -4,6 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blue_gradient"
     tools:context=".BreakfastSpinner">
+
+    <com.adefruandta.spinningwheel.SpinningWheelView
+        android:id="@+id/breakfastSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:wheel_arrow_color="@color/white"
+        app:wheel_colors="@array/rainbow_dash"
+        app:wheel_items="@array/breakfastChoices"
+        app:wheel_stroke_color="@color/white"
+        app:wheel_stroke_width="5dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
