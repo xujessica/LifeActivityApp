@@ -15,12 +15,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onEatClick(View v) {
-        Intent intent = new Intent(this, EatChoicesActivity.class);
+        Intent intent = new Intent(this, ChoicesActivity.class);
+        intent.putExtra(ChoicesActivity.MY_CHOICE, "eat");
         startActivity(intent);
     }
 
     public void onEntertainmentClick(View v) {
-        Intent intent = new Intent(this, EntertainmentChoicesActivity.class);
+        Intent intent = new Intent(this, ChoicesActivity.class);
+        intent.putExtra(ChoicesActivity.MY_CHOICE, "entertainment");
         startActivity(intent);
     }
 
