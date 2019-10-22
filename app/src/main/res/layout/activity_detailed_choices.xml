@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChoicesActivity">
+    tools:context=".DetailedChoicesActivity">
 
     <Button
-        android:id="@+id/firstButton"
+        android:id="@+id/firstButtonDC"
         android:layout_width="253dp"
         android:layout_height="87dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:onClick="onFirstButtonClick"
+        android:onClick="onBreakfastClick"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,34 +22,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/secondButton"
+        android:id="@+id/secondButtonDC"
         android:layout_width="256dp"
         android:layout_height="84dp"
         android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
-        android:onClick="onSecondButtonClick"
+        android:onClick="onLunchClick"
         android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstButton" />
-
-
-    <Button
-        android:id="@+id/thirdButton"
-        android:layout_width="273dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="45dp"
-        android:background="@drawable/transparent_bg_bordered_button"
-        android:fontFamily="@font/roboto_medium"
-        android:onClick="onThirdButtonClick"
-        android:textColor="@color/white"
-        android:textSize="50sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/secondButton" />
+        app:layout_constraintTop_toBottomOf="@+id/firstButtonDC" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
