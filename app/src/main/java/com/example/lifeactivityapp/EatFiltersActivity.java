@@ -7,7 +7,7 @@ import android.os.Bundle;
 
 public class EatFiltersActivity extends AppCompatActivity {
 
-    public static final String MY_EAT_CHOICE = "eatChoice";
+    public static final String MY_EAT_CHOICE = "eat Choice";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

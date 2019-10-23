@@ -2,6 +2,8 @@ package com.example.lifeactivityapp;
 
 public class Movies {
     private String name;
+    private String description;
+    private String rating;
 
     // Inlcude rating and date released when done with main functionality of project
 

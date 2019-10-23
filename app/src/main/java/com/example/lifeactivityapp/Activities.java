@@ -2,6 +2,8 @@ package com.example.lifeactivityapp;
 
 public class Activities {
     private String name;
+    public String desciption;
+    public String location;
 
     // Inlcude rating and date released when done with main functionality of project
 
