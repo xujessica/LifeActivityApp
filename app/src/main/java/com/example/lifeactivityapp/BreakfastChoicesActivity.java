@@ -18,8 +18,4 @@ public class BreakfastChoicesActivity extends AppCompatActivity {
         Intent intent = new Intent(this, BreakfastFilterChoices.class);
         startActivity(intent);
     }
-    public void onBreakfastRandomClick(View v){
-        Intent intent = new Intent(this, BreakfastSpinner.class);
-        startActivity(intent);
-    }
 }

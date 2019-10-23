@@ -1,6 +1,7 @@
 package com.example.lifeactivityapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,16 +11,28 @@ import android.widget.Button;
 public class DetailedChoicesActivity extends AppCompatActivity {
 
     public static final String MY_DETAILED_CHOICE = "detailedChoice";
-    Intent intent = getIntent();
-    String detailedChoice = intent.getStringExtra(MY_DETAILED_CHOICE);
+    Intent intent;
+    String detailedChoice;
+    ConstraintLayout layoutDC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_choices);
 
+        intent = getIntent();
+        detailedChoice = intent.getStringExtra(MY_DETAILED_CHOICE);
         Button firstButtonDC = (Button) findViewById(R.id.firstButtonDC);
         Button secondButtonDC = (Button) findViewById(R.id.secondButtonDC);
+        layoutDC = (ConstraintLayout) findViewById(R.id.layoutDC);
+
+        setBackground();
+
+        firstButtonDC.setText("FILTERS");
+        firstButtonDC.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
+
+        secondButtonDC.setText("RANDOM");
+        secondButtonDC.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
 
     }
 
@@ -58,6 +71,33 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             Intent intent = new Intent(this, EntertainmentFiltersActivity.class);
             intent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, "activities");
             startActivity(intent);
+        }
+    }
+
+
+    public void setBackground() {
+        if(detailedChoice.equalsIgnoreCase("breakfast")){
+            layoutDC.setBackgroundResource(R.drawable.blue_gradient);
+        }
+
+        if(detailedChoice.equalsIgnoreCase("lunch")){
+            layoutDC.setBackgroundResource(R.drawable.blue_gradient);
+        }
+
+        if(detailedChoice.equalsIgnoreCase("dinner")){
+            layoutDC.setBackgroundResource(R.drawable.blue_gradient);
+        }
+
+        if(detailedChoice.equalsIgnoreCase("movies")){
+            layoutDC.setBackgroundResource(R.drawable.red_gradient);
+        }
+
+        if(detailedChoice.equalsIgnoreCase("concerts")){
+            layoutDC.setBackgroundResource(R.drawable.red_gradient);
+        }
+
+        if(detailedChoice.equalsIgnoreCase("activities")){
+            layoutDC.setBackgroundResource(R.drawable.red_gradient);
         }
     }
 

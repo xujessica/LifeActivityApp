@@ -12,26 +12,28 @@ import android.widget.TextView;
 
 public class ChoicesActivity extends AppCompatActivity {
 
-    Intent intent = getIntent();
+    Intent intent;
     ConstraintLayout constraintLayout;
     public static final String MY_CHOICE = "choice";
-    String choice = intent.getStringExtra(MY_CHOICE);
+    String choice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choices);
 
+        intent = getIntent();
+        choice = intent.getStringExtra(MY_CHOICE);
         Button firstButton = (Button) findViewById(R.id.firstButton);
         Button secondButton = (Button) findViewById(R.id.secondButton);
         Button thirdButton = (Button) findViewById(R.id.thirdButton);
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.layout);
 
         if(choice.equalsIgnoreCase("eat")){
-            constraintLayout= new ConstraintLayout(this);
-            constraintLayout.setBackgroundResource(R.drawable.blue_gradient);
-            setContentView(constraintLayout);
+            layout.setBackgroundResource(R.drawable.blue_gradient);
             firstButton.setText("BREAKFAST");
             firstButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
+            firstButton.setVisibility(View.VISIBLE);
 
             secondButton.setText("LUNCH");
             secondButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);

@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailedChoicesActivity">
+    tools:context=".DetailedChoicesActivity"
+    android:id="@+id/layoutDC">
 
     <Button
         android:id="@+id/firstButtonDC"
         android:layout_width="253dp"
         android:layout_height="87dp"
+        android:layout_marginTop="132dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
-        android:onClick="onBreakfastClick"
+        android:onClick="onFirstButtonClickDC"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +30,6 @@
         android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
-        android:onClick="onLunchClick"
         android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"

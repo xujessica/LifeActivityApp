@@ -14,23 +14,9 @@
         <activity android:name=".DetailedChoicesActivity" />
         <activity android:name=".RandomActivity" />
         <activity android:name=".ChoicesActivity" />
-        <activity android:name=".DinnerFilterDisplayActivity" />
-        <activity android:name=".LunchFilterDisplayActivity" />
-        <activity android:name=".DinnerSpinner" />
-        <activity android:name=".LunchSpinner" />
-        <activity android:name=".BreakfastSpinner" />
         <activity android:name=".BreakfastFilterDisplayActivity" />
-        <activity android:name=".DinnerFilterChoices" />
-        <activity android:name=".LunchFilterChoices" />
         <activity android:name=".BreakfastFilterChoices" />
-        <activity android:name=".OtherChoicesActivity" />
-        <activity android:name=".ConcertsChoicesActivity" />
-        <activity android:name=".MoviesChoicesActivity" />
-        <activity android:name=".DinnerChoicesActivity" />
-        <activity android:name=".LunchChoicesActivity" />
         <activity android:name=".BreakfastChoicesActivity" />
-        <activity android:name=".EntertainmentChoicesActivity" />
-        <activity android:name=".EatChoicesActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
