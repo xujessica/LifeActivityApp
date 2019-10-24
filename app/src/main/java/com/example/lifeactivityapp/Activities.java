@@ -5,7 +5,7 @@ public class Activities {
     public String desciption;
     public String location;
 
-    // Inlcude rating and date released when done with main functionality of project
+    // Include rating and date released when done with main functionality of project
 
     public Activities(String name){
         this.name = name;

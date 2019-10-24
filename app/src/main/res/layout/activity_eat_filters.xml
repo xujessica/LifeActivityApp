@@ -4,8 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EatFiltersActivity">
+    tools:context=".EatFiltersActivity"
+    android:background="@drawable/blue_gradient">
+
+    <TextView
+        android:id="@+id/radioTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="64dp"
+        android:textColor="@color/white"
+        android:text="Please Select A Dining Option"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioChoices"
+        android:layout_width="150dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioTextView">
+
+        <RadioButton
+            android:id="@+id/firstOptionEat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chain"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/secondOptionEat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Local"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/noPreferenceType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Preference"
+            android:textColor="@color/white" />
+
+    </RadioGroup>
 
 
+    <TextView
+        android:id="@+id/ratingTextView"
+        android:layout_width="173dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="44dp"
+        android:text="Please Select A Rating"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/radioChoices" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:stepSize="1"
+        app:layout_constraintTop_toBottomOf="@+id/ratingTextView" />
+
+    <Button
+        android:id="@+id/applyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="24dp"
+        android:text="Apply"
+        android:onClick="onClickEatFilter"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        android:background="@drawable/transparent_bg_bordered_button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -76,27 +76,15 @@ public class DetailedChoicesActivity extends AppCompatActivity {
 
 
     public void setBackground() {
-        if(detailedChoice.equalsIgnoreCase("breakfast")){
+        if (detailedChoice.equalsIgnoreCase("breakfast") ||
+                detailedChoice.equalsIgnoreCase("lunch") ||
+                detailedChoice.equalsIgnoreCase("dinner")) {
             layoutDC.setBackgroundResource(R.drawable.blue_gradient);
         }
 
-        if(detailedChoice.equalsIgnoreCase("lunch")){
-            layoutDC.setBackgroundResource(R.drawable.blue_gradient);
-        }
-
-        if(detailedChoice.equalsIgnoreCase("dinner")){
-            layoutDC.setBackgroundResource(R.drawable.blue_gradient);
-        }
-
-        if(detailedChoice.equalsIgnoreCase("movies")){
-            layoutDC.setBackgroundResource(R.drawable.red_gradient);
-        }
-
-        if(detailedChoice.equalsIgnoreCase("concerts")){
-            layoutDC.setBackgroundResource(R.drawable.red_gradient);
-        }
-
-        if(detailedChoice.equalsIgnoreCase("activities")){
+        if (detailedChoice.equalsIgnoreCase("movies") ||
+                detailedChoice.equalsIgnoreCase("concerts") ||
+                detailedChoice.equalsIgnoreCase("activities")) {
             layoutDC.setBackgroundResource(R.drawable.red_gradient);
         }
     }
