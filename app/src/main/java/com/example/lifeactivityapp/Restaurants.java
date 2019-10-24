@@ -39,11 +39,11 @@ public class Restaurants {
     };
 
     public static final Restaurants[] lunchPlaces = {
-            new Restaurants("Jimmy John's","",0,"fast food", 2.5),
+            new Restaurants("Jimmy John's","American franchised sandwich fast food restaurant chain, specializing in delivery.",0,"chain", 2.5),
             new Restaurants("Vini's Pizza","",0,"fast food", 3.5),
-            new Restaurants("Chipotle","",0,"fast food", 2.5),
+            new Restaurants("Chipotle","American chain of fast casual restaurants specializing in tacos and Mission-style burritos.",0,"fast food", 2.5),
             new Restaurants("Portillos","",0,"fast food", 4),
-            new Restaurants("Chick-fil-A","",0,"fast food", 4),
+            new Restaurants("Chick-fil-A","The largest quick-service chicken restaurant chain in the United States",0,"fast food", 4),
             new Restaurants("Culver's","",0,"fast food", 3.5),
             new Restaurants("Wendy's","",0,"fast food", 2.0),
             new Restaurants("Heng Wing Restaurant","",0,"sit down", 3.5),
