@@ -8,6 +8,7 @@ public class Movies {
     // Inlcude rating and date released when done with main functionality of project
 
     public Movies(String name){
+
         this.name = name;
     }
 

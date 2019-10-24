@@ -53,19 +53,19 @@ public class EatFiltersActivity extends AppCompatActivity {
     }
 
     public void onClickEatFilter(View v) {
-        Intent intent = new Intent(this, FilterDisplayActivity.class);
+        Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
 
         if (detailedChoice.equalsIgnoreCase("breakfast")) {
-            randomBreakfast(ratingBarInfo(v), breakfastArraySize, radioInfo(v), randomGenerator);
+            randomBreakfast(ratingBarInfo(v), breakfastArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
         if (detailedChoice.equalsIgnoreCase("lunch")) {
-            randomLunch(ratingBarInfo(v), lunchArraySize, radioInfo(v), randomGenerator);
+            randomLunch(ratingBarInfo(v), lunchArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
         if (detailedChoice.equalsIgnoreCase("dinner")) {
-            randomDinner(ratingBarInfo(v), dinnerArraySize, radioInfo(v), randomGenerator);
+            randomDinner(ratingBarInfo(v), dinnerArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
 
-        startActivity(intent);
+        startActivity(displayIntent);
     }
 
     public String radioInfo(View v) {
@@ -78,7 +78,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
     public int ratingBarInfo(View v) {
         RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-        double ratingStars = ratingBar.getNumStars();
+        double ratingStars = ratingBar.getRating();
         int newRating;
         if (ratingStars == 1) {
             Toast.makeText(EatFiltersActivity.this,"No results for 1 star", Toast.LENGTH_SHORT).show();
@@ -94,7 +94,8 @@ public class EatFiltersActivity extends AppCompatActivity {
         return newRating;
     }
 
-    public void randomBreakfast(double ratingStars, int breakfastArraySize, String serviceType, Random randomGenerator) {
+    public void randomBreakfast(double ratingStars, int breakfastArraySize, String serviceType,
+                                Random randomGenerator, Intent displayIntent) {
         for (int i = 0; i < breakfastArraySize; i++) {
             if (serviceType.equalsIgnoreCase("chain")) {
                 if (Restaurants.breakfastPlaces[i].getType().equalsIgnoreCase("chain")) {
@@ -123,20 +124,21 @@ public class EatFiltersActivity extends AppCompatActivity {
         }
 
         int index = randomGenerator.nextInt(newArray.size());
-        Restaurants chosenRestaurant = Restaurants.breakfastPlaces[index];
+        Restaurants chosenRestaurant = newArray.get(index);
         String restaurantName = chosenRestaurant.getRestaurant();
         String description = chosenRestaurant.getDescription();
         double rating = chosenRestaurant.getRating();
 
-        intent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
-        intent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-        intent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
+        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
 
     }
 
 
 
-    public void randomLunch(double ratingStars, int breakfastArraySize, String serviceType, Random randomGenerator) {
+    public void randomLunch(double ratingStars, int breakfastArraySize, String serviceType,
+                            Random randomGenerator, Intent displayIntent) {
         for (int i = 0; i < breakfastArraySize; i++) {
             if (serviceType.equalsIgnoreCase("fast food")) {
                 if (Restaurants.lunchPlaces[i].getType().equalsIgnoreCase("fast food")) {
@@ -165,20 +167,21 @@ public class EatFiltersActivity extends AppCompatActivity {
         }
 
         int index = randomGenerator.nextInt(newArray.size());
-        Restaurants chosenRestaurant = Restaurants.lunchPlaces[index];
+        Restaurants chosenRestaurant = newArray.get(index);
         String restaurantName = chosenRestaurant.getRestaurant();
         String description = chosenRestaurant.getDescription();
         double rating = chosenRestaurant.getRating();
 
-        intent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
-        intent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-        intent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
+        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
 
     }
 
 
 
-    public void randomDinner(double ratingStars, int breakfastArraySize, String serviceType, Random randomGenerator) {
+    public void randomDinner(double ratingStars, int breakfastArraySize, String serviceType,
+                             Random randomGenerator, Intent displayIntent) {
         for (int i = 0; i < breakfastArraySize; i++) {
             if (serviceType.equalsIgnoreCase("fast food")) {
                 if (Restaurants.dinnerPlaces[i].getType().equalsIgnoreCase("fast food")) {
@@ -207,14 +210,14 @@ public class EatFiltersActivity extends AppCompatActivity {
         }
 
         int index = randomGenerator.nextInt(newArray.size());
-        Restaurants chosenRestaurant = Restaurants.dinnerPlaces[index];
+        Restaurants chosenRestaurant = newArray.get(index);
         String restaurantName = chosenRestaurant.getRestaurant();
         String description = chosenRestaurant.getDescription();
         double rating = chosenRestaurant.getRating();
 
-        intent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
-        intent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-        intent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
+        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
 
     }
 
