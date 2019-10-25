@@ -8,34 +8,71 @@
     android:background="@drawable/blue_gradient">
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="214dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="116dp"
+        android:id="@+id/filterDisplayTitle"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:fontFamily="@font/geostar"
+        android:gravity="center"
         android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="285dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterDisplayTitle" />
 
     <TextView
         android:id="@+id/rating"
         android:layout_width="214dp"
         android:layout_height="47dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
         android:textColor="@color/white"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="223dp"
-        android:layout_height="228dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="256dp"
+        android:layout_height="193dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_horizontal"
         android:textColor="@color/white"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating" />
 
+<!--    <Button-->
+<!--        android:id="@+id/applyButton"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:background="@drawable/transparent_bg_bordered_button"-->
+<!--        android:onClick="newFilterOnClick"-->
+<!--        android:text="NEW FILTER"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        android:fontFamily="@font/roboto_medium"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.469"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/description" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,11 +8,15 @@
     android:id="@+id/layout">
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="264dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="60dp"
+        android:id="@+id/choiceTitle"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/titleFontSize"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:fontFamily="@font/geostar"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,7 +24,7 @@
         android:id="@+id/firstButton"
         android:layout_width="253dp"
         android:layout_height="87dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="48dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
@@ -28,9 +32,9 @@
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/choiceTitle" />
 
     <Button
         android:id="@+id/secondButton"

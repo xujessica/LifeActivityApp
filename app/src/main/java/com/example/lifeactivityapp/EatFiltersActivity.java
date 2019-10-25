@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
         intent = getIntent();
         detailedChoice = intent.getStringExtra(MY_EAT_CHOICE);
+        TextView eatFilterTitle = (TextView) findViewById(R.id.eatFilterTitle);
         RadioButton firstOptionEat = (RadioButton) findViewById(R.id.firstOptionEat);
         RadioButton secondOptionEat = (RadioButton) findViewById(R.id.secondOptionEat);
         randomGenerator = new Random();
@@ -45,12 +47,22 @@ public class EatFiltersActivity extends AppCompatActivity {
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
 
         if (detailedChoice.equalsIgnoreCase("breakfast")) {
+            eatFilterTitle.setText("BREAKFAST");
+            eatFilterTitle.setTextSize(40);
             firstOptionEat.setText("Chain");
             secondOptionEat.setText("Local");
         }
 
-        if (detailedChoice.equalsIgnoreCase("lunch") ||
-                detailedChoice.equalsIgnoreCase("dinner")) {
+        if (detailedChoice.equalsIgnoreCase("lunch")) {
+            eatFilterTitle.setText("LUNCH");
+            eatFilterTitle.setTextSize(60);
+            firstOptionEat.setText("fast food");
+            secondOptionEat.setText("sit down");
+        }
+
+        if (detailedChoice.equalsIgnoreCase("dinner")) {
+            eatFilterTitle.setText("DINNER");
+            eatFilterTitle.setTextSize(50);
             firstOptionEat.setText("fast food");
             secondOptionEat.setText("sit down");
         }
@@ -84,9 +96,11 @@ public class EatFiltersActivity extends AppCompatActivity {
             randomBreakfast(breakfastArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
         if (detailedChoice.equalsIgnoreCase("lunch")) {
+            convertRatingsArray(Restaurants.lunchPlaces);
             randomLunch(lunchArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
         if (detailedChoice.equalsIgnoreCase("dinner")) {
+            convertRatingsArray(Restaurants.dinnerPlaces);
             randomDinner(dinnerArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
 
@@ -161,6 +175,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
 
     }
 
@@ -168,7 +183,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
     public void randomLunch(int lunchArraySize, String serviceType, Random randomGenerator, Intent displayIntent) {
         try {
-            for (int i = 0; i < breakfastArraySize; i++) {
+            for (int i = 0; i < lunchArraySize; i++) {
                 if (serviceType.equalsIgnoreCase("fast food")) {
                     if (Restaurants.lunchPlaces[i].getType().equalsIgnoreCase("fast food")) {
                         if (Restaurants.lunchPlaces[i].getRating() == ratingStars) {
@@ -215,6 +230,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
 
     }
 
@@ -222,7 +238,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
     public void randomDinner(int dinnerArraySize, String serviceType, Random randomGenerator, Intent displayIntent) {
         try {
-            for (int i = 0; i < breakfastArraySize; i++) {
+            for (int i = 0; i < dinnerArraySize; i++) {
                 if (serviceType.equalsIgnoreCase("fast food")) {
                     if (Restaurants.dinnerPlaces[i].getType().equalsIgnoreCase("fast food")) {
                         if (Restaurants.dinnerPlaces[i].getRating() == ratingStars) {
@@ -270,7 +286,10 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
 
     }
+
+    // work on getting original rating of object
 
 }

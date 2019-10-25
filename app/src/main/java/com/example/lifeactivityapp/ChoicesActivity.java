@@ -24,6 +24,7 @@ public class ChoicesActivity extends AppCompatActivity {
 
         intent = getIntent();
         choice = intent.getStringExtra(MY_CHOICE);
+        TextView choiceTitle = (TextView)findViewById(R.id.choiceTitle);
         Button firstButton = (Button) findViewById(R.id.firstButton);
         Button secondButton = (Button) findViewById(R.id.secondButton);
         Button thirdButton = (Button) findViewById(R.id.thirdButton);
@@ -31,7 +32,7 @@ public class ChoicesActivity extends AppCompatActivity {
 
         if(choice.equalsIgnoreCase("eat")){
 
-
+            choiceTitle.setText("EAT");
 
             layout.setBackgroundResource(R.drawable.blue_gradient);
             firstButton.setText("BREAKFAST");
