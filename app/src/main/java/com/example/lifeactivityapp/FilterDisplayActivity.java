@@ -19,6 +19,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
     public static final String MY_DESCRIPTION = "description";
     public static final String MY_RATING_STARS = "ratingStars";
     String displayChoice;
+    ConstraintLayout filterDisplayLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,20 @@ public class FilterDisplayActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    public void setBackground() {
+        if (displayChoice.equalsIgnoreCase("breakfast") ||
+                displayChoice.equalsIgnoreCase("lunch") ||
+                displayChoice.equalsIgnoreCase("dinner")) {
+            filterDisplayLayout.setBackgroundResource(R.drawable.blue_gradient);
+        }
+
+        if (displayChoice.equalsIgnoreCase("movies") ||
+                displayChoice.equalsIgnoreCase("concerts") ||
+                displayChoice.equalsIgnoreCase("activities")) {
+            filterDisplayLayout.setBackgroundResource(R.drawable.red_gradient);
+        }
     }
 
     // suraj, from your entertainmentFiltersActivity you need to pass in the "displayChoice" so whether
