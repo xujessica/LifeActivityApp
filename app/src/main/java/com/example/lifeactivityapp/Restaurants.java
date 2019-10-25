@@ -20,7 +20,7 @@ public class Restaurants {
     }
 
     public static final Restaurants[] breakfastPlaces = {
-            new Restaurants("Einstein Bros. Bagels", "American bagel and coffee chain", 0, "chain", 2.0),
+            new Restaurants("Einstein Bros. Bagels", "American bagel and coffee chain ", 0, "chain", 2.0),
             new Restaurants("Dunkin Donuts", "American multinational coffee/donut company and quick service restaurant",0, "chain",2.0),
             new Restaurants("Mcdonalds", "Fast food, limited service restaurant",0, "chain",2.0),
             new Restaurants("Wildberry Pancakes & Cafe", "Bustling, family-oriented eatery features American breakfasts & lunches in a smart setting", 1, "chain",4.5),
