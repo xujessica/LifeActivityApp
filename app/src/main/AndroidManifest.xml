@@ -15,9 +15,6 @@
         <activity android:name=".DetailedChoicesActivity" />
         <activity android:name=".RandomActivity" />
         <activity android:name=".ChoicesActivity" />
-        <activity android:name=".BreakfastFilterDisplayActivity" />
-        <activity android:name=".BreakfastFilterChoices" />
-        <activity android:name=".BreakfastChoicesActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

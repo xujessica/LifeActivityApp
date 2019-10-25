@@ -30,6 +30,9 @@ public class ChoicesActivity extends AppCompatActivity {
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.layout);
 
         if(choice.equalsIgnoreCase("eat")){
+
+
+
             layout.setBackgroundResource(R.drawable.blue_gradient);
             firstButton.setText("BREAKFAST");
             firstButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
