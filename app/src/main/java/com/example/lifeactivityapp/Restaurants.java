@@ -40,34 +40,34 @@ public class Restaurants {
 
     public static final Restaurants[] lunchPlaces = {
             new Restaurants("Jimmy John's","American franchised sandwich fast food restaurant chain, specializing in delivery.",0,"chain", 2.5),
-            new Restaurants("Vini's Pizza","",0,"fast food", 3.5),
+            new Restaurants("Vini's Pizza","Vini's Pizza serves up great Italian food including pizzas, pastas, sandwiches, salads, ribs, wings & more",0,"fast food", 3.5),
             new Restaurants("Chipotle","American chain of fast casual restaurants specializing in tacos and Mission-style burritos.",0,"fast food", 2.5),
-            new Restaurants("Portillos","",0,"fast food", 4),
+            new Restaurants("Portillos","American fast casual restaurant chain that specializes in serving Chicago-style food such as hot dogs, Maxwell Street Polish, and Italian Beef.",0,"fast food", 4),
             new Restaurants("Chick-fil-A","The largest quick-service chicken restaurant chain in the United States",0,"fast food", 4),
-            new Restaurants("Culver's","",0,"fast food", 3.5),
-            new Restaurants("Wendy's","",0,"fast food", 2.0),
-            new Restaurants("Heng Wing Restaurant","",0,"sit down", 3.5),
-            new Restaurants("Tap House Grill","",0,"sit down", 3.5),
-            new Restaurants("Mother Cluckers Kitchen","",0,"sit down", 4.0),
-            new Restaurants("Gianni's Cafe","",0,"sit down", 4.0),
-            new Restaurants("Brandt's","",0,"sit down",4.0),
-            new Restaurants("On the Border","",0,"sit down", 3.0),
-            new Restaurants("Giordano's","",0,"sit down", 3.0)
+            new Restaurants("Culver's","A privately owned and operated casual fast food restaurant chain that is mostly known for its \"butterburgers\" and frozen custard.",0,"fast food", 3.5),
+            new Restaurants("Wendy's","An American international fast food restaurant chain that sells hamburgers, chicken sandwiches, and Frostys",0,"fast food", 2.0),
+            new Restaurants("Heng Wing Restaurant","A locally owned Chinese cuisine restaurant located in Palatine",0,"sit down", 3.5),
+            new Restaurants("Tap House Grill","At Tap House restaurant, sports bar and grill you will find great friends, addictive food and creative brews.",0,"sit down", 3.5),
+            new Restaurants("Mother Cluckers Kitchen","A local restaurant serving chicken and sandwiches.",0,"sit down", 4.0),
+            new Restaurants("Gianni's Cafe","An Italian restaurant serving regional salads, create-your-own pastas & classic entrees in a family-friendly setting.",0,"sit down", 4.0),
+            new Restaurants("Brandt's","A local bar and grill restaurant serving hamburgers and beer.",0,"sit down",4.0),
+            new Restaurants("On the Border","A restaurant chain serving dishes inspired by famous areas along the border between Texas and Mexico",0,"sit down", 3.0),
+            new Restaurants("Giordano's","Giordano's has been serving Chicago's famous deep dish pizza since 1974 with more than 50 locations nationwide",0,"sit down", 3.0)
     };
 
     public static final Restaurants[] dinnerPlaces = {
-            new Restaurants("Panera Bread","",0,"fast food",3.0),
-            new Restaurants("Papa John's","",0,"fast food", 2.0),
-            new Restaurants("Five Guys","",0,"fast food",3.0),
-            new Restaurants("Taco Bell","",0,"fast food", 2.0),
-            new Restaurants("Panda Express","",0,"fast food", 3.0),
-            new Restaurants("MOD Pizza","",0,"fast food", 4.5),
-            new Restaurants("Maggiano's Little Italy","",0,"sit down", 3.5),
-            new Restaurants("Moretti's Ristorante and Pizzeria","",0,"sit down", 3.5),
-            new Restaurants("Westwood Tavern","",0,"sit down", 4.0),
-            new Restaurants("Red Lobster","",0,"sit down", 3.5),
-            new Restaurants("Olive Garden","",0,"sit down", 3.0),
-            new Restaurants("The Cheesecake Factory","",0,"sit down",3.0)
+            new Restaurants("Panera Bread","A bakery chain that focuses on providing the cleanest and healthiest ingredients in their bakery items, pasta, salads, sandwiches, soups, and specialty drinks.",0,"fast food",3.0),
+            new Restaurants("Papa John's","Papa Johns is an fourth largest American pizza restaurant franchise.",0,"fast food", 2.0),
+            new Restaurants("Five Guys","An American fast casual restaurant chain focused on hamburgers, hot dogs, and French fries.",0,"fast food",3.0),
+            new Restaurants("Taco Bell","An American chain of fast food restaurants that serves a variety of Mexican inspired foods that include tacos, burritos, quesadillas, and nachos.",0,"fast food", 2.0),
+            new Restaurants("Panda Express","Panda Express is a fast food restaurant chain which serves American Chinese cuisine.",0,"fast food", 3.0),
+            new Restaurants("MOD Pizza","MOD is the original superfast pizza experience – a pioneering fast-casual concept that puts you in the driver's seat. Artisan-style pizzas and salads are individually sized, made on demand, and ready in just minutes.",0,"fast food", 4.5),
+            new Restaurants("Maggiano's Little Italy","Maggiano's Little Italy is an American casual dining restaurant chain specializing in Italian-American cuisine. ",0,"sit down", 3.5),
+            new Restaurants("Moretti's Ristorante and Pizzeria","Voted Reader's Choice \"Best Pizza\" by local Daily Herald Readers, Moretti's pizza is just the most famous part of their large and varied menu.",0,"sit down", 3.5),
+            new Restaurants("Westwood Tavern","Modern wood-&-stone watering hole with table taps, American eats, fireplaces & an outside patio.",0,"sit down", 4.0),
+            new Restaurants("Red Lobster","A restaurant that specializes in seafood, including crab, fish, lobster, mollusks, and shrimp.",0,"sit down", 3.5),
+            new Restaurants("Olive Garden","An American casual dining restaurant chain specializing in Italian-American cuisine.",0,"sit down", 3.0),
+            new Restaurants("The Cheesecake Factory","An American restaurant company and distributor of cheesecakes based in the United States.",0,"sit down",3.0)
     };
 
 
