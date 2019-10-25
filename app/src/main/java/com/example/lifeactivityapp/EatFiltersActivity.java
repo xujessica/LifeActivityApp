@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,6 +36,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
         intent = getIntent();
         detailedChoice = intent.getStringExtra(MY_EAT_CHOICE);
+        TextView eatFilterTitle = (TextView) findViewById(R.id.eatFilterTitle);
         RadioButton firstOptionEat = (RadioButton) findViewById(R.id.firstOptionEat);
         RadioButton secondOptionEat = (RadioButton) findViewById(R.id.secondOptionEat);
         randomGenerator = new Random();
@@ -45,12 +47,22 @@ public class EatFiltersActivity extends AppCompatActivity {
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
 
         if (detailedChoice.equalsIgnoreCase("breakfast")) {
+            eatFilterTitle.setText("BREAKFAST");
+            eatFilterTitle.setTextSize(40);
             firstOptionEat.setText("Chain");
             secondOptionEat.setText("Local");
         }
 
-        if (detailedChoice.equalsIgnoreCase("lunch") ||
-                detailedChoice.equalsIgnoreCase("dinner")) {
+        if (detailedChoice.equalsIgnoreCase("lunch")) {
+            eatFilterTitle.setText("LUNCH");
+            eatFilterTitle.setTextSize(60);
+            firstOptionEat.setText("fast food");
+            secondOptionEat.setText("sit down");
+        }
+
+        if (detailedChoice.equalsIgnoreCase("dinner")) {
+            eatFilterTitle.setText("DINNER");
+            eatFilterTitle.setTextSize(50);
             firstOptionEat.setText("fast food");
             secondOptionEat.setText("sit down");
         }
@@ -161,6 +173,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
 
     }
 
@@ -215,6 +228,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
 
     }
 
@@ -270,6 +284,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
 
     }
 

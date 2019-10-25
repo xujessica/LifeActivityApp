@@ -8,22 +8,40 @@
     android:background="@drawable/blue_gradient">
 
     <TextView
-        android:id="@+id/name"
-        android:layout_width="214dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="116dp"
+        android:id="@+id/filterDisplayTitle"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:fontFamily="@font/geostar"
+        android:gravity="center"
         android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="285dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filterDisplayTitle" />
 
     <TextView
         android:id="@+id/rating"
         android:layout_width="214dp"
         android:layout_height="47dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
         android:textColor="@color/white"
+        android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -34,6 +52,9 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="40dp"
         android:textColor="@color/white"
+        android:fontFamily="@font/roboto_medium"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating" />
 

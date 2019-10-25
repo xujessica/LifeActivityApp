@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class DetailedChoicesActivity extends AppCompatActivity {
 
@@ -22,9 +23,35 @@ public class DetailedChoicesActivity extends AppCompatActivity {
 
         intent = getIntent();
         detailedChoice = intent.getStringExtra(MY_DETAILED_CHOICE);
+        TextView titleDC = (TextView) findViewById(R.id.titleDC);
         Button firstButtonDC = (Button) findViewById(R.id.firstButtonDC);
         Button secondButtonDC = (Button) findViewById(R.id.secondButtonDC);
         layoutDC = (ConstraintLayout) findViewById(R.id.layoutDC);
+
+        if (detailedChoice.equalsIgnoreCase("breakfast")) {
+            titleDC.setText("BREAKFAST");
+            titleDC.setTextSize(40);
+        }
+        if (detailedChoice.equalsIgnoreCase("lunch")) {
+            titleDC.setText("LUNCH");
+            titleDC.setTextSize(60);
+        }
+        if (detailedChoice.equalsIgnoreCase("dinner")) {
+            titleDC.setText("DINNER");
+            titleDC.setTextSize(50);
+        }
+        if (detailedChoice.equalsIgnoreCase("movies")) {
+            titleDC.setText("MOVIES");
+            titleDC.setTextSize(50);
+        }
+        if (detailedChoice.equalsIgnoreCase("concerts")) {
+            titleDC.setText("CONCERTS");
+            titleDC.setTextSize(50);
+        }
+        if (detailedChoice.equalsIgnoreCase("activities")) {
+            titleDC.setText("ACTIVITIES");
+            titleDC.setTextSize(40);
+        }
 
         setBackground();
 

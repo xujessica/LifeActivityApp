@@ -4,27 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EatFiltersActivity"
-    android:background="@drawable/blue_gradient">
+    android:background="@drawable/blue_gradient"
+    tools:context=".EatFiltersActivity">
 
-    <TextView
-        android:id="@+id/radioTextView"
+    <Button
+        android:id="@+id/applyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/transparent_bg_bordered_button"
+        android:onClick="onClickEatFilter"
+        android:text="Apply"
         android:textColor="@color/white"
-        android:text="Please Select A Dining Option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     <RadioGroup
         android:id="@+id/radioChoices"
         android:layout_width="150dp"
         android:layout_height="106dp"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="28dp"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioTextView">
 
@@ -45,45 +51,61 @@
         <RadioButton
             android:id="@+id/noPreferenceType"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:text="No Preference"
             android:textColor="@color/white" />
 
     </RadioGroup>
-
-
-    <TextView
-        android:id="@+id/ratingTextView"
-        android:layout_width="173dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="44dp"
-        android:text="Please Select A Rating"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/radioChoices" />
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white"
         android:stepSize="1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingTextView" />
 
-    <Button
-        android:id="@+id/applyButton"
+
+    <TextView
+        android:id="@+id/ratingTextView"
+        android:layout_width="173dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:text="Please Select A Rating"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioChoices" />
+
+    <TextView
+        android:id="@+id/radioTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="24dp"
-        android:text="Apply"
-        android:onClick="onClickEatFilter"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="28dp"
+        android:text="Please Select A Dining Option"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
-        android:background="@drawable/transparent_bg_bordered_button"/>
+        app:layout_constraintTop_toBottomOf="@+id/eatFilterTitle" />
+
+    <TextView
+        android:id="@+id/eatFilterTitle"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:fontFamily="@font/geostar"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
