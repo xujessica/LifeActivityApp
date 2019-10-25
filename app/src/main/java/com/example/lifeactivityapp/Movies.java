@@ -7,10 +7,10 @@ public class Movies {
 
     // Inlcude rating and date released when done with main functionality of project
 
-    public Movies(String name, String rating, String description
-    ){
-
+    public Movies(String name, String rating, String description){
         this.name = name;
+        this.rating = rating;
+        this.description = description;
     }
 
     public static final Movies[] Action = {
@@ -57,7 +57,20 @@ public class Movies {
             new Movies("Cars","7.1", "While traveling to California to race against The King (Richard Petty) and Chick Hicks (Michael Keaton) for the Piston Cup Championship, Lightning McQueen (Owen Wilson) becomes lost after falling out of his trailer in a run down town called Radiator Springs. While there he slowly befriends the town's odd residents, including Sally (Bonnie Hunt), Doc Hudson (Paul Newman) and Mater (Larry the Cable Guy). When it comes time for him to leave to championship is no longer his top priority."),
     };
 
+    public static Movies[] getAction() {
+        return Action;
+    }
+    public static Movies[] getComedy() {
+        return Comedy;
+    }
+    public static Movies[] getRomance() {
+        return Romance;
+    }
+    public static Movies[] getKids() {
+        return Kids;
+    }
 
 
+    public String toString(){ return name;}
 
 }

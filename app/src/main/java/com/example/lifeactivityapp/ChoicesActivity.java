@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 public class ChoicesActivity extends AppCompatActivity {
 
-    Intent intent;
-    ConstraintLayout constraintLayout;
+
     public static final String MY_CHOICE = "choice";
+    Intent intent;
     String choice;
 
     @Override
@@ -24,16 +24,12 @@ public class ChoicesActivity extends AppCompatActivity {
 
         intent = getIntent();
         choice = intent.getStringExtra(MY_CHOICE);
-        TextView choiceTitle = (TextView)findViewById(R.id.choiceTitle);
         Button firstButton = (Button) findViewById(R.id.firstButton);
         Button secondButton = (Button) findViewById(R.id.secondButton);
         Button thirdButton = (Button) findViewById(R.id.thirdButton);
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.layout);
 
         if(choice.equalsIgnoreCase("eat")){
-
-            choiceTitle.setText("EAT");
-
             layout.setBackgroundResource(R.drawable.blue_gradient);
             firstButton.setText("BREAKFAST");
             firstButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
@@ -42,17 +38,16 @@ public class ChoicesActivity extends AppCompatActivity {
             secondButton.setText("LUNCH");
             secondButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
 
-
             thirdButton.setText("DINNER");
             thirdButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
         }
 
         if (choice.equalsIgnoreCase("entertainment")) {
-            constraintLayout= new ConstraintLayout(this);
-            constraintLayout.setBackgroundResource(R.drawable.red_gradient);
-            setContentView(constraintLayout);
+            layout.setBackgroundResource(R.drawable.red_gradient);
+
             firstButton.setText("MOVIES");
             firstButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
+            firstButton.setVisibility(View.VISIBLE);
 
             secondButton.setText("CONCERTS");
             secondButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
@@ -104,3 +99,4 @@ public class ChoicesActivity extends AppCompatActivity {
 
 
 }
+

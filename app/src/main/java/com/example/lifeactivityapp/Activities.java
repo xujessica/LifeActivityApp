@@ -5,44 +5,69 @@ public class Activities {
     public String desciption;
     public String location;
 
-    // Include rating and date released when done with main functionality of project
+    // Inlcude rating and date released when done with main functionality of project
 
-    public Activities(String name){
+    public Activities(String name, String location){
         this.name = name;
+        this.location = location;
     }
 
-    public static final Activities[] Rap = {
-            new Activities("Cardi B"),
-            new Activities("A Boogie Wit Da Hoodie"),
-            new Activities("Chance the Rapper"),
-            new Activities("Logic"),
-            new Activities("Snoop dog"),
-            new Activities("Post Malone"),
-            new Activities("Lizzo"),
-            new Activities("Louis the Child"),
+    public static final Activities[] Spring = {
+            new Activities("Go shopping", "outdoors"),
+            new Activities("Go to an art festival", "outdoors"),
+            new Activities("Have a picnic", "outdoors"),
+            new Activities("Plant flowers", "outdoors"),
+            new Activities("Ride your bike", "outdoors"),
+            new Activities("Visit a flea market", "outdoors"),
+            new Activities("Read a book", "indoors")
     };
 
-    public static final Activities[] Pop = {
-            new Activities("Alessia Cara"),
-            new Activities("Ariana Grande"),
-            new Activities("Jonas Brothers"),
-            new Activities("Taylor Swift"),
-            new Activities("Maroon 5"),
-            new Activities("Billie Ellish"),
-            new Activities("Backstreet Boys"),
-            new Activities("Lady Gaga"),
+    public static final Activities[] Summer = {
+            new Activities("Get ice cream", "outdoors"),
+            new Activities("Mini golf", "outdoors"),
+            new Activities("Go camping", "outdoors"),
+            new Activities("See a drive-in movie", "outdoors"),
+            new Activities("Visit a carnival", "outdoors"),
+            new Activities("Go to a theme park", "outdoors"),
+            new Activities("Go to the beach", "outdoors"),
+            new Activities("Go tubing", "outdoors")
     };
 
-    public static final Activities[] Country = {
-            new Activities("Floridea Georgia Line"),
-            new Activities("Carrie Underwood"),
-            new Activities("Old Dominion"),
-            new Activities("Kane Brown"),
-            new Activities("Luke Combs"),
-            new Activities("Thomas Rhett"),
-            new Activities("Luke Bryan"),
-            new Activities("Zac Brown Band"),
+    public static final Activities[] Fall = {
+            new Activities("Have a bonfire", "outdoors"),
+            new Activities("Visit a haunted house", "indoors"),
+            new Activities("Pick apples", "outdoors"),
+            new Activities("Carve pumpkins", "outdoors"),
+            new Activities("Bake a pie", "indoors"),
+            new Activities("Watch a scary movie", "indoors"),
+            new Activities("Visit a corn maze", "outdoors"),
+            new Activities("Make candy apples", "indoors")
     };
 
+    public static final Activities[] Winter = {
+            new Activities("Build a snowman", "outdoors"),
+            new Activities("Drink hot coco", "indoors"),
+            new Activities("Go skiing/snowboarding", "outdoors"),
+            new Activities("Go ice skating", "outdoors"),
+            new Activities("Watch a Christmas movie", "indoors"),
+            new Activities("See zoo lights", "outdoors"),
+            new Activities("Make gingerbread lights", "indoors"),
+            new Activities("Go to a museum", "indoors")
+    };
 
+    public static Activities[] getSpring() {
+        return Spring;
+    }
+    public static Activities[] getSummer() {
+        return Summer;
+    }
+    public static Activities[] getFall() {
+        return Fall;
+    }
+    public static Activities[] getWinter() {
+        return Winter;
+    }
+
+
+    public String toString(){ return name;}
 }

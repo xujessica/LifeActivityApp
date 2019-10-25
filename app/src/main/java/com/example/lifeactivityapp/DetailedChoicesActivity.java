@@ -32,23 +32,24 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             titleDC.setText("BREAKFAST");
             titleDC.setTextSize(40);
         }
-        if (detailedChoice.equalsIgnoreCase("lunch")) {
+        else if (detailedChoice.equalsIgnoreCase("lunch")) {
             titleDC.setText("LUNCH");
             titleDC.setTextSize(60);
         }
-        if (detailedChoice.equalsIgnoreCase("dinner")) {
+        else if (detailedChoice.equalsIgnoreCase("dinner")) {
             titleDC.setText("DINNER");
             titleDC.setTextSize(50);
         }
-        if (detailedChoice.equalsIgnoreCase("movies")) {
+        else if (detailedChoice.equalsIgnoreCase("movies")) {
             titleDC.setText("MOVIES");
             titleDC.setTextSize(50);
         }
-        if (detailedChoice.equalsIgnoreCase("concerts")) {
+        else if (detailedChoice.equalsIgnoreCase("concerts")) {
             titleDC.setText("CONCERTS");
             titleDC.setTextSize(50);
         }
-        if (detailedChoice.equalsIgnoreCase("activities")) {
+        else// if (detailedChoice.equalsIgnoreCase("activities"))
+        {
             titleDC.setText("ACTIVITIES");
             titleDC.setTextSize(40);
         }
@@ -64,39 +65,18 @@ public class DetailedChoicesActivity extends AppCompatActivity {
     }
 
     public void onFirstButtonClickDC(View v) {
-        if (detailedChoice.equalsIgnoreCase("breakfast")) {
+        if (detailedChoice.equalsIgnoreCase("breakfast") ||
+                detailedChoice.equalsIgnoreCase("lunch") ||
+                detailedChoice.equalsIgnoreCase("dinner")) {
+
             Intent intent = new Intent(this, EatFiltersActivity.class);
-            intent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, "breakfast");
+            intent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, detailedChoice);
             startActivity(intent);
         }
-
-        if (detailedChoice.equalsIgnoreCase("lunch")) {
-            Intent intent = new Intent(this, EatFiltersActivity.class);
-            intent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, "lunch");
-            startActivity(intent);
-        }
-
-        if (detailedChoice.equalsIgnoreCase("dinner")) {
-            Intent intent = new Intent(this, EatFiltersActivity.class);
-            intent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, "dinner");
-            startActivity(intent);
-        }
-
-        if (detailedChoice.equalsIgnoreCase("movies")) {
+        else
+        {
             Intent intent = new Intent(this, EntertainmentFiltersActivity.class);
-            intent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, "movies");
-            startActivity(intent);
-        }
-
-        if (detailedChoice.equalsIgnoreCase("concerts")) {
-            Intent intent = new Intent(this, EntertainmentFiltersActivity.class);
-            intent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, "concerts");
-            startActivity(intent);
-        }
-
-        if (detailedChoice.equalsIgnoreCase("activities")) {
-            Intent intent = new Intent(this, EntertainmentFiltersActivity.class);
-            intent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, "activities");
+            intent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, detailedChoice);
             startActivity(intent);
         }
     }

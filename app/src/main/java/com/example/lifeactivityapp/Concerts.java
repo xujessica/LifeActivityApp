@@ -44,5 +44,14 @@ public class Concerts {
             new Concerts("Zac Brown Band"),
     };
 
+    public static Concerts[] getRap() { return Rap; }
+    public static Concerts[] getPop() {
+        return Pop;
+    }
+    public static Concerts[] getCountry() {
+        return Country;
+    }
 
+
+    public String toString(){return name;}
 }
