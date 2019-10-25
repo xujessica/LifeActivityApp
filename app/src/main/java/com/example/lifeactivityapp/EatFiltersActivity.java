@@ -96,9 +96,11 @@ public class EatFiltersActivity extends AppCompatActivity {
             randomBreakfast(breakfastArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
         if (detailedChoice.equalsIgnoreCase("lunch")) {
+            convertRatingsArray(Restaurants.lunchPlaces);
             randomLunch(lunchArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
         if (detailedChoice.equalsIgnoreCase("dinner")) {
+            convertRatingsArray(Restaurants.dinnerPlaces);
             randomDinner(dinnerArraySize, radioInfo(v), randomGenerator, displayIntent);
         }
 
@@ -181,7 +183,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
     public void randomLunch(int lunchArraySize, String serviceType, Random randomGenerator, Intent displayIntent) {
         try {
-            for (int i = 0; i < breakfastArraySize; i++) {
+            for (int i = 0; i < lunchArraySize; i++) {
                 if (serviceType.equalsIgnoreCase("fast food")) {
                     if (Restaurants.lunchPlaces[i].getType().equalsIgnoreCase("fast food")) {
                         if (Restaurants.lunchPlaces[i].getRating() == ratingStars) {
@@ -236,7 +238,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
     public void randomDinner(int dinnerArraySize, String serviceType, Random randomGenerator, Intent displayIntent) {
         try {
-            for (int i = 0; i < breakfastArraySize; i++) {
+            for (int i = 0; i < dinnerArraySize; i++) {
                 if (serviceType.equalsIgnoreCase("fast food")) {
                     if (Restaurants.dinnerPlaces[i].getType().equalsIgnoreCase("fast food")) {
                         if (Restaurants.dinnerPlaces[i].getRating() == ratingStars) {
@@ -287,5 +289,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
 
     }
+
+    // work on getting original rating of object
 
 }
