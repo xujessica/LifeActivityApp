@@ -28,7 +28,7 @@
 
     <Button
         android:id="@+id/entertainmentButton"
-        android:layout_width="289dp"
+        android:layout_width="310dp"
         android:layout_height="89dp"
         android:layout_marginTop="45dp"
         android:background="@drawable/transparent_bg_bordered_button"

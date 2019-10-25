@@ -17,6 +17,7 @@
         android:onClick="onClickEatFilter"
         android:text="Apply"
         android:textColor="@color/white"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,14 +39,14 @@
             android:id="@+id/firstOptionEat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chain"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/white" />
 
         <RadioButton
             android:id="@+id/secondOptionEat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Local"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/white" />
 
         <RadioButton
@@ -53,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="42dp"
             android:text="No Preference"
+            android:fontFamily="@font/roboto_medium"
             android:textColor="@color/white" />
 
     </RadioGroup>
@@ -77,6 +79,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="44dp"
         android:text="Please Select A Rating"
+        android:fontFamily="@font/roboto_medium"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -90,6 +93,7 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="28dp"
         android:text="Please Select A Dining Option"
+        android:fontFamily="@font/roboto_medium"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.263"
