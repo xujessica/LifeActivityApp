@@ -102,4 +102,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
 //        }
 //    }
 
+    // keep fonts consistent and make text more visible
+
+
 }
