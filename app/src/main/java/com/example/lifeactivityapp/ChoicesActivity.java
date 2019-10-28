@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ChoicesActivity extends AppCompatActivity {
 
 
@@ -24,6 +26,7 @@ public class ChoicesActivity extends AppCompatActivity {
 
         intent = getIntent();
         choice = intent.getStringExtra(MY_CHOICE);
+        TextView title = (TextView) findViewById(R.id.choiceTitle);
         Button firstButton = (Button) findViewById(R.id.firstButton);
         Button secondButton = (Button) findViewById(R.id.secondButton);
         Button thirdButton = (Button) findViewById(R.id.thirdButton);
@@ -31,6 +34,11 @@ public class ChoicesActivity extends AppCompatActivity {
 
         if(choice.equalsIgnoreCase("eat")){
             layout.setBackgroundResource(R.drawable.blue_gradient);
+
+            title.setTextSize(R.dimen.eatTitleFontSize);
+            title.setText("EAT ");
+            setContentView(title);
+
             firstButton.setText("BREAKFAST");
             firstButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
             firstButton.setVisibility(View.VISIBLE);
@@ -44,6 +52,9 @@ public class ChoicesActivity extends AppCompatActivity {
 
         if (choice.equalsIgnoreCase("entertainment")) {
             layout.setBackgroundResource(R.drawable.red_gradient);
+
+            title.setTextSize(R.dimen.entertainmentTitleFontSize);
+            title.setText("ENTERTAINMENT ");
 
             firstButton.setText("MOVIES");
             firstButton.setBackgroundResource(R.drawable.transparent_bg_bordered_button);
