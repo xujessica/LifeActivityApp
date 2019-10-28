@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="titleFontSize">70sp</dimen>
+    <dimen name="eatTitleFontSize">70sp</dimen>
+    <dimen name="entertainmentTitleFontSize">40sp</dimen>
+
+    <dimen name="buttonTextSize">40sp</dimen>
+    <dimen name="buttonHeight">85dp</dimen>
+    <dimen name="buttonWidth">250dp</dimen>
 </resources>
