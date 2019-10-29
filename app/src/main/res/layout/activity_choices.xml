@@ -2,22 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChoicesActivity"
-    android:id="@+id/layout">
-
-    <TextView
-        android:id="@+id/choiceTitle"
-        android:layout_width="match_parent"
-        android:layout_height="115dp"
-        android:fontFamily="@font/cinzel_bold"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="0dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".ChoicesActivity">
 
     <Button
         android:id="@+id/firstButton"
@@ -29,7 +17,7 @@
         android:gravity="center"
         android:onClick="onFirstButtonClick"
         android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textSize="@dimen/buttonTextSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,9 +32,9 @@
         android:fontFamily="@font/roboto_medium"
         android:onClick="onSecondButtonClick"
         android:textColor="@color/white"
-        android:textSize="50sp"
+        android:textSize="@dimen/buttonTextSize"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstButton" />
 
@@ -60,10 +48,24 @@
         android:fontFamily="@font/roboto_medium"
         android:onClick="onThirdButtonClick"
         android:textColor="@color/white"
-        android:textSize="50sp"
+        android:textSize="@dimen/buttonTextSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondButton" />
+
+    <TextView
+        android:id="@+id/choiceTitle"
+        android:layout_width="0dp"
+        android:layout_height="114dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="titleFontSize">70sp</dimen>
-    <dimen name="eatTitleFontSize">70sp</dimen>
+    <dimen name="mainTitleFontSize">85sp</dimen>
+    <dimen name="eatTitleFontSize">85sp</dimen>
     <dimen name="entertainmentTitleFontSize">40sp</dimen>
 
     <dimen name="buttonTextSize">40sp</dimen>
