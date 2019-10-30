@@ -13,18 +13,29 @@ import java.util.ArrayList;
 
 public class FavoritesActivity extends AppCompatActivity {
 
-    public static ArrayList<Object> favorites;
+    public static final String MY_RESTAURANT_NAME = "restaurantName";
+    public static final String MY_MEAL_CHOICE = "mealChoice";
+    public ArrayList<Object> favoritesArray;
     ListView favoritesChoices;
+    String mealChoice;
+    String restaurantName;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
 
-        favorites = new ArrayList<>();
+        Intent intent = getIntent();
+        mealChoice = intent.getStringExtra(MY_MEAL_CHOICE);
+        restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME);
         favoritesChoices = (ListView) findViewById(R.id.favoritesChoices);
+        favoritesArray = new ArrayList<>();
+
+        addObject(restaurantName, mealChoice);
+
         ArrayAdapter<Object> arrayAdapter = new ArrayAdapter<Object>
-                (this, android.R.layout.simple_list_item_1, favorites);
+                (this, android.R.layout.simple_list_item_1, favoritesArray);
         favoritesChoices.setAdapter(arrayAdapter);
 
         AdapterView.OnItemClickListener itemClickListener =
@@ -43,8 +54,27 @@ public class FavoritesActivity extends AppCompatActivity {
 
     }
 
-    public static void addToFavorites(Object object) {
-        favorites.add(object);
+    public void addObject(String restaurantName, String mealChoice) {
+
+        Restaurants[] array;
+        if (mealChoice.equalsIgnoreCase("breakfast")) {
+            array = Restaurants.breakfastPlaces;
+        }
+
+        else if (mealChoice.equalsIgnoreCase("lunch")) {
+            array = Restaurants.breakfastPlaces;
+        }
+
+        else {
+            array = Restaurants.breakfastPlaces;
+        }
+
+
+        for (int i = 0; i < array.length; i++) {
+            if (restaurantName.equalsIgnoreCase(array[i].getRestaurant())) {
+                favoritesArray.add(array[i]);
+            }
+        }
     }
 
 

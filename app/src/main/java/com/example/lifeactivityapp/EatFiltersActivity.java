@@ -20,7 +20,7 @@ public class EatFiltersActivity extends AppCompatActivity {
 
     public static final String MY_EAT_CHOICE = "eatChoice";
     ArrayList<Restaurants> newArray;
-    String detailedChoice;
+    String mealChoice;
     Intent intent;
     Random randomGenerator;
     RatingBar ratingBar;
@@ -32,7 +32,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eat_filters);
 
         intent = getIntent();
-        detailedChoice = intent.getStringExtra(MY_EAT_CHOICE);
+        mealChoice = intent.getStringExtra(MY_EAT_CHOICE);
         TextView eatFilterTitle = (TextView) findViewById(R.id.eatFilterTitle);
         RadioButton firstOptionEat = (RadioButton) findViewById(R.id.firstOptionEat);
         RadioButton secondOptionEat = (RadioButton) findViewById(R.id.secondOptionEat);
@@ -40,21 +40,21 @@ public class EatFiltersActivity extends AppCompatActivity {
         newArray = new ArrayList<>();
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
 
-        if (detailedChoice.equalsIgnoreCase("breakfast")) {
+        if (mealChoice.equalsIgnoreCase("breakfast")) {
             eatFilterTitle.setText("BREAKFAST");
             eatFilterTitle.setTextSize(40);
             firstOptionEat.setText("Chain");
             secondOptionEat.setText("Local");
         }
 
-        if (detailedChoice.equalsIgnoreCase("lunch")) {
+        if (mealChoice.equalsIgnoreCase("lunch")) {
             eatFilterTitle.setText("LUNCH");
             eatFilterTitle.setTextSize(60);
             firstOptionEat.setText("fast food");
             secondOptionEat.setText("sit down");
         }
 
-        if (detailedChoice.equalsIgnoreCase("dinner")) {
+        if (mealChoice.equalsIgnoreCase("dinner")) {
             eatFilterTitle.setText("DINNER");
             eatFilterTitle.setTextSize(50);
             firstOptionEat.setText("fast food");
@@ -85,15 +85,15 @@ public class EatFiltersActivity extends AppCompatActivity {
         }
 
 
-        if (detailedChoice.equalsIgnoreCase("breakfast")) {
+        if (mealChoice.equalsIgnoreCase("breakfast")) {
             convertRatingsArray(Restaurants.breakfastPlaces);
             random(radioInfo(v), randomGenerator, displayIntent, Restaurants.breakfastPlaces);
         }
-        if (detailedChoice.equalsIgnoreCase("lunch")) {
+        if (mealChoice.equalsIgnoreCase("lunch")) {
             convertRatingsArray(Restaurants.lunchPlaces);
             random(radioInfo(v), randomGenerator, displayIntent, Restaurants.lunchPlaces);
         }
-        if (detailedChoice.equalsIgnoreCase("dinner")) {
+        if (mealChoice.equalsIgnoreCase("dinner")) {
             convertRatingsArray(Restaurants.dinnerPlaces);
             random(radioInfo(v), randomGenerator, displayIntent,Restaurants.dinnerPlaces);
         }
@@ -123,49 +123,49 @@ public class EatFiltersActivity extends AppCompatActivity {
 
     // work on getting original rating of object
 
-    public void random(String serviceType, Random randomGenerator, Intent displayIntent, Restaurants[] meal) {
+    public void random(String serviceType, Random randomGenerator, Intent displayIntent, Restaurants[] mealArray) {
         try {
-            for (int i = 0; i < meal.length; i++) {
-                if (detailedChoice.equalsIgnoreCase("breakfast")) {
+            for (int i = 0; i < mealArray.length; i++) {
+                if (mealChoice.equalsIgnoreCase("breakfast")) {
                     if (serviceType.equalsIgnoreCase("chain")) {
-                        if (meal[i].getType().equalsIgnoreCase("chain")) {
-                            if (meal[i].getRating() == ratingStars) {
-                                newArray.add(meal[i]);
+                        if (mealArray[i].getType().equalsIgnoreCase("chain")) {
+                            if (mealArray[i].getRating() == ratingStars) {
+                                newArray.add(mealArray[i]);
                             }
                         }
                     }
                     if (serviceType.equalsIgnoreCase("local")) {
-                        if (meal[i].getType().equalsIgnoreCase("local")) {
-                            if (meal[i].getRating() == ratingStars) {
-                                newArray.add(meal[i]);
+                        if (mealArray[i].getType().equalsIgnoreCase("local")) {
+                            if (mealArray[i].getRating() == ratingStars) {
+                                newArray.add(mealArray[i]);
                             }
                         }
                     }
                     if (serviceType.equalsIgnoreCase("no preference")) {
-                        if (meal[i].getRating() == ratingStars) {
-                            newArray.add(meal[i]);
+                        if (mealArray[i].getRating() == ratingStars) {
+                            newArray.add(mealArray[i]);
                         }
                     }
                 }
-                if (detailedChoice.equalsIgnoreCase("lunch") ||
-                        detailedChoice.equalsIgnoreCase("dinner")) {
+                if (mealChoice.equalsIgnoreCase("lunch") ||
+                        mealChoice.equalsIgnoreCase("dinner")) {
                     if (serviceType.equalsIgnoreCase("fast food")) {
-                        if (meal[i].getType().equalsIgnoreCase("fast food")) {
-                            if (meal[i].getRating() == ratingStars) {
-                                newArray.add(meal[i]);
+                        if (mealArray[i].getType().equalsIgnoreCase("fast food")) {
+                            if (mealArray[i].getRating() == ratingStars) {
+                                newArray.add(mealArray[i]);
                             }
                         }
                     }
                     if (serviceType.equalsIgnoreCase("sit down")) {
-                        if (meal[i].getType().equalsIgnoreCase("sit down")) {
-                            if (meal[i].getRating() == ratingStars) {
-                                newArray.add(meal[i]);
+                        if (mealArray[i].getType().equalsIgnoreCase("sit down")) {
+                            if (mealArray[i].getRating() == ratingStars) {
+                                newArray.add(mealArray[i]);
                             }
                         }
                     }
                     if (serviceType.equalsIgnoreCase("no preference")) {
-                        if (meal[i].getRating() == ratingStars) {
-                            newArray.add(meal[i]);
+                        if (mealArray[i].getRating() == ratingStars) {
+                            newArray.add(mealArray[i]);
                         }
                     }
                 }
@@ -195,171 +195,8 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
+        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, mealChoice);
 
     }
 }
 
-//    public void randomBreakfast(int breakfastArraySize, String serviceType, Random randomGenerator, Intent displayIntent) {
-//        try {
-//            for (int i = 0; i < breakfastArraySize; i++) {
-//                if (serviceType.equalsIgnoreCase("chain")) {
-//                    if (Restaurants.breakfastPlaces[i].getType().equalsIgnoreCase("chain")) {
-//                        if (Restaurants.breakfastPlaces[i].getRating() == ratingStars) {
-//                            newArray.add(Restaurants.breakfastPlaces[i]);
-//                        }
-//                    }
-//                }
-//                if (serviceType.equalsIgnoreCase("local")) {
-//                    if (Restaurants.breakfastPlaces[i].getType().equalsIgnoreCase("local")) {
-//                        if (Restaurants.breakfastPlaces[i].getRating() == ratingStars) {
-//                            newArray.add(Restaurants.breakfastPlaces[i]);
-//                        }
-//                    }
-//                }
-//                if (serviceType.equalsIgnoreCase("no preference")) {
-//                    if (Restaurants.breakfastPlaces[i].getRating() == ratingStars) {
-//                        newArray.add(Restaurants.breakfastPlaces[i]);
-//                    }
-//                }
-//
-//            }
-//            if (newArray.size() == 0) {
-//                throw new NullPointerException();
-//            }
-//        }
-//        catch (NullPointerException e) {
-//            Context context = getApplicationContext();
-//            CharSequence text = "No results for chosen options";
-//            int duration = Toast.LENGTH_SHORT;
-//
-//            Toast toast = Toast.makeText(context, text, duration);
-//
-//            toast.show();
-//            toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,
-//                    0, 0);
-//        }
-//
-//        int index = randomGenerator.nextInt(newArray.size());
-//        Restaurants chosenRestaurant = newArray.get(index);
-//        String restaurantName = chosenRestaurant.getRestaurant();
-//        String description = chosenRestaurant.getDescription();
-//        double rating = chosenRestaurant.getRating();
-//
-//        displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
-//
-//    }
-//
-//
-//
-//    public void randomLunch(int lunchArraySize, String serviceType, Random randomGenerator, Intent displayIntent) {
-//        try {
-//            for (int i = 0; i < lunchArraySize; i++) {
-//                if (serviceType.equalsIgnoreCase("fast food")) {
-//                    if (Restaurants.lunchPlaces[i].getType().equalsIgnoreCase("fast food")) {
-//                        if (Restaurants.lunchPlaces[i].getRating() == ratingStars) {
-//                            newArray.add(Restaurants.lunchPlaces[i]);
-//                        }
-//                    }
-//                }
-//                if (serviceType.equalsIgnoreCase("sit down")) {
-//                    if (Restaurants.lunchPlaces[i].getType().equalsIgnoreCase("sit down")) {
-//                        if (Restaurants.lunchPlaces[i].getRating() == ratingStars) {
-//                            newArray.add(Restaurants.lunchPlaces[i]);
-//                        }
-//                    }
-//                }
-//                if (serviceType.equalsIgnoreCase("no preference")) {
-//                    if (Restaurants.lunchPlaces[i].getRating() == ratingStars) {
-//                        newArray.add(Restaurants.lunchPlaces[i]);
-//                    }
-//                }
-//
-//            }
-//            if (newArray.size() == 0) {
-//                throw new NullPointerException();
-//            }
-//        }
-//        catch (NullPointerException e) {
-//            Context context = getApplicationContext();
-//            CharSequence text = "No results for chosen options";
-//            int duration = Toast.LENGTH_SHORT;
-//
-//            Toast toast = Toast.makeText(context, text, duration);
-//
-//            toast.show();
-//            toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,
-//                    0, 0);
-//        }
-//
-//        int index = randomGenerator.nextInt(newArray.size());
-//        Restaurants chosenRestaurant = newArray.get(index);
-//        String restaurantName = chosenRestaurant.getRestaurant();
-//        String description = chosenRestaurant.getDescription();
-//        double rating = chosenRestaurant.getRating();
-//
-//        displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
-//
-//    }
-//
-//
-//
-//    public void randomDinner(int dinnerArraySize, String serviceType, Random randomGenerator, Intent displayIntent) {
-//        try {
-//            for (int i = 0; i < dinnerArraySize; i++) {
-//                if (serviceType.equalsIgnoreCase("fast food")) {
-//                    if (Restaurants.dinnerPlaces[i].getType().equalsIgnoreCase("fast food")) {
-//                        if (Restaurants.dinnerPlaces[i].getRating() == ratingStars) {
-//                            newArray.add(Restaurants.dinnerPlaces[i]);
-//                        }
-//                    }
-//                }
-//                if (serviceType.equalsIgnoreCase("sit down")) {
-//                    if (Restaurants.dinnerPlaces[i].getType().equalsIgnoreCase("sit down")) {
-//                        if (Restaurants.dinnerPlaces[i].getRating() == ratingStars) {
-//                            newArray.add(Restaurants.dinnerPlaces[i]);
-//                        }
-//                    }
-//                }
-//                if (serviceType.equalsIgnoreCase("no preference")) {
-//                    if (Restaurants.dinnerPlaces[i].getRating() == ratingStars) {
-//                        newArray.add(Restaurants.dinnerPlaces[i]);
-//                    }
-//                }
-//
-//            }
-//            if (newArray.size() == 0) {
-//                throw new NullPointerException();
-//            }
-//        }
-//        catch (NullPointerException e) {
-//            Context context = getApplicationContext();
-//            CharSequence text = "No results for chosen options";
-//            int duration = Toast.LENGTH_SHORT;
-//
-//            Toast toast = Toast.makeText(context, text, duration);
-//
-//            toast.show();
-//            toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,
-//                    0, 0);
-//        }
-//
-//
-//        int index = randomGenerator.nextInt(newArray.size());
-//        Restaurants chosenRestaurant = newArray.get(index);
-//        String restaurantName = chosenRestaurant.getRestaurant();
-//        String description = chosenRestaurant.getDescription();
-//        double rating = chosenRestaurant.getRating();
-//
-//        displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-//        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
-//
-//    }
