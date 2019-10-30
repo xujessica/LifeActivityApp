@@ -18,6 +18,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
     public static final String MY_RESTAURANT_NAME = "name";
     public static final String MY_DESCRIPTION = "description";
     public static final String MY_RATING_STARS = "ratingStars";
+    public static Restaurants object;
     String displayChoice;
     ConstraintLayout filterDisplayLayout;
 
@@ -36,6 +37,11 @@ public class FilterDisplayActivity extends AppCompatActivity {
         TextView rating = (TextView) findViewById(R.id.rating);
         TextView description = (TextView) findViewById(R.id.description);
 
+        findObject(Restaurants.breakfastPlaces, restaurantName);
+        findObject(Restaurants.lunchPlaces, restaurantName);
+        findObject(Restaurants.dinnerPlaces, restaurantName);
+
+        setBackground();
         if (displayChoice.equalsIgnoreCase("breakfast")) {
             filterDisplayTitle.setText("BREAKFAST");
             filterDisplayTitle.setTextSize(40);
@@ -76,6 +82,14 @@ public class FilterDisplayActivity extends AppCompatActivity {
 
     }
 
+    public void findObject(Restaurants[] array, String restaurantName) {
+        for (int i = 0; i < array.length; i++) {
+            if (restaurantName.equalsIgnoreCase(array[i].getRestaurant())) {
+                object = array[i];
+            }
+        }
+    }
+
     public void setBackground() {
         if (displayChoice.equalsIgnoreCase("breakfast") ||
                 displayChoice.equalsIgnoreCase("lunch") ||
@@ -93,16 +107,20 @@ public class FilterDisplayActivity extends AppCompatActivity {
     // suraj, from your entertainmentFiltersActivity you need to pass in the "displayChoice" so whether
     // it's a movie, concert, or activity
 
-//    public void newFilterOnClick(View v) {
-//        if (displayChoice.equalsIgnoreCase("breakfast") ||
-//                displayChoice.equalsIgnoreCase("lunch") ||
-//                        displayChoice.equalsIgnoreCase("dinner")) {
-//            Intent pastIntent = new Intent(this, EatFiltersActivity.class);
-//            pastIntent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, displayChoice);
-//        }
-//    }
+    public void newFilterOnClick(View v) {
+        if (displayChoice.equalsIgnoreCase("breakfast") ||
+                displayChoice.equalsIgnoreCase("lunch") ||
+                        displayChoice.equalsIgnoreCase("dinner")) {
+            Intent pastIntent = new Intent(this, EatFiltersActivity.class);
+            pastIntent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, displayChoice);
+        }
+    }
 
     // keep fonts consistent and make text more visible
+
+    public static void addToFavoritesOnClick(View v) {
+        FavoritesActivity.addToFavorites(object);
+    }
 
 
 }

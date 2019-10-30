@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EntertainmentDisplayActivity"></activity>
+        <activity android:name=".FavoritesDisplayActivity"></activity>
+        <activity android:name=".FavoritesActivity" />
+        <activity android:name=".EntertainmentDisplayActivity" />
         <activity android:name=".FilterDisplayActivity" />
         <activity android:name=".EntertainmentFiltersActivity" />
         <activity android:name=".EatFiltersActivity" />

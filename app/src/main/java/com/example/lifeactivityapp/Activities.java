@@ -13,7 +13,7 @@ public class Activities {
     }
 
     public static final Activities[] Spring = {
-            new Activities("Go shopping", "outdoors"),
+            new Activities("Go shopping at the mall", "outdoors"),
             new Activities("Go to an art festival", "outdoors"),
             new Activities("Have a picnic", "outdoors"),
             new Activities("Plant flowers", "outdoors"),

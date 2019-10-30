@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FilterDisplayActivity"
-    android:id="@+id/filterDisplayLayout">
+    tools:context=".FavoritesDisplayActivity">
 
     <TextView
         android:id="@+id/filterDisplayTitle"
@@ -64,34 +63,15 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/transparent_bg_bordered_button"
-        android:fontFamily="@font/roboto_medium"
-        android:onClick="newFilterOnClick"
         android:text="NEW FILTER"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
-
-    <Button
-        android:id="@+id/addToFavoritesButton"
-        android:layout_width="210dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/transparent_bg_bordered_button"
-        android:fontFamily="@font/roboto_medium"
-        android:onClick=""
-        android:text="ADD TO FAVORITES"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.465"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/applyButton" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
