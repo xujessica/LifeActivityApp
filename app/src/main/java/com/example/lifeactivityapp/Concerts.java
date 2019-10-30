@@ -5,7 +5,7 @@ public class Concerts {
     private String description;
     private String famousSong;
 
-    // Inlcude rating and date released when done with main functionality of project
+    // Include rating and date released when done with main functionality of project
 
     public Concerts(String name, String description, String famousSong){
 
