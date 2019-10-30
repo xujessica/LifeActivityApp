@@ -21,6 +21,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
     public static Restaurants object;
     String displayChoice;
     ConstraintLayout filterDisplayLayout;
+    String restaurantName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +30,14 @@ public class FilterDisplayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         displayChoice = intent.getStringExtra(MY_DISPLAY_CHOICE);
-        String restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME);
+        restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME);
         String restaurantInfo = intent.getStringExtra(MY_DESCRIPTION);
         double ratingStars = intent.getExtras().getDouble(MY_RATING_STARS);
         TextView filterDisplayTitle = (TextView) findViewById(R.id.filterDisplayTitle);
         TextView name = (TextView) findViewById(R.id.name);
         TextView rating = (TextView) findViewById(R.id.rating);
         TextView description = (TextView) findViewById(R.id.description);
-
-        findObject(Restaurants.breakfastPlaces, restaurantName);
-        findObject(Restaurants.lunchPlaces, restaurantName);
-        findObject(Restaurants.dinnerPlaces, restaurantName);
+        filterDisplayLayout = (ConstraintLayout) findViewById(R.id.filterDisplayLayout);
 
         setBackground();
         if (displayChoice.equalsIgnoreCase("breakfast")) {
@@ -82,14 +80,6 @@ public class FilterDisplayActivity extends AppCompatActivity {
 
     }
 
-    public void findObject(Restaurants[] array, String restaurantName) {
-        for (int i = 0; i < array.length; i++) {
-            if (restaurantName.equalsIgnoreCase(array[i].getRestaurant())) {
-                object = array[i];
-            }
-        }
-    }
-
     public void setBackground() {
         if (displayChoice.equalsIgnoreCase("breakfast") ||
                 displayChoice.equalsIgnoreCase("lunch") ||
@@ -113,13 +103,17 @@ public class FilterDisplayActivity extends AppCompatActivity {
                         displayChoice.equalsIgnoreCase("dinner")) {
             Intent pastIntent = new Intent(this, EatFiltersActivity.class);
             pastIntent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, displayChoice);
+            startActivity(pastIntent);
         }
     }
 
     // keep fonts consistent and make text more visible
 
-    public static void addToFavoritesOnClick(View v) {
-        FavoritesActivity.addToFavorites(object);
+    public void addToFavoritesOnClick(View v) {
+        Intent favIntent = new Intent(this,FavoritesActivity.class);
+        favIntent.putExtra(FavoritesActivity.MY_RESTAURANT_NAME, restaurantName);
+        favIntent.putExtra(FavoritesActivity.MY_MEAL_CHOICE, displayChoice);
+        startActivity(favIntent);
     }
 
 
