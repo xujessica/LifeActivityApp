@@ -7,4 +7,6 @@
     <dimen name="buttonTextSize">40sp</dimen>
     <dimen name="buttonHeight">85dp</dimen>
     <dimen name="buttonWidth">250dp</dimen>
+
+    <dimen name="badge_count_textsize">20dp</dimen>
 </resources>
