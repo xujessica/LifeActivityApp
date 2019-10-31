@@ -71,6 +71,10 @@ public class Concerts {
                     "Famous songs: Chicken Fried, Knee Deep, Homegrown"),
     };
 
+    public String getName() {
+        return name;
+    }
+
     public static Concerts[] getRap() { return Rap; }
     public static Concerts[] getPop() {
         return Pop;

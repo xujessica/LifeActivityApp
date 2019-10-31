@@ -16,9 +16,11 @@ public class FavoritesActivity extends AppCompatActivity {
     public static final String MY_RESTAURANT_NAME = "restaurantName";
     public static final String MY_MEAL_CHOICE = "mealChoice";
     public ArrayList<Object> favoritesArray;
+    public ArrayList<String> favoriteStrings;
     ListView favoritesChoices;
     String mealChoice;
     String restaurantName;
+    String displayName;
 
 
     @Override
@@ -31,11 +33,18 @@ public class FavoritesActivity extends AppCompatActivity {
         restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME);
         favoritesChoices = (ListView) findViewById(R.id.favoritesChoices);
         favoritesArray = new ArrayList<>();
+        favoriteStrings = new ArrayList<>();
 
         addObject(restaurantName, mealChoice);
+//        if (favoritesArray.size() != 0) {
+//            for (int i = 0; i < favoritesArray.size(); i++) {
+//                favoriteStrings.add(favoritesArray.get(i).getClass().getName());
+//            }
+//        }
 
-        ArrayAdapter<Object> arrayAdapter = new ArrayAdapter<Object>
-                (this, android.R.layout.simple_list_item_1, favoritesArray);
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
+                (this, android.R.layout.simple_list_item_1, favoriteStrings);
         favoritesChoices.setAdapter(arrayAdapter);
 
         AdapterView.OnItemClickListener itemClickListener =
@@ -73,6 +82,8 @@ public class FavoritesActivity extends AppCompatActivity {
         for (int i = 0; i < array.length; i++) {
             if (restaurantName.equalsIgnoreCase(array[i].getRestaurant())) {
                 favoritesArray.add(array[i]);
+                displayName = array[i].getRestaurant();
+                favoriteStrings.add(displayName);
             }
         }
     }
