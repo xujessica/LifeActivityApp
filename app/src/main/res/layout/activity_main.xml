@@ -8,6 +8,8 @@
     android:background="@drawable/gradient1"
     tools:context=".MainActivity">
 
+    
+
 
     <Button
         android:id="@+id/eatButton"
