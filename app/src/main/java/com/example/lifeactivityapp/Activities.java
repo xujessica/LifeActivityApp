@@ -55,6 +55,10 @@ public class Activities {
             new Activities("Go to a museum", "indoors")
     };
 
+    public String getName() {
+        return name;
+    }
+
     public static Activities[] getSpring() {
         return Spring;
     }

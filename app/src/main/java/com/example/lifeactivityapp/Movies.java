@@ -57,6 +57,10 @@ public class Movies {
             new Movies("Cars","7.1", "While traveling to California to race against The King (Richard Petty) and Chick Hicks (Michael Keaton) for the Piston Cup Championship, Lightning McQueen (Owen Wilson) becomes lost after falling out of his trailer in a run down town called Radiator Springs. While there he slowly befriends the town's odd residents, including Sally (Bonnie Hunt), Doc Hudson (Paul Newman) and Mater (Larry the Cable Guy). When it comes time for him to leave to championship is no longer his top priority."),
     };
 
+    public String getName() {
+        return name;
+    }
+
     public static Movies[] getAction() {
         return Action;
     }
