@@ -18,10 +18,16 @@ public class FilterDisplayActivity extends AppCompatActivity {
     public static final String MY_RESTAURANT_NAME = "name";
     public static final String MY_DESCRIPTION = "description";
     public static final String MY_RATING_STARS = "ratingStars";
+    public static final String MY_ENTERTAINMENT_NAME = "entertainment";
+    public static final String FAMOUS_SONG = "song";
+    public static final String IDK = "idk";
     public static Restaurants object;
     String displayChoice;
     ConstraintLayout filterDisplayLayout;
     String restaurantName;
+    String entertainmentChoice;
+    String info;
+    String song, idk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +35,17 @@ public class FilterDisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_filter_display);
 
         Intent intent = getIntent();
-        displayChoice = intent.getStringExtra(MY_DISPLAY_CHOICE);
-        restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME);
-        String restaurantInfo = intent.getStringExtra(MY_DESCRIPTION);
-        double ratingStars = intent.getExtras().getDouble(MY_RATING_STARS);
+        displayChoice = intent.getStringExtra(MY_DISPLAY_CHOICE); // movie, conerts, or activtieis
+        restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME); // Names
+
+        entertainmentChoice = intent.getStringExtra(MY_ENTERTAINMENT_NAME); // Avengers Movie
+
+        info = intent.getStringExtra(MY_DESCRIPTION); // Description
+        double ratingStars = intent.getExtras().getDouble(MY_RATING_STARS); // ratingStars
+        song = intent.getStringExtra(FAMOUS_SONG); // Description
+        idk = intent.getStringExtra(IDK); // Description
+
+
         TextView filterDisplayTitle = (TextView) findViewById(R.id.filterDisplayTitle);
         TextView name = (TextView) findViewById(R.id.name);
         TextView rating = (TextView) findViewById(R.id.rating);
@@ -40,12 +53,13 @@ public class FilterDisplayActivity extends AppCompatActivity {
         filterDisplayLayout = (ConstraintLayout) findViewById(R.id.filterDisplayLayout);
 
         setBackground();
+
         if (displayChoice.equalsIgnoreCase("breakfast")) {
             filterDisplayTitle.setText("BREAKFAST");
             filterDisplayTitle.setTextSize(40);
 
             name.setText(restaurantName);
-            description.setText(restaurantInfo);
+            description.setText(info);
             rating.setText(ratingStars + " stars");
         }
         if (displayChoice.equalsIgnoreCase("lunch")) {
@@ -53,7 +67,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
             filterDisplayTitle.setTextSize(60);
 
             name.setText(restaurantName);
-            description.setText(restaurantInfo);
+            description.setText(info);
             rating.setText(ratingStars + " stars");
         }
         if (displayChoice.equalsIgnoreCase("dinner")) {
@@ -61,20 +75,32 @@ public class FilterDisplayActivity extends AppCompatActivity {
             filterDisplayTitle.setTextSize(50);
 
             name.setText(restaurantName);
-            description.setText(restaurantInfo);
+            description.setText(info);
             rating.setText(ratingStars + " stars");
         }
         if (displayChoice.equalsIgnoreCase("movies")) {
             filterDisplayTitle.setText("MOVIES");
             filterDisplayTitle.setTextSize(50);
+
+            name.setText(entertainmentChoice);
+            description.setText(info);
+            rating.setText(ratingStars + " stars");
         }
         if (displayChoice.equalsIgnoreCase("concerts")) {
             filterDisplayTitle.setText("CONCERTS");
             filterDisplayTitle.setTextSize(50);
+
+            name.setText(entertainmentChoice);
+            description.setText(info);
+            rating.setText(song);
         }
         if (displayChoice.equalsIgnoreCase("activities")) {
             filterDisplayTitle.setText("ACTIVITIES");
             filterDisplayTitle.setTextSize(40);
+
+            name.setText(entertainmentChoice);
+            description.setText(info);
+            rating.setText(idk);
         }
 
 
@@ -105,7 +131,15 @@ public class FilterDisplayActivity extends AppCompatActivity {
             pastIntent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, displayChoice);
             startActivity(pastIntent);
         }
+        if (displayChoice.equalsIgnoreCase("movies") ||
+                displayChoice.equalsIgnoreCase("concerts") ||
+                displayChoice.equalsIgnoreCase("activities")) {
+            Intent pastIntent = new Intent(this, EntertainmentFiltersActivity.class);
+            pastIntent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, displayChoice);
+            startActivity(pastIntent);
+        }
     }
+
 
     // keep fonts consistent and make text more visible
 
