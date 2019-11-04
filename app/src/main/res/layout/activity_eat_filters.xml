@@ -104,11 +104,11 @@
         android:id="@+id/eatFilterTitle"
         android:layout_width="match_parent"
         android:layout_height="115dp"
-        android:fontFamily="@font/geostar"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cinzel_bold"
         android:gravity="center"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
