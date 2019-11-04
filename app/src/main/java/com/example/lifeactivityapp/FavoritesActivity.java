@@ -43,19 +43,21 @@ public class FavoritesActivity extends AppCompatActivity {
 //        }
 
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
                 (this, android.R.layout.simple_list_item_1, favoriteStrings);
         favoritesChoices.setAdapter(arrayAdapter);
 
         AdapterView.OnItemClickListener itemClickListener =
                 new AdapterView.OnItemClickListener() {
-                    public void onItemClick(AdapterView<?> listFoods,
+                    public void onItemClick(AdapterView<?> favoritesChoices,
                                             View itemView, int position, long id) {
 
-                        // Pass the Food name the user clicks on to BreakfastChoicesActivity
+                        String name = favoriteStrings.get(position).toString();
+
                         Intent intent = new Intent(FavoritesActivity.this,
                                 FavoritesDisplayActivity.class);
-                        intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_ID, (int) id);
+                        intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_ID, name);
+                        intent.putExtra(FavoritesDisplayActivity.MY_MEAL_CHOICE, mealChoice);
                         startActivity(intent);
                     }
                 };
@@ -71,11 +73,11 @@ public class FavoritesActivity extends AppCompatActivity {
         }
 
         else if (mealChoice.equalsIgnoreCase("lunch")) {
-            array = Restaurants.breakfastPlaces;
+            array = Restaurants.lunchPlaces;
         }
 
         else {
-            array = Restaurants.breakfastPlaces;
+            array = Restaurants.dinnerPlaces;
         }
 
 
@@ -90,3 +92,11 @@ public class FavoritesActivity extends AppCompatActivity {
 
 
 }
+
+/*
+
+things to work on (Jess):
+    make all the added to favorites objects show after choosing new filter
+    work on display of favorites
+
+ */

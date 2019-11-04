@@ -6,30 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".FavoritesDisplayActivity">
 
-    <TextView
-        android:id="@+id/filterDisplayTitle"
-        android:layout_width="match_parent"
-        android:layout_height="115dp"
-        android:fontFamily="@font/geostar"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="285dp"
-        android:layout_height="73dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="12dp"
+    <Button
+        android:id="@+id/applyButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
-        android:gravity="center"
+        android:text="REMOVE"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filterDisplayTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <TextView
         android:id="@+id/rating"
@@ -41,6 +33,9 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
@@ -54,24 +49,25 @@
         android:gravity="center_horizontal"
         android:textColor="@color/white"
         android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rating" />
 
 
-    <Button
-        android:id="@+id/applyButton"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/transparent_bg_bordered_button"
-        android:text="NEW FILTER"
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="285dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
