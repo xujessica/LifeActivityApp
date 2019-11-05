@@ -36,7 +36,7 @@ public class ChoicesActivity extends AppCompatActivity {
         if(choice.equalsIgnoreCase("eat")){
             layout.setBackgroundResource(R.drawable.blue_gradient);
 
-            //title.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.eatTitleFontSize));
+            title.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.eatTitleFontSize));
             title.setText("EAT ");
 
             firstButton.setText("BREAKFAST");
@@ -54,7 +54,7 @@ public class ChoicesActivity extends AppCompatActivity {
         if (choice.equalsIgnoreCase("entertainment")) {
             layout.setBackgroundResource(R.drawable.red_gradient);
 
-            //title.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.entertainmentTitleFontSize));
+            title.setTextSize(TypedValue.COMPLEX_UNIT_PX,getResources().getDimension(R.dimen.entertainmentTitleFontSize));
             title.setText("ENTERTAINMENT ");
 
             firstButton.setText("MOVIES");

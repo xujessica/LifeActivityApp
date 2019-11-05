@@ -72,6 +72,9 @@ public class Activities {
         return Winter;
     }
 
+    public String getLocation() {return location;}
+    public String getIDK() {return "idk";}
+
 
     public String toString(){ return name;}
 }

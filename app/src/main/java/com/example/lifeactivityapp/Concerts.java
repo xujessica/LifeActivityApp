@@ -83,6 +83,9 @@ public class Concerts {
         return Country;
     }
 
+    public String getDescription() {return description;}
+    public String getFamousSong() {return famousSong;}
+
 
     public String toString(){return name;}
 }

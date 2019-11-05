@@ -12,7 +12,6 @@
         android:id="@+id/removeButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
@@ -28,7 +27,6 @@
         android:id="@+id/ratingFav"
         android:layout_width="214dp"
         android:layout_height="47dp"
-        android:layout_marginStart="92dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
@@ -40,11 +38,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameFav" />
 
+
     <TextView
         android:id="@+id/descriptionFav"
         android:layout_width="256dp"
         android:layout_height="193dp"
-        android:layout_marginStart="76dp"
         android:layout_marginTop="44dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center_horizontal"
@@ -55,12 +53,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingFav" />
 
-
     <TextView
         android:id="@+id/nameFav"
         android:layout_width="285dp"
         android:layout_height="73dp"
-        android:layout_marginStart="52dp"
         android:layout_marginTop="72dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"

@@ -2,7 +2,6 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/cinzel_bold</item>
-        <item>@font/geostar</item>
         <item>@font/roboto_medium</item>
     </array>
 </resources>

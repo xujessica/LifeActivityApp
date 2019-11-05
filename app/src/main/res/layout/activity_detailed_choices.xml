@@ -2,23 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDC"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailedChoicesActivity"
-    android:id="@+id/layoutDC">
-
-    <TextView
-        android:id="@+id/titleDC"
-        android:layout_width="match_parent"
-        android:layout_height="115dp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:fontFamily="@font/geostar"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    tools:context=".DetailedChoicesActivity">
 
     <Button
         android:id="@+id/firstButtonDC"
@@ -35,6 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleDC" />
 
+
     <Button
         android:id="@+id/secondButtonDC"
         android:layout_width="256dp"
@@ -48,6 +36,20 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstButtonDC" />
+
+    <TextView
+        android:id="@+id/titleDC"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cinzel_bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
