@@ -1,22 +1,26 @@
 package com.example.lifeactivityapp;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 public class Restaurants {
     private String restaurant;
     private String description;
     private int price;
     private String type;
     private double rating;
-    //private int imageResourceID;
 
-    // price 0 = low and 1 = high
     public Restaurants(String restaurant, String description,
-                 String type, double rating) { //int imageResourceID) {
+                       String type, double rating) { //int imageResourceID) {
         this.restaurant = restaurant;
         this.description = description;
         this.type = type;
         this.rating = rating;
         //this.imageResourceID = imageResourceID;
     }
+
+
+
 
     public static final Restaurants[] breakfastPlaces = {
             new Restaurants("Einstein Bros. Bagels", "American bagel and coffee chain ", "chain", 2.0),

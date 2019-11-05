@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavoritesDisplayActivity">
+    tools:context=".FavoritesDisplayActivity"
+    android:background="@drawable/rainbow_gradient_background">
 
 
     <Button
-        android:id="@+id/applyButton"
+        android:id="@+id/removeButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginStart="16dp"
@@ -21,10 +22,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionFav" />
 
     <TextView
-        android:id="@+id/rating"
+        android:id="@+id/ratingFav"
         android:layout_width="214dp"
         android:layout_height="47dp"
         android:layout_marginStart="92dp"
@@ -33,14 +34,14 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionFav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        app:layout_constraintTop_toBottomOf="@+id/nameFav" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/descriptionFav"
         android:layout_width="256dp"
         android:layout_height="193dp"
         android:layout_marginStart="76dp"
@@ -52,11 +53,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingFav" />
 
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/nameFav"
         android:layout_width="285dp"
         android:layout_height="73dp"
         android:layout_marginStart="52dp"

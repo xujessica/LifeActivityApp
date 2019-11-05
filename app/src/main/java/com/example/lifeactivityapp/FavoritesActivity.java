@@ -4,15 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class FavoritesActivity extends AppCompatActivity {
 
+    private int mData;
     public static final String MY_RESTAURANT_NAME = "restaurantName";
     public static final String MY_MEAL_CHOICE = "mealChoice";
     public ArrayList<Object> favoritesArray;
@@ -21,6 +25,8 @@ public class FavoritesActivity extends AppCompatActivity {
     String mealChoice;
     String restaurantName;
     String displayName;
+
+
 
 
     @Override
@@ -56,7 +62,7 @@ public class FavoritesActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(FavoritesActivity.this,
                                 FavoritesDisplayActivity.class);
-                        intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_ID, name);
+                        intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_NAME, name);
                         intent.putExtra(FavoritesDisplayActivity.MY_MEAL_CHOICE, mealChoice);
                         startActivity(intent);
                     }
