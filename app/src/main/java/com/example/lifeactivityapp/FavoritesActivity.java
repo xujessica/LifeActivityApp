@@ -2,14 +2,17 @@ package com.example.lifeactivityapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,7 +23,7 @@ public class FavoritesActivity extends AppCompatActivity {
     public static final String MY_RESTAURANT_NAME = "restaurantName";
     public static final String MY_MEAL_CHOICE = "mealChoice";
     public ArrayList<Object> favoritesArray;
-    public ArrayList<String> favoriteStrings;
+    public static ArrayList<String> favoriteStrings;
     ListView favoritesChoices;
     String mealChoice;
     String restaurantName;
@@ -42,32 +45,45 @@ public class FavoritesActivity extends AppCompatActivity {
         favoriteStrings = new ArrayList<>();
 
         addObject(restaurantName, mealChoice);
-//        if (favoritesArray.size() != 0) {
-//            for (int i = 0; i < favoritesArray.size(); i++) {
-//                favoriteStrings.add(favoritesArray.get(i).getClass().getName());
-//            }
-//        }
 
+        try {
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
-                (this, android.R.layout.simple_list_item_1, favoriteStrings);
-        favoritesChoices.setAdapter(arrayAdapter);
+            final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
+                    (this, android.R.layout.simple_list_item_1, favoriteStrings);
+            favoritesChoices.setAdapter(arrayAdapter);
 
-        AdapterView.OnItemClickListener itemClickListener =
-                new AdapterView.OnItemClickListener() {
-                    public void onItemClick(AdapterView<?> favoritesChoices,
-                                            View itemView, int position, long id) {
+            AdapterView.OnItemClickListener itemClickListener =
+                    new AdapterView.OnItemClickListener() {
+                        public void onItemClick(AdapterView<?> favoritesChoices,
+                                                View itemView, int position, long id) {
 
-                        String name = favoriteStrings.get(position).toString();
+                            String name = favoriteStrings.get(position).toString();
 
-                        Intent intent = new Intent(FavoritesActivity.this,
-                                FavoritesDisplayActivity.class);
-                        intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_NAME, name);
-                        intent.putExtra(FavoritesDisplayActivity.MY_MEAL_CHOICE, mealChoice);
-                        startActivity(intent);
-                    }
-                };
-        favoritesChoices.setOnItemClickListener(itemClickListener);
+                            Intent intent = new Intent(FavoritesActivity.this,
+                                    FavoritesDisplayActivity.class);
+                            intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_NAME, name);
+                            intent.putExtra(FavoritesDisplayActivity.MY_MEAL_CHOICE, mealChoice);
+                            startActivity(intent);
+                        }
+                    };
+            favoritesChoices.setOnItemClickListener(itemClickListener);
+
+            if (favoriteStrings.size() == 0) {
+                throw new NullPointerException();
+            }
+        }
+
+        catch (NullPointerException e) {
+            Context context = getApplicationContext();
+            CharSequence text = "No Favorites added yet";
+            int duration = Toast.LENGTH_LONG;
+
+            Toast toast = Toast.makeText(context, text, duration);
+
+            toast.show();
+            toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
+                    0, 0);
+        }
 
     }
 

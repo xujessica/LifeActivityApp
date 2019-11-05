@@ -6,6 +6,7 @@
     <item
         android:id="@+id/action_favorite"
         android:icon="@drawable/icons8_favorite_folder"
+        android:onClick="onComposeAction"
         android:title="action favorite"
         app:showAsAction="always">
     </item>
