@@ -14,11 +14,13 @@
 
     <Button
         android:id="@+id/apply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
         android:layout_marginTop="55dp"
+        android:background="@drawable/transparent_bg_bordered_button"
         android:onClick="onClickApply"
         android:text="Button"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

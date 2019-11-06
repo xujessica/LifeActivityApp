@@ -17,6 +17,9 @@ import static com.example.lifeactivityapp.Movies.getAction;
 import static com.example.lifeactivityapp.Movies.getComedy;
 import static com.example.lifeactivityapp.Movies.getKids;
 import static com.example.lifeactivityapp.Movies.getRomance;
+import static com.example.lifeactivityapp.Restaurants.getBreakfastPlaces;
+import static com.example.lifeactivityapp.Restaurants.getDinnerPlaces;
+import static com.example.lifeactivityapp.Restaurants.getLunchPlaces;
 
 public class RandomActivity extends AppCompatActivity
 {
@@ -26,6 +29,8 @@ public class RandomActivity extends AppCompatActivity
     double rating = 0.0;
     String famousSong = " ";
     String idk = "";
+
+    String restaurtant = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,17 +48,17 @@ public class RandomActivity extends AppCompatActivity
             //breakfast
             if(eatRand == 0)
             {
-                //int breakfastRand = Resturants.getBreakfastPlaces().length
+                int breakfastRand = random.nextInt(getBreakfastPlaces().length);
             }
             //lunch
             else if(eatRand == 1)
             {
-
+                int lunchRand = random.nextInt(getLunchPlaces().length);
             }
             //dinner
             else if(eatRand == 2)
             {
-
+                int dinnerRand = random.nextInt(getDinnerPlaces().length);
             }
         }
         else if (eatOrEntertain == 1)

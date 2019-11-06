@@ -11,15 +11,14 @@
         android:id="@+id/applyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/transparent_bg_bordered_button"
+        android:fontFamily="@font/roboto_medium"
         android:onClick="onClickEatFilter"
         android:text="Apply"
         android:textColor="@color/white"
-        android:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
@@ -27,7 +26,6 @@
         android:id="@+id/radioChoices"
         android:layout_width="150dp"
         android:layout_height="106dp"
-        android:layout_marginStart="18dp"
         android:layout_marginTop="28dp"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,22 +38,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"/>
 
         <RadioButton
             android:id="@+id/secondOptionEat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"/>
 
         <RadioButton
             android:id="@+id/noPreferenceType"
             android:layout_width="match_parent"
             android:layout_height="42dp"
-            android:text="No Preference"
             android:fontFamily="@font/roboto_medium"
-            android:textColor="@color/white" />
+            android:text="No Preference"
+            android:textColor="@color/white"
+            android:buttonTint="@color/white"/>
 
     </RadioGroup>
 
@@ -63,11 +64,11 @@
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
         android:stepSize="1"
         android:textColor="@color/white"
+        android:progressTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingTextView" />
 
@@ -76,10 +77,10 @@
         android:id="@+id/ratingTextView"
         android:layout_width="173dp"
         android:layout_height="44dp"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="44dp"
-        android:text="Please Select A Rating"
         android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:text="Please Select A Rating"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -90,13 +91,12 @@
         android:id="@+id/radioTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
         android:layout_marginTop="28dp"
-        android:text="Please Select A Dining Option"
         android:fontFamily="@font/roboto_medium"
+        android:text="Please Select A Dining Option"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eatFilterTitle" />
 
@@ -109,6 +109,8 @@
         android:gravity="center"
         android:textColor="@color/white"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
