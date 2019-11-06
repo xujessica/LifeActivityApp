@@ -3,30 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:titleTextColor="@color/black">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
+        android:background="@color/white"
         android:id="@+id/action_favorite"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:icon="@drawable/icons8_favorite_folder">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
 
         <TextView
             android:layout_width="203dp"
             android:layout_height="60dp"
-            android:text="Life App"
+            android:fontFamily="@font/cinzel_bold"
             android:gravity="center_vertical"
+            android:text="Life App"
             android:textColor="@color/black"
-            android:textSize="30sp"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-        </TextView>
+        <ImageButton
+            android:id="@+id/favoritesButton"
+            android:layout_width="66dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="4dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:onClick="onFavoritesClick"
+            android:maxWidth="18dp"
+            android:maxHeight="30dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons8_favorite_folder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
