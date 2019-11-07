@@ -27,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onHomeClick (View v) {
+        Intent intent = new Intent (this, MainActivity.class);
+        startActivity(intent);
+    }
 
     public void onEatClick(View v) {
         Intent intent = new Intent(this, ChoicesActivity.class);

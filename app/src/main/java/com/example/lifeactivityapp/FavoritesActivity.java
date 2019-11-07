@@ -93,6 +93,12 @@ public class FavoritesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onHomeClick (View v) {
+        Intent intent = new Intent (this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
     public void addObject(String restaurantName, String mealChoice) {
 
         Restaurants[] array;

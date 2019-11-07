@@ -68,6 +68,12 @@ public class EatFiltersActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onHomeClick (View v) {
+        Intent intent = new Intent (this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
     public void onClickEatFilter(View v) {
         Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
         ratingStars = ratingBar.getRating();

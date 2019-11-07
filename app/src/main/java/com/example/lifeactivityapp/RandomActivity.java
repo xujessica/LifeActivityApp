@@ -43,7 +43,17 @@ public class RandomActivity extends AppCompatActivity
         setContentView(R.layout.activity_random);
     }
 
-    public void vmainRandom(View v)
+    public void onFavoritesClick (View v) {
+        Intent intent = new Intent (this, FavoritesActivity.class);
+        startActivity(intent);
+    }
+
+    public void onHomeClick (View v) {
+        Intent intent = new Intent (this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void mainRandom(View v)
     {
         Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
         int eatOrEntertain = random.nextInt(1);

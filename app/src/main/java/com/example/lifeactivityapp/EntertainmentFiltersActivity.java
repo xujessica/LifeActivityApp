@@ -67,6 +67,12 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onHomeClick (View v) {
+        Intent intent = new Intent (this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
     public void defineOptions(){
 
         RadioButton b1 = (RadioButton) findViewById(R.id.radioButton);

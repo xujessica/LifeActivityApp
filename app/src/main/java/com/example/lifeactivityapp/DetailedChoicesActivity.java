@@ -69,6 +69,12 @@ public class DetailedChoicesActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onHomeClick (View v) {
+        Intent intent = new Intent (this, MainActivity.class);
+        startActivity(intent);
+    }
+
+
     public void onFirstButtonClickDC(View v) {
         if (detailedChoice.equalsIgnoreCase("breakfast") ||
                 detailedChoice.equalsIgnoreCase("lunch") ||
