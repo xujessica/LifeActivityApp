@@ -6,21 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".RandomActivity">
 
+    <include
+        android:id="@+id/actionBar"
+        layout="@layout/action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
 
     <TextView
-        android:id="@+id/randomTitle"
-        android:layout_width="match_parent"
-        android:layout_height="115dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/ratingFav"
+        android:layout_width="214dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/descriptionFav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/nameFav" />
+
 
     <TextView
-        android:id="@+id/randomActivityText"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="153dp" />
+        android:id="@+id/descriptionFav"
+        android:layout_width="256dp"
+        android:layout_height="193dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingFav" />
+
+    <TextView
+        android:id="@+id/nameFav"
+        android:layout_width="285dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

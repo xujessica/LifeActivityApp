@@ -44,9 +44,14 @@ public class FavoritesActivity extends AppCompatActivity {
         favoritesArray = new ArrayList<>();
         favoriteStrings = new ArrayList<>();
 
-        addObject(restaurantName, mealChoice);
+
 
         try {
+            addObject(restaurantName, mealChoice);
+
+            if (favoriteStrings.size() == 0) {
+                throw new NullPointerException();
+            }
 
             final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
                     (this, android.R.layout.simple_list_item_1, favoriteStrings);
@@ -67,10 +72,6 @@ public class FavoritesActivity extends AppCompatActivity {
                         }
                     };
             favoritesChoices.setOnItemClickListener(itemClickListener);
-
-            if (favoriteStrings.size() == 0) {
-                throw new NullPointerException();
-            }
         }
 
         catch (NullPointerException e) {
@@ -85,6 +86,11 @@ public class FavoritesActivity extends AppCompatActivity {
                     0, 0);
         }
 
+    }
+
+    public void onFavoritesClick (View v) {
+        Intent intent = new Intent (this, FavoritesActivity.class);
+        startActivity(intent);
     }
 
     public void addObject(String restaurantName, String mealChoice) {
@@ -115,10 +121,3 @@ public class FavoritesActivity extends AppCompatActivity {
 
 }
 
-/*
-
-things to work on (Jess):
-    make all the added to favorites objects show after choosing new filter
-    work on display of favorites
-
- */

@@ -13,6 +13,14 @@
         android:layout_height="match_parent"
         tools:context=".FilterDisplayActivity">
 
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/action_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </include>
+
         <Button
             android:id="@+id/newFilterButton"
             android:layout_width="150dp"
@@ -66,7 +74,6 @@
             android:id="@+id/filterDisplayTitle"
             android:layout_width="match_parent"
             android:layout_height="115dp"
-            android:layout_marginTop="20dp"
             android:fontFamily="@font/cinzel_bold"
             android:gravity="center"
             android:textColor="@color/white"
@@ -74,7 +81,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/actionBar" />
 
         <TextView
             android:id="@+id/name"

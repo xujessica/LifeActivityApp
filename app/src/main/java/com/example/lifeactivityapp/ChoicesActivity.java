@@ -71,6 +71,11 @@ public class ChoicesActivity extends AppCompatActivity {
         }
     }
 
+    public void onFavoritesClick (View v) {
+        Intent intent = new Intent (this, FavoritesActivity.class);
+        startActivity(intent);
+    }
+
     public void onFirstButtonClick(View v) {
         if (choice.equalsIgnoreCase("eat")) {
             Intent intent = new Intent(this, DetailedChoicesActivity.class);

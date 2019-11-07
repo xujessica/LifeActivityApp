@@ -8,6 +8,14 @@
     android:background="@drawable/rainbow_gradient_background">
 
 
+    <include
+        android:id="@+id/actionBar"
+        layout="@layout/action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
+
     <Button
         android:id="@+id/removeButton"
         android:layout_width="150dp"
@@ -65,6 +73,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/actionBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

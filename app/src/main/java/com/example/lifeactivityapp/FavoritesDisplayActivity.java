@@ -36,6 +36,11 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
 
     }
 
+    public void onFavoritesClick (View v) {
+        Intent intent = new Intent (this, FavoritesActivity.class);
+        startActivity(intent);
+    }
+
     public void checkObject(String mealChoice) {
         Restaurants[] temp;
 

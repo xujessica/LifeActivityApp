@@ -62,6 +62,11 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         defineOptions();
     }
 
+    public void onFavoritesClick (View v) {
+        Intent intent = new Intent (this, FavoritesActivity.class);
+        startActivity(intent);
+    }
+
     public void defineOptions(){
 
         RadioButton b1 = (RadioButton) findViewById(R.id.radioButton);

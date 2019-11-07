@@ -29,6 +29,11 @@ public class FilterDisplayActivity extends AppCompatActivity {
     String info;
     String song, idk;
 
+    public void onFavoritesClick (View v) {
+        Intent intent = new Intent (this, FavoritesActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

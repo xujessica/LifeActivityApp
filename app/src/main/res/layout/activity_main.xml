@@ -8,12 +8,14 @@
     android:background="@drawable/rainbow_gradient_background"
     tools:context=".MainActivity">
 
+
     <include
         android:id="@+id/actionBar"
-        layout="@layout/action_bar" >
+        layout="@layout/action_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
     </include>
-
 
     <Button
         android:id="@+id/eatButton"
