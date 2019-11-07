@@ -60,11 +60,12 @@
         android:text="RANDOM"
         android:textColor="@color/white"
         android:textSize="50sp"
-        android:onClick="mainRandom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/entertainmentButton" />
+<!--        android:onClick="mainRandom"-->
+
 
     <TextView
         android:id="@+id/mainPageSubText"
@@ -72,6 +73,8 @@
         android:layout_height="97dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center_horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:text="CHOOSE WHAT YOU WOULD LIKE TO DO"
         android:textColor="@color/white"
         android:textSize="30sp"
@@ -95,18 +98,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionBar" />
 
-<!--    <ToggleButton-->
-<!--        android:id="@+id/button_favorite"-->
-<!--        android:layout_width="84dp"-->
-<!--        android:layout_height="87dp"-->
-<!--        android:layout_marginStart="324dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:background="@drawable/favorite_button"-->
-<!--        android:checked="false"-->
-<!--        android:text=""-->
-<!--        android:textOff=""-->
-<!--        android:textOn=""-->
-<!--        app:layout_constraintStart_toStartOf="@+id/mainPageTitle"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
