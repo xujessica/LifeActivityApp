@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        androidx.appcompat.widget.Toolbar toolbar = (androidx.appcompat.widget.Toolbar)findViewById(R.id.actionBar);
+        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.actionBar);
         setSupportActionBar(toolbar);
 
         imageButton = (ImageButton)toolbar.findViewById(R.id.favoritesButton);

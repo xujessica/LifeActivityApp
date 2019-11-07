@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/action_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/favoritesButton"
+            android:layout_width="46dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:maxWidth="18dp"
+            android:maxHeight="30dp"
+            android:onClick="onFavoritesClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons8_home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.318" />
+
+        <ImageButton
+            android:id="@+id/homeButton"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:maxWidth="18dp"
+            android:maxHeight="30dp"
+            android:onClick="onFavoritesClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icons8_favorite_folder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/favoritesButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.272" />
+
+        <TextView
+            android:layout_width="203dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/cinzel_bold"
+            android:gravity="center_vertical"
+            android:text="Life App"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.Toolbar>

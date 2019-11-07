@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/ic_heart"
-        android:drawable="@drawable/favorite_button"/>
-    <item
-        android:id="@+id/ic_badge"
-        android:drawable="@drawable/favorite_button" />
-</layer-list>
