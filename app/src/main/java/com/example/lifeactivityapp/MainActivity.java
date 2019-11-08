@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // making custom action bar: https://www.youtube.com/watch?v=j-3L3CgYXkU
         androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.actionBar);
         setSupportActionBar(toolbar);
 

@@ -131,8 +131,6 @@ public class FilterDisplayActivity extends AppCompatActivity {
         }
     }
 
-    // suraj, from your entertainmentFiltersActivity you need to pass in the "displayChoice" so whether
-    // it's a movie, concert, or activity
 
     public void newFilterOnClick(View v) {
         if (displayChoice.equalsIgnoreCase("breakfast") ||

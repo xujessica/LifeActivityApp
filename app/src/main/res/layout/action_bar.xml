@@ -16,7 +16,7 @@
         android:background="@color/white">
 
         <ImageButton
-            android:id="@+id/favoritesButton"
+            android:id="@+id/homeButton"
             android:layout_width="46dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -25,7 +25,7 @@
             android:background="@color/white"
             android:maxWidth="18dp"
             android:maxHeight="30dp"
-            android:onClick="onFavoritesClick"
+            android:onClick="onHomeClick"
             android:scaleType="fitCenter"
             android:src="@drawable/icons8_home"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
             app:layout_constraintVertical_bias="0.318" />
 
         <ImageButton
-            android:id="@+id/homeButton"
+            android:id="@+id/favoritesButton"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -42,11 +42,11 @@
             android:background="@color/white"
             android:maxWidth="18dp"
             android:maxHeight="30dp"
-            android:onClick="onHomeClick"
+            android:onClick="onFavoritesClick"
             android:scaleType="fitCenter"
             android:src="@drawable/icons8_favorite_folder"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/favoritesButton"
+            app:layout_constraintEnd_toStartOf="@+id/homeButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.272" />
 

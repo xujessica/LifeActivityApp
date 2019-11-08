@@ -38,6 +38,8 @@ public class EatFiltersActivity extends AppCompatActivity {
         RadioButton secondOptionEat = (RadioButton) findViewById(R.id.secondOptionEat);
         randomGenerator = new Random();
         newArray = new ArrayList<>();
+
+        // using a rating bar: https://abhiandroid.com/ui/ratingbar
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
 
         if (mealChoice.equalsIgnoreCase("breakfast")) {
@@ -130,9 +132,6 @@ public class EatFiltersActivity extends AppCompatActivity {
         }
     }
 
-
-
-    // work on getting original rating of object
 
     public void random(String serviceType, Random randomGenerator, Intent displayIntent, Restaurants[] mealArray) {
         try {
