@@ -19,9 +19,11 @@ import java.util.ArrayList;
 
 public class FavoritesActivity extends AppCompatActivity {
 
-    private int mData;
+    private static final String MY_DESCRIPTION = " ";
     public static final String MY_RESTAURANT_NAME = "restaurantName";
     public static final String MY_MEAL_CHOICE = "mealChoice";
+    public static final String MY_ENTERTAINMENT_NAME = "restaurantName";
+    //public static final String  = "mealChoice";
     public ArrayList<Object> favoritesArray;
     public static ArrayList<String> favoriteStrings;
     ListView favoritesChoices;
@@ -43,6 +45,11 @@ public class FavoritesActivity extends AppCompatActivity {
         favoritesChoices = (ListView) findViewById(R.id.favoritesChoices);
         favoritesArray = new ArrayList<>();
         favoriteStrings = new ArrayList<>();
+
+        String info = intent.getStringExtra(MY_DESCRIPTION); // Description
+        //double ratingStars = intent.getExtras().getDouble(MY_RATING_STARS); // ratingStars
+        //String song = intent.getStringExtra(FAMOUS_SONG); // Description
+        //String idk = intent.getStringExtra(IDK); // Description
 
 
 
