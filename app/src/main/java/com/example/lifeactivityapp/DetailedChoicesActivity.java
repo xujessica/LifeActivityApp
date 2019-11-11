@@ -197,6 +197,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 name = getAction()[randomNum].toString();
                 description = getAction()[randomNum].getDescription();
                 rating = getAction()[randomNum].getRating();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "action");
             }
             else if(movieRand == 1)
             {
@@ -204,6 +205,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 name = getComedy()[randomNum].toString();
                 description = getComedy()[randomNum].getDescription();
                 rating = getComedy()[randomNum].getRating();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "comedy");
             }
             else if(movieRand == 2)
             {
@@ -211,6 +213,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 name = getRomance()[randomNum].toString();
                 description = getRomance()[randomNum].getDescription();
                 rating = getRomance()[randomNum].getRating();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "romance");
             }
             else if(movieRand == 3)
             {
@@ -218,13 +221,13 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 name = getKids()[randomNum].toString();
                 description = getKids()[randomNum].getDescription();
                 rating = getKids()[randomNum].getRating();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "kids");
             }
 
             displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
             displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
             displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
             displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
             displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
@@ -239,6 +242,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 name = getRap()[randomNum].toString();
                 description = getRap()[randomNum].getDescription();
                 famousSong = getRap()[randomNum].getFamousSong();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "rap");
             }
             else if(concertRand == 1)
             {
@@ -246,6 +250,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 name = getPop()[randomNum].toString();
                 description = getPop()[randomNum].getDescription();
                 famousSong = getRap()[randomNum].getFamousSong();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "pop");
             }
             else if(concertRand == 2)
             {
@@ -253,13 +258,13 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 name = getCountry()[randomNum].toString();
                 description = getCountry()[randomNum].getDescription();
                 famousSong = getCountry()[randomNum].getFamousSong();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "country");
             }
 
-            displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+            displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name);
             displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
+            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, famousSong);
             displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
@@ -274,31 +279,33 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 int randomNum = random.nextInt(getSpring().length);
                 name = getSpring()[randomNum].toString();
                 description = getSpring()[randomNum].getLocation();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "spring");
             }
             else if(activityRand == 1)
             {
                 int randomNum = random.nextInt(getSummer().length);
                 name = getSummer()[randomNum].toString();
                 description = getSummer()[randomNum].getLocation();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "summer");
             }
             else if(activityRand == 2)
             {
                 int randomNum = random.nextInt(getFall().length);
                 name = getFall()[randomNum].toString();
                 description = getFall()[randomNum].getLocation();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "fall");
             }
             else if(activityRand == 3)
             {
                 int randomNum = random.nextInt(getWinter().length);
                 name = getWinter()[randomNum].toString();
                 description = getWinter()[randomNum].getLocation();
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "winter");
             }
 
-            displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+            displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name);
             displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
             displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);

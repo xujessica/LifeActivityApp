@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -66,6 +67,9 @@ public class DisplayActivity extends AppCompatActivity {
         TextView description = (TextView) findViewById(R.id.description);
         secondButton = (Button) findViewById(R.id.secondButton);
         filterDisplayLayout = (ConstraintLayout) findViewById(R.id.filterDisplayLayout);
+
+//        rating.setMovementMethod(new ScrollingMovementMethod());
+//        description.setMovementMethod(new ScrollingMovementMethod());
 
         setBackground();
         setButtons();
@@ -156,7 +160,7 @@ public class DisplayActivity extends AppCompatActivity {
         }
         else {
             Intent displayIntent = new Intent (this, DetailedChoicesActivity.class);
-            displayIntent.putExtra(MY_DISPLAY_CHOICE, displayChoice);
+            displayIntent.putExtra(DetailedChoicesActivity.MY_DETAILED_CHOICE, displayChoice);
             startActivity(displayIntent);
         }
     }
