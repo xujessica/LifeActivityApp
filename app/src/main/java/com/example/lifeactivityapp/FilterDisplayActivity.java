@@ -3,11 +3,14 @@ package com.example.lifeactivityapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -19,15 +22,15 @@ public class FilterDisplayActivity extends AppCompatActivity {
     public static final String MY_DESCRIPTION = "description";
     public static final String MY_RATING_STARS = "ratingStars";
     public static final String MY_ENTERTAINMENT_NAME = "entertainment";
-    public static final String FAMOUS_SONG = "song";
-    public static final String IDK = "idk";
-    public static Restaurants object;
+    public static final String MY_FAMOUS_SONG = "song";
+    public static final String MY_ENTERTAINMENT_TYPE = "entertainmentType";
     String displayChoice;
     ConstraintLayout filterDisplayLayout;
     String restaurantName;
-    String entertainmentChoice;
+    String entertainmentName;
+    String entertainmentType;
     String info;
-    String song, idk;
+    String song;
 
     public void onFavoritesClick (View v) {
         Intent intent = new Intent (this, FavoritesActivity.class);
@@ -46,15 +49,13 @@ public class FilterDisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_filter_display);
 
         Intent intent = getIntent();
-        displayChoice = intent.getStringExtra(MY_DISPLAY_CHOICE); // movie, conerts, or activtieis
+        displayChoice = intent.getStringExtra(MY_DISPLAY_CHOICE); // movie, concerts, or activtieis
         restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME); // Names
-
-        entertainmentChoice = intent.getStringExtra(MY_ENTERTAINMENT_NAME); // Avengers Movie
-
+        entertainmentName = intent.getStringExtra(MY_ENTERTAINMENT_NAME); // Avengers Movie
+        entertainmentType = intent.getStringExtra(MY_ENTERTAINMENT_TYPE); // Avengers Movie
         info = intent.getStringExtra(MY_DESCRIPTION); // Description
         double ratingStars = intent.getExtras().getDouble(MY_RATING_STARS); // ratingStars
-        song = intent.getStringExtra(FAMOUS_SONG); // Description
-        idk = intent.getStringExtra(IDK); // Description
+        song = intent.getStringExtra(MY_FAMOUS_SONG); // Description
 
 
         TextView filterDisplayTitle = (TextView) findViewById(R.id.filterDisplayTitle);
@@ -93,7 +94,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
             filterDisplayTitle.setText("MOVIES");
             filterDisplayTitle.setTextSize(50);
 
-            name.setText(entertainmentChoice);
+            name.setText(entertainmentName);
             description.setText(info);
             rating.setText(ratingStars + " stars");
         }
@@ -101,7 +102,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
             filterDisplayTitle.setText("CONCERTS");
             filterDisplayTitle.setTextSize(50);
 
-            name.setText(entertainmentChoice);
+            name.setText(entertainmentName);
             description.setText(info);
             rating.setText(song);
         }
@@ -109,9 +110,9 @@ public class FilterDisplayActivity extends AppCompatActivity {
             filterDisplayTitle.setText("ACTIVITIES");
             filterDisplayTitle.setTextSize(40);
 
-            name.setText(entertainmentChoice);
+            name.setText(entertainmentName);
             description.setText(info);
-            rating.setText(idk);
+            rating.setVisibility(View.INVISIBLE);;
         }
 
 
@@ -150,14 +151,86 @@ public class FilterDisplayActivity extends AppCompatActivity {
     }
 
 
-    // keep fonts consistent and make text more visible
-
     public void addToFavoritesOnClick(View v) {
-        Intent favIntent = new Intent(this,FavoritesActivity.class);
-        favIntent.putExtra(FavoritesActivity.MY_RESTAURANT_NAME, restaurantName);
-        favIntent.putExtra(FavoritesActivity.MY_MEAL_CHOICE, displayChoice);
-        startActivity(favIntent);
+
+        if (entertainmentName == null) {
+            MainActivity.favoriteStrings.add(restaurantName);
+        }
+        if (restaurantName == null) {
+            MainActivity.favoriteStrings.add(entertainmentName);
+        }
+        addObject();
+
+        Context context = getApplicationContext();
+        CharSequence text = "Added to Favorites";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+
+        toast.show();
+        toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,
+                0, 0);
+    }
+
+    public void addObject() {
+
+        if (entertainmentName == null) {
+            Restaurants[] array;
+            if (displayChoice.equalsIgnoreCase("breakfast")) {
+                array = Restaurants.breakfastPlaces;
+            } else if (displayChoice.equalsIgnoreCase("lunch")) {
+                array = Restaurants.lunchPlaces;
+            } else {
+                array = Restaurants.dinnerPlaces;
+            }
+
+
+            for (int i = 0; i < array.length; i++) {
+                if (restaurantName.equalsIgnoreCase(array[i].getRestaurant())) {
+                    MainActivity.favoritesArray.add(array[i]);
+                }
+            }
+        }
+
+        if (restaurantName == null) {
+
+            if (displayChoice.equalsIgnoreCase("movies")) {
+                if (entertainmentType.equalsIgnoreCase("Action")) {
+                    Movies[] array = Movies.Action;
+                }
+                if (entertainmentType.equalsIgnoreCase("Comedy")) {
+                    Movies[] array = Movies.Comedy;
+                }
+                if (entertainmentType.equalsIgnoreCase("Romance")) {
+                    Movies[] array = Movies.Romance;
+                }
+                if (entertainmentType.equalsIgnoreCase("Kids")) {
+                    Movies[] array = Movies.Kids;
+                }
+            }
+
+            if (displayChoice.equalsIgnoreCase("concerts")) {
+                Concerts[] array;
+
+                if (entertainmentType.equalsIgnoreCase("rap")) {
+                    array = Concerts.Rap;
+                }
+                if (entertainmentType.equalsIgnoreCase("pop")) {
+                    array = Concerts.Pop;
+                }
+                if (entertainmentType.equalsIgnoreCase("country")) {
+                    array = Concerts.Country;
+                }
+
+//                for (int i = 0; i < array.length; i++) {
+//                    if (entertainmentName.equalsIgnoreCase(array[i].getName())) {
+//                        MainActivity.favoritesArray.add(array[i]);
+//                    }
+//                }
+            }
+
+        }
     }
 
 
-}
+    }

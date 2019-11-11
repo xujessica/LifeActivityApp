@@ -34,14 +34,13 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
     public static final String MY_ENTERTAINMENT_CHOICES = "entertainmentChoices";
     String str, detailedChoice;
     Intent displayIntents;
-    Random randomGenerator;
-    ArrayList<Movies> newArray;
     String name = "";
     String description = "";
     double rating = 0.0;
     String famousSong = " ";
     Random random;
-    String idk = "";
+    String idk = ""; // variable because one class doesn't have three
+    String type;
 
 
     @Override
@@ -51,8 +50,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
 
         ConstraintLayout layoutEF = (ConstraintLayout) findViewById(R.id.layoutEF);
         layoutEF.setBackgroundResource(R.drawable.red_gradient);
-
-        randomGenerator = new Random();
 
         displayIntents = getIntent();
         detailedChoice = displayIntents.getStringExtra(MY_ENTERTAINMENT_CHOICES);
@@ -152,8 +149,8 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
         displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
         displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-        displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
-        displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
+        displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_TYPE, type);
 
         startActivity(displayIntent);
 
@@ -173,24 +170,28 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 name = getAction()[randomNum].toString();
                 description = getAction()[randomNum].getDescription();
                 rating = getAction()[randomNum].getRating();
+                type = "Action";
             }
             if(str.equalsIgnoreCase("second")){
                 int randomNum = random.nextInt(cmLength);
                 name = getComedy()[randomNum].toString();
                 description = getComedy()[randomNum].getDescription();
                 rating = getComedy()[randomNum].getRating();
+                type = "Comedy";
             }
             if(str.equalsIgnoreCase("third")){
                 int randomNum = random.nextInt(rmLength);
                 name = getRomance()[randomNum].toString();
                 description = getRomance()[randomNum].getDescription();
                 rating = getRomance()[randomNum].getRating();
+                type = "Romance";
             }
             if(str.equalsIgnoreCase("fourth")){
                 int randomNum = random.nextInt(kmLength);
                 name = getKids()[randomNum].toString();
                 description = getKids()[randomNum].getDescription();
                 rating = getKids()[randomNum].getRating();
+                type = "Kids";
             }
         }
 
@@ -211,18 +212,21 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 name = getRap()[randomNum].toString();
                 description = getRap()[randomNum].getDescription();
                 famousSong = getRap()[randomNum].getFamousSong();
+                type = "Rap";
             }
             if(str.equalsIgnoreCase("second")){
                 int randomNum = random.nextInt(pcLength);
                 name = getPop()[randomNum].toString();
                 description = getPop()[randomNum].getDescription();
                 famousSong = getRap()[randomNum].getFamousSong();
+                type = "Pop";
             }
             if(str.equalsIgnoreCase("third")){
                 int randomNum = random.nextInt(ccLength);
                 name = getCountry()[randomNum].toString();
                 description = getCountry()[randomNum].getDescription();
                 famousSong = getCountry()[randomNum].getFamousSong();
+                type = "Country";
             }
         }
     }
@@ -240,25 +244,25 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 int randomNum = random.nextInt(spLength);
                 name = getSpring()[randomNum].toString();
                 description = getSpring()[randomNum].getLocation();
-                idk = getSpring()[randomNum].getIDK();
+                type = "Spring";
             }
             if(str.equalsIgnoreCase("second")){
                 int randomNum = random.nextInt(sALength);
                 name = getSummer()[randomNum].toString();
                 description = getSummer()[randomNum].getLocation();
-                idk = getSummer()[randomNum].getIDK();
+                type = "Summer";
             }
             if(str.equalsIgnoreCase("third")){
                 int randomNum = random.nextInt(fALength);
                 name = getFall()[randomNum].toString();
                 description = getFall()[randomNum].getLocation();
-                idk = getFall()[randomNum].getIDK();
+                type = "Fall";
             }
             if(str.equalsIgnoreCase("fourth")){
                 int randomNum = random.nextInt(wALength);
                 name = getWinter()[randomNum].toString();
                 description = getWinter()[randomNum].getLocation();
-                idk = getWinter()[randomNum].getIDK();
+                type = "Winter";
             }
         }
     }

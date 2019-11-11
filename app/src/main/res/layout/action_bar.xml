@@ -19,8 +19,6 @@
             android:id="@+id/homeButton"
             android:layout_width="46dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             android:adjustViewBounds="true"
             android:background="@color/white"
             android:maxWidth="18dp"
@@ -29,15 +27,14 @@
             android:scaleType="fitCenter"
             android:src="@drawable/icons8_home"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.318" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/favoritesButton"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:adjustViewBounds="true"
             android:background="@color/white"
             android:maxWidth="18dp"
@@ -46,21 +43,25 @@
             android:scaleType="fitCenter"
             android:src="@drawable/icons8_favorite_folder"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/homeButton"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.272" />
+            app:layout_constraintVertical_bias="0.523" />
 
         <TextView
-            android:layout_width="203dp"
-            android:layout_height="60dp"
+            android:layout_width="54dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="96dp"
             android:fontFamily="@font/cinzel_bold"
             android:gravity="center_vertical"
-            android:text="Life App"
+            android:text="Life"
             android:textColor="@color/black"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/favoritesButton"
+            app:layout_constraintHorizontal_bias="0.208"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
