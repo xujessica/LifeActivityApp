@@ -10,26 +10,20 @@ import android.widget.ImageButton;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static com.example.lifeactivityapp.Activities.getFall;
-import static com.example.lifeactivityapp.Activities.getSpring;
-import static com.example.lifeactivityapp.Activities.getSummer;
-import static com.example.lifeactivityapp.Activities.getWinter;
-import static com.example.lifeactivityapp.Concerts.getCountry;
-import static com.example.lifeactivityapp.Concerts.getPop;
-import static com.example.lifeactivityapp.Concerts.getRap;
-import static com.example.lifeactivityapp.Movies.getAction;
-import static com.example.lifeactivityapp.Movies.getComedy;
-import static com.example.lifeactivityapp.Movies.getKids;
-import static com.example.lifeactivityapp.Movies.getRomance;
-import static com.example.lifeactivityapp.Restaurants.getBreakfastPlaces;
-import static com.example.lifeactivityapp.Restaurants.getDinnerPlaces;
-import static com.example.lifeactivityapp.Restaurants.getLunchPlaces;
-
 public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<String> favoriteStrings = new ArrayList<>();
     public static ArrayList<Object> favoritesArray = new ArrayList<>();
     ImageButton imageButton;
+    Random random = new Random();
+    String name = "";
+    String description = "";
+    double rating = 0.0;
+    String famousSong = " ";
+    String type ="";
+    String restaurant = "";
+    String mealChoice = "";
+    String detailedChoice = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,52 +60,58 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    Random random = new Random();
-    String name = "";
-    String description = "";
-    double rating = 0.0;
-    String famousSong = " ";
-    String idk = "";
-    String type ="";
-    String restaurant = "";
-    String mealChoice = "";
-    String detailedChoice = "";
     public void mainRandom(View v)
     {
+        Restaurants[] breakfast = Restaurants.breakfastPlaces;
+        Restaurants[] lunch = Restaurants.lunchPlaces;
+        Restaurants[] dinner = Restaurants.dinnerPlaces;
+        Movies[] action = Movies.Action;
+        Movies[] comedy = Movies.Comedy;
+        Movies[] romance = Movies.Romance;
+        Movies[] kids = Movies.Kids;
+        Concerts[] rap = Concerts.Rap;
+        Concerts[] pop = Concerts.Pop;
+        Concerts[] country = Concerts.Country;
+        Activities[] spring = Activities.Spring;
+        Activities[] summer = Activities.Summer;
+        Activities[] fall = Activities.Fall;
+        Activities[] winter = Activities.Winter;
+
         Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
-        int eatOrEntertain = random.nextInt(1);
+        int eatOrEntertain = random.nextInt(3);
+
         if (eatOrEntertain == 0)
         {
-            int eatRand = random.nextInt(2);
+            int eatRand = random.nextInt(3);
             //breakfast
             if(eatRand == 0)
             {
-                int breakfastRand = random.nextInt(getBreakfastPlaces().length);
+                int breakfastRand = random.nextInt(breakfast.length);
                 mealChoice = "breakfast";
-                restaurant = getBreakfastPlaces()[breakfastRand].getRestaurant();
-                description = getBreakfastPlaces()[breakfastRand].getDescription();
-                type = getBreakfastPlaces()[breakfastRand].getType();
-                rating = getBreakfastPlaces()[breakfastRand].getRating();
+                restaurant = breakfast[breakfastRand].getRestaurant();
+                description = breakfast[breakfastRand].getDescription();
+                type = breakfast[breakfastRand].getType();
+                rating = breakfast[breakfastRand].getRating();
             }
             //lunch
             else if(eatRand == 1)
             {
-                int lunchRand = random.nextInt(getLunchPlaces().length);
+                int lunchRand = random.nextInt(lunch.length);
                 mealChoice = "lunch";
-                restaurant = getLunchPlaces()[lunchRand].getRestaurant();
-                description = getLunchPlaces()[lunchRand].getDescription();
-                type = getLunchPlaces()[lunchRand].getType();
-                rating = getLunchPlaces()[lunchRand].getRating();
+                restaurant = lunch[lunchRand].getRestaurant();
+                description = lunch[lunchRand].getDescription();
+                type = lunch[lunchRand].getType();
+                rating = lunch[lunchRand].getRating();
             }
             //dinner
             else if(eatRand == 2)
             {
-                int dinnerRand = random.nextInt(getDinnerPlaces().length);
+                int dinnerRand = random.nextInt(dinner.length);
                 mealChoice = "dinner";
-                restaurant = getDinnerPlaces()[dinnerRand].getRestaurant();
-                description = getDinnerPlaces()[dinnerRand].getDescription();
-                type = getDinnerPlaces()[dinnerRand].getType();
-                rating = getDinnerPlaces()[dinnerRand].getRating();
+                restaurant = dinner[dinnerRand].getRestaurant();
+                description = dinner[dinnerRand].getDescription();
+                type = dinner[dinnerRand].getType();
+                rating = dinner[dinnerRand].getRating();
             }
 
             displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurant);
@@ -123,68 +123,68 @@ public class MainActivity extends AppCompatActivity {
         }
         else if (eatOrEntertain == 1)
         {
-            int entertainRand = random.nextInt(2);
+            int entertainRand = random.nextInt(3);
             //Movies
             if(entertainRand == 0)
             {
-                int movieRand = random.nextInt(3);
+                int movieRand = random.nextInt(4);
                 detailedChoice = "movies";
 
                 if(movieRand == 0)
                 {
-                    int randomNum = random.nextInt(getAction().length);
-                    name = getAction()[randomNum].toString();
-                    description = getAction()[randomNum].getDescription();
-                    rating = getAction()[randomNum].getRating();
+                    int randomNum = random.nextInt(action.length);
+                    name = action[randomNum].toString();
+                    description = action[randomNum].getDescription();
+                    rating = action[randomNum].getRating();
                 }
                 else if(movieRand == 1)
                 {
-                    int randomNum = random.nextInt(getComedy().length);
-                    name = getComedy()[randomNum].toString();
-                    description = getComedy()[randomNum].getDescription();
-                    rating = getComedy()[randomNum].getRating();
+                    int randomNum = random.nextInt(comedy.length);
+                    name = comedy[randomNum].toString();
+                    description = comedy[randomNum].getDescription();
+                    rating = comedy[randomNum].getRating();
                 }
                 else if(movieRand == 2)
                 {
-                    int randomNum = random.nextInt(getRomance().length);
-                    name = getRomance()[randomNum].toString();
-                    description = getRomance()[randomNum].getDescription();
-                    rating = getRomance()[randomNum].getRating();
+                    int randomNum = random.nextInt(romance.length);
+                    name = romance[randomNum].toString();
+                    description = romance[randomNum].getDescription();
+                    rating = romance[randomNum].getRating();
                 }
                 else if(movieRand == 3)
                 {
-                    int randomNum = random.nextInt(getKids().length);
-                    name = getKids()[randomNum].toString();
-                    description = getKids()[randomNum].getDescription();
-                    rating = getKids()[randomNum].getRating();
+                    int randomNum = random.nextInt(kids.length);
+                    name = kids[randomNum].toString();
+                    description = kids[randomNum].getDescription();
+                    rating = kids[randomNum].getRating();
                 }
             }
             //Concerts
             else if(entertainRand == 1)
             {
-                int concertRand = random.nextInt(2);
+                int concertRand = random.nextInt(3);
                 detailedChoice = "concerts";
 
                 if(concertRand == 0)
                 {
-                    int randomNum = random.nextInt(getRap().length);
-                    name = getRap()[randomNum].toString();
-                    description = getRap()[randomNum].getDescription();
-                    famousSong = getRap()[randomNum].getFamousSong();
+                    int randomNum = random.nextInt(rap.length);
+                    name = rap[randomNum].toString();
+                    description = rap[randomNum].getDescription();
+                    famousSong = rap[randomNum].getFamousSong();
                 }
                 else if(concertRand == 1)
                 {
-                    int randomNum = random.nextInt(getPop().length);
-                    name = getPop()[randomNum].toString();
-                    description = getPop()[randomNum].getDescription();
-                    famousSong = getRap()[randomNum].getFamousSong();
+                    int randomNum = random.nextInt(pop.length);
+                    name = pop[randomNum].toString();
+                    description = pop[randomNum].getDescription();
+                    famousSong = pop[randomNum].getFamousSong();
                 }
                 else if(concertRand == 2)
                 {
-                    int randomNum = random.nextInt(getCountry().length);
-                    name = getCountry()[randomNum].toString();
-                    description = getCountry()[randomNum].getDescription();
-                    famousSong = getCountry()[randomNum].getFamousSong();
+                    int randomNum = random.nextInt(country.length);
+                    name = country[randomNum].toString();
+                    description = country[randomNum].getDescription();
+                    famousSong = country[randomNum].getFamousSong();
                 }
 
 
@@ -197,27 +197,27 @@ public class MainActivity extends AppCompatActivity {
 
                 if(activityRand == 0)
                 {
-                    int randomNum = random.nextInt(getSpring().length);
-                    name = getSpring()[randomNum].toString();
-                    description = getSpring()[randomNum].getLocation();
+                    int randomNum = random.nextInt(spring.length);
+                    name = spring[randomNum].toString();
+                    description = spring[randomNum].getLocation();
                 }
                 else if(activityRand == 1)
                 {
-                    int randomNum = random.nextInt(getSummer().length);
-                    name = getSummer()[randomNum].toString();
-                    description = getSummer()[randomNum].getLocation();
+                    int randomNum = random.nextInt(summer.length);
+                    name = summer[randomNum].toString();
+                    description = summer[randomNum].getLocation();
                 }
                 else if(activityRand == 2)
                 {
-                    int randomNum = random.nextInt(getFall().length);
-                    name = getFall()[randomNum].toString();
-                    description = getFall()[randomNum].getLocation();
+                    int randomNum = random.nextInt(fall.length);
+                    name = fall[randomNum].toString();
+                    description = fall[randomNum].getLocation();
                 }
                 else if(activityRand == 3)
                 {
-                    int randomNum = random.nextInt(getWinter().length);
-                    name = getWinter()[randomNum].toString();
-                    description = getWinter()[randomNum].getLocation();
+                    int randomNum = random.nextInt(winter.length);
+                    name = winter[randomNum].toString();
+                    description = winter[randomNum].getLocation();
                 }
             }
             displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
