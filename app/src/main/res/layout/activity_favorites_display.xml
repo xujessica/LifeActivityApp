@@ -24,6 +24,7 @@
         android:background="@drawable/transparent_bg_bordered_button"
         android:fontFamily="@font/roboto_medium"
         android:text="REMOVE"
+        android:onClick="removeFavorite"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

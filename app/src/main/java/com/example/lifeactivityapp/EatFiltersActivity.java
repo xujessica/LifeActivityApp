@@ -22,7 +22,6 @@ public class EatFiltersActivity extends AppCompatActivity {
     ArrayList<Restaurants> newArray;
     String mealChoice;
     Intent intent;
-    Random randomGenerator;
     RatingBar ratingBar;
     double ratingStars;
 
@@ -36,7 +35,6 @@ public class EatFiltersActivity extends AppCompatActivity {
         TextView eatFilterTitle = (TextView) findViewById(R.id.eatFilterTitle);
         RadioButton firstOptionEat = (RadioButton) findViewById(R.id.firstOptionEat);
         RadioButton secondOptionEat = (RadioButton) findViewById(R.id.secondOptionEat);
-        randomGenerator = new Random();
         newArray = new ArrayList<>();
 
         // using a rating bar: https://abhiandroid.com/ui/ratingbar
@@ -81,7 +79,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         ratingStars = ratingBar.getRating();
         try {
             int rating = (int)ratingStars;
-            if (rating == 1 || rating == 5) {
+            if (rating == 1) {
                 throw new NullPointerException();
             }
         }
@@ -100,15 +98,15 @@ public class EatFiltersActivity extends AppCompatActivity {
 
         if (mealChoice.equalsIgnoreCase("breakfast")) {
             convertRatingsArray(Restaurants.breakfastPlaces);
-            random(radioInfo(v), randomGenerator, displayIntent, Restaurants.breakfastPlaces);
+            random(radioInfo(v), displayIntent, Restaurants.breakfastPlaces);
         }
         if (mealChoice.equalsIgnoreCase("lunch")) {
             convertRatingsArray(Restaurants.lunchPlaces);
-            random(radioInfo(v), randomGenerator, displayIntent, Restaurants.lunchPlaces);
+            random(radioInfo(v), displayIntent, Restaurants.lunchPlaces);
         }
         if (mealChoice.equalsIgnoreCase("dinner")) {
             convertRatingsArray(Restaurants.dinnerPlaces);
-            random(radioInfo(v), randomGenerator, displayIntent,Restaurants.dinnerPlaces);
+            random(radioInfo(v), displayIntent,Restaurants.dinnerPlaces);
         }
 
         startActivity(displayIntent);
@@ -133,7 +131,7 @@ public class EatFiltersActivity extends AppCompatActivity {
     }
 
 
-    public void random(String serviceType, Random randomGenerator, Intent displayIntent, Restaurants[] mealArray) {
+    public void random(String serviceType, Intent displayIntent, Restaurants[] mealArray) {
         try {
             for (int i = 0; i < mealArray.length; i++) {
                 if (mealChoice.equalsIgnoreCase("breakfast")) {
@@ -196,7 +194,7 @@ public class EatFiltersActivity extends AppCompatActivity {
                     0, 0);
         }
 
-        int index = randomGenerator.nextInt(newArray.size());
+        int index = new Random().nextInt(newArray.size());
         Restaurants chosenRestaurant = newArray.get(index);
         String restaurantName = chosenRestaurant.getRestaurant();
         String description = chosenRestaurant.getDescription();

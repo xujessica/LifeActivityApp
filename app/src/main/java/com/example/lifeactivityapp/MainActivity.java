@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import static com.example.lifeactivityapp.Activities.getFall;
@@ -26,6 +27,8 @@ import static com.example.lifeactivityapp.Restaurants.getLunchPlaces;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static ArrayList<String> favoriteStrings = new ArrayList<>();
+    public static ArrayList<Object> favoritesArray = new ArrayList<>();
     ImageButton imageButton;
 
     @Override
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    Random random;
+    Random random = new Random();
     String name = "";
     String description = "";
     double rating = 0.0;

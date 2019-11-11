@@ -6,17 +6,15 @@ import android.os.Parcelable;
 public class Restaurants {
     private String restaurant;
     private String description;
-    private int price;
     private String type;
     private double rating;
 
     public Restaurants(String restaurant, String description,
-                       String type, double rating) { //int imageResourceID) {
+                       String type, double rating) {
         this.restaurant = restaurant;
         this.description = description;
         this.type = type;
         this.rating = rating;
-        //this.imageResourceID = imageResourceID;
     }
 
 
