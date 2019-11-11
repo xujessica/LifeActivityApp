@@ -195,17 +195,25 @@ public class FilterDisplayActivity extends AppCompatActivity {
         if (restaurantName == null) {
 
             if (displayChoice.equalsIgnoreCase("movies")) {
+                Movies[] array;
+
                 if (entertainmentType.equalsIgnoreCase("Action")) {
-                    Movies[] array = Movies.Action;
+                    array = Movies.Action;
                 }
-                if (entertainmentType.equalsIgnoreCase("Comedy")) {
-                    Movies[] array = Movies.Comedy;
+                else if (entertainmentType.equalsIgnoreCase("Comedy")) {
+                    array = Movies.Comedy;
                 }
-                if (entertainmentType.equalsIgnoreCase("Romance")) {
-                    Movies[] array = Movies.Romance;
+                else if (entertainmentType.equalsIgnoreCase("Romance")) {
+                    array = Movies.Romance;
                 }
-                if (entertainmentType.equalsIgnoreCase("Kids")) {
-                    Movies[] array = Movies.Kids;
+                else {
+                    array = Movies.Kids;
+                }
+
+                for (int i = 0; i < array.length; i++) {
+                    if (entertainmentName.equalsIgnoreCase(array[i].getName())) {
+                        MainActivity.favoritesArray.add(array[i]);
+                    }
                 }
             }
 
@@ -215,18 +223,41 @@ public class FilterDisplayActivity extends AppCompatActivity {
                 if (entertainmentType.equalsIgnoreCase("rap")) {
                     array = Concerts.Rap;
                 }
-                if (entertainmentType.equalsIgnoreCase("pop")) {
+                else if (entertainmentType.equalsIgnoreCase("pop")) {
                     array = Concerts.Pop;
                 }
-                if (entertainmentType.equalsIgnoreCase("country")) {
+                else {
                     array = Concerts.Country;
                 }
 
-//                for (int i = 0; i < array.length; i++) {
-//                    if (entertainmentName.equalsIgnoreCase(array[i].getName())) {
-//                        MainActivity.favoritesArray.add(array[i]);
-//                    }
-//                }
+                for (int i = 0; i < array.length; i++) {
+                    if (entertainmentName.equalsIgnoreCase(array[i].getName())) {
+                        MainActivity.favoritesArray.add(array[i]);
+                    }
+                }
+            }
+
+            if (displayChoice.equalsIgnoreCase("activities")) {
+                Activities[] array;
+
+                if (entertainmentType.equalsIgnoreCase("Spring")) {
+                    array = Activities.Spring;
+                }
+                else if (entertainmentType.equalsIgnoreCase("Summer")) {
+                    array = Activities.Summer;
+                }
+                else if (entertainmentType.equalsIgnoreCase("Fall")) {
+                    array = Activities.Fall;
+                }
+                else {
+                    array = Activities.Winter;
+                }
+
+                for (int i = 0; i < array.length; i++) {
+                    if (entertainmentName.equalsIgnoreCase(array[i].getName())) {
+                        MainActivity.favoritesArray.add(array[i]);
+                    }
+                }
             }
 
         }

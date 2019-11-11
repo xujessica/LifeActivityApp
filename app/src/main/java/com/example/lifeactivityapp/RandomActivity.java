@@ -30,7 +30,6 @@ public class RandomActivity extends AppCompatActivity
     String description = "";
     double rating = 0.0;
     String famousSong = " ";
-    String idk = "";
     String type ="";
     String restaurant = "";
     String mealChoice = "";
@@ -177,36 +176,31 @@ public class RandomActivity extends AppCompatActivity
                     int randomNum = random.nextInt(getSpring().length);
                     name = getSpring()[randomNum].toString();
                     description = getSpring()[randomNum].getLocation();
-                    idk = getSpring()[randomNum].getIDK();
                 }
                 else if(activityRand == 1)
                 {
                     int randomNum = random.nextInt(getSummer().length);
                     name = getSummer()[randomNum].toString();
                     description = getSummer()[randomNum].getLocation();
-                    idk = getSummer()[randomNum].getIDK();
                 }
                 else if(activityRand == 2)
                 {
                     int randomNum = random.nextInt(getFall().length);
                     name = getFall()[randomNum].toString();
                     description = getFall()[randomNum].getLocation();
-                    idk = getFall()[randomNum].getIDK();
                 }
                 else if(activityRand == 3)
                 {
                     int randomNum = random.nextInt(getWinter().length);
                     name = getWinter()[randomNum].toString();
                     description = getWinter()[randomNum].getLocation();
-                    idk = getWinter()[randomNum].getIDK();
                 }
             }
             displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
             displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
             displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
             displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
-            displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+            displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
 
             startActivity(displayIntent);
         }

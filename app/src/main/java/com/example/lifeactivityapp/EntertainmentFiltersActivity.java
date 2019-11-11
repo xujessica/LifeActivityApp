@@ -39,7 +39,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
     double rating = 0.0;
     String famousSong = " ";
     Random random;
-    String idk = ""; // variable because one class doesn't have three
     String type;
 
 

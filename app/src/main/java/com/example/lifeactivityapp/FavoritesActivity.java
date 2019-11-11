@@ -45,10 +45,12 @@ public class FavoritesActivity extends AppCompatActivity {
                                                 View itemView, int position, long id) {
 
                             String name = MainActivity.favoriteStrings.get(position).toString();
+                            int index = (int)id;
 
                             Intent intent = new Intent(FavoritesActivity.this,
                                     FavoritesDisplayActivity.class);
                             intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_NAME, name);
+                            intent.putExtra(FavoritesDisplayActivity.MY_INDEX, index);
                             startActivity(intent);
                         }
                     };

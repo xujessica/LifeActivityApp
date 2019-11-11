@@ -15,8 +15,10 @@ import java.io.Serializable;
 public class FavoritesDisplayActivity extends AppCompatActivity {
 
     public static final String MY_OBJECT_NAME = "name";
+    public static final String MY_INDEX = "index";
 
     String name;
+    int index;
     TextView rating;
     TextView description;
 
@@ -28,9 +30,11 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         name = intent.getStringExtra(MY_OBJECT_NAME);
+        index = intent.getIntExtra(MY_INDEX, 0);
         TextView displayName = (TextView) findViewById(R.id.nameFav);
         rating = (TextView) findViewById(R.id.ratingFav);
         description = (TextView) findViewById(R.id.descriptionFav);
+
 
         displayName.setText(name);
         checkObject();
@@ -49,6 +53,8 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
 
 
     public void checkObject() {
+
+        MainActivity.favoritesArray.get(index).getClass();
 
         for (int i = 0; i < Restaurants.breakfastPlaces.length; i++) {
             if (Restaurants.breakfastPlaces[i].getRestaurant().equalsIgnoreCase(name)) {
@@ -69,6 +75,10 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
                 rating.setText(Restaurants.dinnerPlaces[i].getRating().toString());
                 description.setText(Restaurants.dinnerPlaces[i].getDescription());
             }
+        }
+
+        for (int i = 0; i < Movies.Action.length; i++) {
+
         }
 
     }
