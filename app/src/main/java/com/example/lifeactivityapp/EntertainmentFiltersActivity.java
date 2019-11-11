@@ -432,22 +432,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 }
             }
 
-        /*}catch (NullPointerException e) {
-            Context context = getApplicationContext();
-            CharSequence text = "Choose Both Options!";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-
-            toast.show();
-            toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
-                    0, 0);
-
-            str5 = "catch thrown";
-        }*/
-
-
-
     }
 
 
@@ -625,20 +609,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                     }
                 }
             }
-        /*}
-        catch (NullPointerException e) {
-            Context context = getApplicationContext();
-            CharSequence text = "Choose Both Options!";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-
-            toast.show();
-            toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
-                    0, 0);
-
-            str5 = "catch thrown";
-        }*/
     }
 
 

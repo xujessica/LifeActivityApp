@@ -24,6 +24,8 @@ public class EatFiltersActivity extends AppCompatActivity {
     Intent intent;
     RatingBar ratingBar;
     double ratingStars;
+    Boolean checked = false, checked1 = false;
+    RadioGroup radioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class EatFiltersActivity extends AppCompatActivity {
         TextView eatFilterTitle = findViewById(R.id.eatFilterTitle);
         RadioButton firstOptionEat = findViewById(R.id.firstOptionEat);
         RadioButton secondOptionEat = findViewById(R.id.secondOptionEat);
+        radioGroup = (RadioGroup)findViewById(R.id.radioChoices);
         newArray = new ArrayList<>();
 
         // using a rating bar: https://abhiandroid.com/ui/ratingbar
@@ -74,7 +77,7 @@ public class EatFiltersActivity extends AppCompatActivity {
     }
 
     // Creating a Separate Method for Display Toast
-    public void displayToast(){
+    public void displayNoResultsToast(){
         Context context = getApplicationContext();
         CharSequence text = "No results for chosen rating";
         int duration = Toast.LENGTH_SHORT;
@@ -86,43 +89,64 @@ public class EatFiltersActivity extends AppCompatActivity {
                 0, 0);
     }
 
+    public void displayChooseToast(){
+        Context context = getApplicationContext();
+        CharSequence text = "Choose All Options!";
+        int duration = Toast.LENGTH_SHORT;
 
-    public void onClickEatFilter(View v) {
-        Intent displayIntent = new Intent(this, DisplayActivity.class);
-        ratingStars = ratingBar.getRating();
-        try {
-            int rating = (int)ratingStars;
-            if (rating == 1) {
-                throw new NullPointerException();
-            }
+        Toast toast = Toast.makeText(context, text, duration);
 
-            if (mealChoice.equalsIgnoreCase("breakfast")) {
-                convertRatingsArray(Restaurants.breakfastPlaces);
-                random(radioInfo(v), displayIntent, Restaurants.breakfastPlaces);
-            }
-            if (mealChoice.equalsIgnoreCase("lunch")) {
-                convertRatingsArray(Restaurants.lunchPlaces);
-                random(radioInfo(v), displayIntent, Restaurants.lunchPlaces);
-            }
-            if (mealChoice.equalsIgnoreCase("dinner")) {
-                convertRatingsArray(Restaurants.dinnerPlaces);
-                random(radioInfo(v), displayIntent,Restaurants.dinnerPlaces);
-            }
-
-            startActivity(displayIntent);
-        }
-        catch (NullPointerException e) {
-            displayToast();
-        }
-
-
+        toast.show();
+        toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 0);
 
     }
 
 
-    public String radioInfo(View v) {
-        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.radioChoices);
+    public void onClickEatFilter(View v) {
+        Intent displayIntent = new Intent(this, DisplayActivity.class);
+        ratingStars = ratingBar.getRating();
+        int rating = (int)ratingStars;
         int radioButtonID = radioGroup.getCheckedRadioButtonId();
+
+        if (radioButtonID >= 0) {
+            checked = true;
+        }
+        if (ratingStars > 1 ) {
+            checked1 = true;
+        }
+
+        try {
+            if (rating == 1) {
+                throw new NullPointerException();
+            }
+            if (checked && checked1) {
+                if (mealChoice.equalsIgnoreCase("breakfast")) {
+                    convertRatingsArray(Restaurants.breakfastPlaces);
+                    random(radioInfo(v, radioButtonID), displayIntent, Restaurants.breakfastPlaces);
+                }
+                if (mealChoice.equalsIgnoreCase("lunch")) {
+                    convertRatingsArray(Restaurants.lunchPlaces);
+                    random(radioInfo(v, radioButtonID), displayIntent, Restaurants.lunchPlaces);
+                }
+                if (mealChoice.equalsIgnoreCase("dinner")) {
+                    convertRatingsArray(Restaurants.dinnerPlaces);
+                    random(radioInfo(v, radioButtonID), displayIntent, Restaurants.dinnerPlaces);
+                }
+
+                startActivity(displayIntent);
+            }
+            else {
+                displayChooseToast();
+            }
+        }
+        catch (NullPointerException e) {
+            displayNoResultsToast();
+        }
+
+    }
+
+
+    public String radioInfo(View v, int radioButtonID) {
         RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioButtonID);
         String serviceType = radioButton.getText().toString();
         return serviceType;
@@ -190,7 +214,7 @@ public class EatFiltersActivity extends AppCompatActivity {
                 throw new NullPointerException();
             }
         } catch (NullPointerException e) {
-            displayToast();
+            displayNoResultsToast();
         }
 
         int index = new Random().nextInt(newArray.size());
@@ -205,5 +229,6 @@ public class EatFiltersActivity extends AppCompatActivity {
         displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, mealChoice);
 
     }
+
 }
 
