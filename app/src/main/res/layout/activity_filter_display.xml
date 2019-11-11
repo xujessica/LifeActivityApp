@@ -13,20 +13,10 @@
         android:layout_height="match_parent"
         tools:context=".FilterDisplayActivity">
 
-        <include
-            android:id="@+id/actionBar"
-            layout="@layout/action_bar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </include>
-
         <Button
             android:id="@+id/newFilterButton"
             android:layout_width="150dp"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/transparent_bg_bordered_button"
             android:fontFamily="@font/roboto_medium"
             android:onClick="newFilterOnClick"
@@ -34,41 +24,36 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.465"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
+            tools:layout_editor_absoluteY="662dp"
+            app:layout_constraintTop_toBottomOf="@+id/addToFavoritesButton"/>
 
         <Button
             android:id="@+id/addToFavoritesButton"
             android:layout_width="210dp"
             android:layout_height="78dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
             android:background="@drawable/transparent_bg_bordered_button"
             android:fontFamily="@font/roboto_medium"
             android:onClick="addToFavoritesOnClick"
             android:text="ADD TO FAVORITES"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.465"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/newFilterButton" />
-
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="214dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/newFilterButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintTop_toBottomOf="@+id/description" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
 
         <TextView
             android:id="@+id/filterDisplayTitle"
@@ -82,6 +67,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/actionBar" />
+
 
         <TextView
             android:id="@+id/name"
@@ -97,15 +83,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/filterDisplayTitle" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" />
-        </ScrollView>
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="214dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
 
         <TextView
             android:id="@+id/description"
@@ -120,6 +110,14 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rating" />
+
+        <include
+            android:id="@+id/actionBar"
+            layout="@layout/action_bar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </include>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
