@@ -1,2 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name = "efTitle">Please Input Your Preference</string>
+    <string name = "display">Display</string>
+    <string name = "action">Action</string>
+    <string name = "comedy">Comedy</string>
+    <string name = "romance">Romance</string>
+    <string name = "kids">Kids</string>
+    <string name = "frating">Rating: 6.9 or less</string>
+    <string name = "srating">Rating: 7.0 - 7.9</string>
+    <string name = "trating">Rating: 8.0 - 8.9</string>
+    <string name = "pop">Pop</string>
+    <string name = "rap">Rap</string>
+    <string name = "country">Country</string>
+    <string name = "spring">Spring</string>
+    <string name = "summer">Summer</string>
+    <string name = "fall">Fall</string>
+    <string name = "winter">Winter</string>
+    <string name = "indoors">Indoors</string>
+    <string name = "outdoors">Outdoors</string>
+    <string name = "breakfast">Breakfast</string>
+    <string name = "lunch">Lunch</string>
+    <string name = "dinner">Dinner</string>
+    <string name = "chain">Chain</string>
+    <string name = "local">Local</string>
+    <string name = "fast_food">Fast Food</string>
+    <string name = "sit_down">Sit Down</string>
+</resources>
