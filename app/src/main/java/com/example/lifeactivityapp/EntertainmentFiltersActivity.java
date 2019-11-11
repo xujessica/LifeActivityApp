@@ -35,14 +35,11 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
     String str, str2, detailedChoice;
     Intent displayIntents;
     Random randomGenerator;
-    //ArrayList<Movies> newArray;
     String name = "";
     String description = "";
     double rating = 0.0;
     String famousSong = " ";
     Random random;
-    String idk = "";
-    String str5;
     boolean checked, checked1;
 
 
@@ -88,7 +85,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         RadioButton b8 = findViewById(R.id.radioButton8);
         RadioGroup rg = findViewById(R.id.radioGroup2);
 
-        TextView tv2  = findViewById(R.id.textView2);
 
         if(detailedChoice.equalsIgnoreCase("movies")){
             b1.setText("Action");
@@ -107,7 +103,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             b4.setVisibility(View.INVISIBLE);
             b5.setVisibility(View.INVISIBLE);
             rg.setVisibility(View.GONE);
-            tv2.setVisibility(View.GONE);
 
         }
         if(detailedChoice.equalsIgnoreCase("activities")){
@@ -193,8 +188,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
                 displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
                 displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
-                displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
 
                 startActivity(displayIntent);
             }
@@ -212,8 +206,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
                 displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
                 displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
-                displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
 
                 startActivity(displayIntent);
             }else
@@ -505,7 +498,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getSpring()[randomNum].isIndoors()) {
                                 name = getSpring()[randomNum].toString();
                                 description = getSpring()[randomNum].getLocation();
-                                idk = getSpring()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(spLength);
@@ -520,7 +512,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getSpring()[randomNum].isIndoors()) {
                                 name = getSpring()[randomNum].toString();
                                 description = getSpring()[randomNum].getLocation();
-                                idk = getSpring()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(spLength);
@@ -538,7 +529,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getSummer()[randomNum].isIndoors()) {
                                 name = getSummer()[randomNum].toString();
                                 description = getSummer()[randomNum].getLocation();
-                                idk = getSummer()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(sALength);
@@ -553,7 +543,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getSummer()[randomNum].isIndoors()) {
                                 name = getSummer()[randomNum].toString();
                                 description = getSummer()[randomNum].getLocation();
-                                idk = getSummer()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(sALength);
@@ -570,7 +559,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getFall()[randomNum].isIndoors()) {
                                 name = getFall()[randomNum].toString();
                                 description = getFall()[randomNum].getLocation();
-                                idk = getFall()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(fALength);
@@ -585,7 +573,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getFall()[randomNum].isIndoors()) {
                                 name = getFall()[randomNum].toString();
                                 description = getFall()[randomNum].getLocation();
-                                idk = getFall()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(fALength);
@@ -602,7 +589,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getWinter()[randomNum].isIndoors()) {
                                 name = getWinter()[randomNum].toString();
                                 description = getWinter()[randomNum].getLocation();
-                                idk = getWinter()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(wALength);
@@ -617,7 +603,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getWinter()[randomNum].isIndoors()) {
                                 name = getWinter()[randomNum].toString();
                                 description = getWinter()[randomNum].getLocation();
-                                idk = getWinter()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(wALength);
