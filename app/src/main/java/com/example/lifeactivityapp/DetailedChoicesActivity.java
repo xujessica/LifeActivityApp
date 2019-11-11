@@ -167,6 +167,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
             displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
             displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
@@ -182,6 +183,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
             displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
             displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
@@ -223,6 +225,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
             displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
             displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
@@ -257,6 +260,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
             displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
             displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
@@ -295,6 +299,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
             displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
             displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }

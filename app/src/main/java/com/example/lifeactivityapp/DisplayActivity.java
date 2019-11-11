@@ -155,8 +155,9 @@ public class DisplayActivity extends AppCompatActivity {
             }
         }
         else {
-            finish();
-            startActivity(intent);
+            Intent displayIntent = new Intent (this, DetailedChoicesActivity.class);
+            displayIntent.putExtra(MY_DISPLAY_CHOICE, displayChoice);
+            startActivity(displayIntent);
         }
     }
 
@@ -274,7 +275,7 @@ public class DisplayActivity extends AppCompatActivity {
 
     public void setButtons() {
         if (randomType == true) {
-            secondButton.setText("RANDOM");
+            secondButton.setText("Return");
         }
         else {
             secondButton.setText("New Filter");
