@@ -301,5 +301,6 @@ public class DetailedChoicesActivity extends AppCompatActivity {
             startActivity(displayIntent);
         }
 
+        
     }
 }
