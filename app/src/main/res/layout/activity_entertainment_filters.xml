@@ -8,6 +8,15 @@
     tools:context=".EntertainmentFiltersActivity"
     android:background="@drawable/red_gradient">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="104dp"
+        android:text="@string/efTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
 
     <include
         android:id="@+id/actionBar"
@@ -25,7 +34,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:onClick="onClickApply"
-        android:text="Display"
+        android:text="@string/display"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -34,33 +43,28 @@
         android:id="@+id/radioGroup2"
         android:layout_width="223dp"
         android:layout_height="113dp"
-        android:layout_marginEnd="92dp"
+        android:layout_marginEnd="84dp"
         android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/apply"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup1"
-        app:layout_constraintVertical_bias="0.208">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onSecondRadioButtonClicked"
-            android:text="RadioButton" />
+            android:onClick="onSecondRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onSecondRadioButtonClicked"
-            android:text="RadioButton" />
+            android:onClick="onSecondRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radioButton8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onSecondRadioButtonClicked"
-            android:text="RadioButton" />
+            android:onClick="onSecondRadioButtonClicked" />
     </RadioGroup>
 
     <RadioGroup
@@ -76,36 +80,31 @@
             android:id="@+id/radioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="Hello" />
+            android:onClick="onRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="RadioButton" />
+            android:onClick="onRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="RadioButton" />
+            android:onClick="onRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="RadioButton" />
+            android:onClick="onRadioButtonClicked" />
 
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="RadioButton" />
+            android:onClick="onRadioButtonClicked" />
 
     </RadioGroup>
 
@@ -115,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="112dp"
-        android:text="Please Input Your Preference"
+        android:text="@string/efTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionBar" />
 
