@@ -6,10 +6,8 @@
     android:layout_height="wrap_content"
     android:fillViewport="false"
     android:orientation="vertical">
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FavoritesDisplayActivity"
     android:background="@drawable/rainbow_gradient_background">
@@ -55,7 +53,17 @@
         app:layout_constraintTop_toBottomOf="@+id/nameFav" />
 
 
-    <TextView
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <TextView
         android:id="@+id/descriptionFav"
         android:layout_width="256dp"
         android:layout_height="193dp"
