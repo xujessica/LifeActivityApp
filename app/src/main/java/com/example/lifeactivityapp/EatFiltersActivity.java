@@ -32,13 +32,13 @@ public class EatFiltersActivity extends AppCompatActivity {
 
         intent = getIntent();
         mealChoice = intent.getStringExtra(MY_EAT_CHOICE);
-        TextView eatFilterTitle = (TextView) findViewById(R.id.eatFilterTitle);
-        RadioButton firstOptionEat = (RadioButton) findViewById(R.id.firstOptionEat);
-        RadioButton secondOptionEat = (RadioButton) findViewById(R.id.secondOptionEat);
+        TextView eatFilterTitle = findViewById(R.id.eatFilterTitle);
+        RadioButton firstOptionEat = findViewById(R.id.firstOptionEat);
+        RadioButton secondOptionEat = findViewById(R.id.secondOptionEat);
         newArray = new ArrayList<>();
 
         // using a rating bar: https://abhiandroid.com/ui/ratingbar
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        ratingBar = findViewById(R.id.ratingBar);
 
         if (mealChoice.equalsIgnoreCase("breakfast")) {
             eatFilterTitle.setText("BREAKFAST");
@@ -73,43 +73,50 @@ public class EatFiltersActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Creating a Separate Method for Display Toast
+    public void displayToast(){
+        Context context = getApplicationContext();
+        CharSequence text = "No results for chosen rating";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+
+        toast.show();
+        toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,
+                0, 0);
+    }
+
 
     public void onClickEatFilter(View v) {
-        Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
+        Intent displayIntent = new Intent(this, DisplayActivity.class);
         ratingStars = ratingBar.getRating();
         try {
             int rating = (int)ratingStars;
             if (rating == 1) {
                 throw new NullPointerException();
             }
+
+            if (mealChoice.equalsIgnoreCase("breakfast")) {
+                convertRatingsArray(Restaurants.breakfastPlaces);
+                random(radioInfo(v), displayIntent, Restaurants.breakfastPlaces);
+            }
+            if (mealChoice.equalsIgnoreCase("lunch")) {
+                convertRatingsArray(Restaurants.lunchPlaces);
+                random(radioInfo(v), displayIntent, Restaurants.lunchPlaces);
+            }
+            if (mealChoice.equalsIgnoreCase("dinner")) {
+                convertRatingsArray(Restaurants.dinnerPlaces);
+                random(radioInfo(v), displayIntent,Restaurants.dinnerPlaces);
+            }
+
+            startActivity(displayIntent);
         }
         catch (NullPointerException e) {
-            Context context = getApplicationContext();
-            CharSequence text = "No results for chosen rating";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-
-            toast.show();
-            toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,
-                    0, 0);
+            displayToast();
         }
 
 
-        if (mealChoice.equalsIgnoreCase("breakfast")) {
-            convertRatingsArray(Restaurants.breakfastPlaces);
-            random(radioInfo(v), displayIntent, Restaurants.breakfastPlaces);
-        }
-        if (mealChoice.equalsIgnoreCase("lunch")) {
-            convertRatingsArray(Restaurants.lunchPlaces);
-            random(radioInfo(v), displayIntent, Restaurants.lunchPlaces);
-        }
-        if (mealChoice.equalsIgnoreCase("dinner")) {
-            convertRatingsArray(Restaurants.dinnerPlaces);
-            random(radioInfo(v), displayIntent,Restaurants.dinnerPlaces);
-        }
 
-        startActivity(displayIntent);
     }
 
 
@@ -183,15 +190,7 @@ public class EatFiltersActivity extends AppCompatActivity {
                 throw new NullPointerException();
             }
         } catch (NullPointerException e) {
-            Context context = getApplicationContext();
-            CharSequence text = "No results for chosen options";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-
-            toast.show();
-            toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
-                    0, 0);
+            displayToast();
         }
 
         int index = new Random().nextInt(newArray.size());
@@ -200,10 +199,10 @@ public class EatFiltersActivity extends AppCompatActivity {
         String description = chosenRestaurant.getDescription();
         double rating = chosenRestaurant.getRating();
 
-        displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurantName);
-        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, mealChoice);
+        displayIntent.putExtra(DisplayActivity.MY_RESTAURANT_NAME, restaurantName);
+        displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+        displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+        displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, mealChoice);
 
     }
 }

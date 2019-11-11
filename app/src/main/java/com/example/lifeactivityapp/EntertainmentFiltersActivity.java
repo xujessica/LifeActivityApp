@@ -10,11 +10,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import static com.example.lifeactivityapp.Activities.getFall;
@@ -182,15 +180,15 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 selectOneActivity();
                 selectOneMovie();
 
-                Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
+                Intent displayIntent = new Intent(this, DisplayActivity.class);
 
 
-                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
-                displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-                displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-                displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, famousSong);
-                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_TYPE, type);
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+                displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+                displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
+                displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+                displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, famousSong);
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, type);
 
                 startActivity(displayIntent);
 
@@ -202,15 +200,15 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             if(checked){
                 selectOneConcert();
 
-                Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
+                Intent displayIntent = new Intent(this, DisplayActivity.class);
 
 
-                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
-                displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-                displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-                displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, famousSong);
-                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_TYPE, type);
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+                displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+                displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
+                displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+                displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, famousSong);
+                displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, type);
 
                 startActivity(displayIntent);
             }else

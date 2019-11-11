@@ -34,13 +34,13 @@ public class DetailedChoicesActivity extends AppCompatActivity {
     ConstraintLayout layoutDC;
 
     Random random;
+    Boolean randomType = false;
     String name = "";
     String description = "";
     double rating = 0.0;
     String famousSong = " ";
     String type ="";
     String restaurant = "";
-    String mealChoice = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,7 @@ public class DetailedChoicesActivity extends AppCompatActivity {
         Button firstButtonDC = (Button) findViewById(R.id.firstButtonDC);
         Button secondButtonDC = (Button) findViewById(R.id.secondButtonDC);
         layoutDC = (ConstraintLayout) findViewById(R.id.layoutDC);
+        random = new Random();
 
         if (detailedChoice.equalsIgnoreCase("breakfast")) {
             titleDC.setText("BREAKFAST");
@@ -135,60 +136,60 @@ public class DetailedChoicesActivity extends AppCompatActivity {
 
     public void randomOnClick(View v)
     {
-        Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
+        Intent displayIntent = new Intent(this, DisplayActivity.class);
+        randomType = true;
 
         if(detailedChoice.equalsIgnoreCase("breakfast"))
         {
             int breakfastRand = random.nextInt(getBreakfastPlaces().length);
-            mealChoice = "breakfast";
             restaurant = getBreakfastPlaces()[breakfastRand].getRestaurant();
             description = getBreakfastPlaces()[breakfastRand].getDescription();
             type = getBreakfastPlaces()[breakfastRand].getType();
             rating = getBreakfastPlaces()[breakfastRand].getRating();
 
-            displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurant);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, mealChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RESTAURANT_NAME, restaurant);
+            displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
         else if(detailedChoice.equalsIgnoreCase("lunch"))
         {
             int lunchRand = random.nextInt(getLunchPlaces().length);
-            mealChoice = "lunch";
             restaurant = getLunchPlaces()[lunchRand].getRestaurant();
             description = getLunchPlaces()[lunchRand].getDescription();
             type = getLunchPlaces()[lunchRand].getType();
             rating = getLunchPlaces()[lunchRand].getRating();
 
-            displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurant);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, mealChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RESTAURANT_NAME, restaurant);
+            displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
         else if(detailedChoice.equalsIgnoreCase("dinner"))
         {
             int dinnerRand = random.nextInt(getDinnerPlaces().length);
-            mealChoice = "dinner";
             restaurant = getDinnerPlaces()[dinnerRand].getRestaurant();
             description = getDinnerPlaces()[dinnerRand].getDescription();
             type = getDinnerPlaces()[dinnerRand].getType();
             rating = getDinnerPlaces()[dinnerRand].getRating();
 
-            displayIntent.putExtra(FilterDisplayActivity.MY_RESTAURANT_NAME, restaurant);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, mealChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RESTAURANT_NAME, restaurant);
+            displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
         else if(detailedChoice.equalsIgnoreCase("movies"))
         {
-            int movieRand = random.nextInt(3);
-            detailedChoice = "movies";
+            int movieRand = random.nextInt(4);
 
             if(movieRand == 0)
             {
@@ -219,18 +220,18 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 rating = getKids()[randomNum].getRating();
             }
 
-            displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
-            displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-            displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+            displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
+            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
         else if(detailedChoice.equalsIgnoreCase("concerts"))
         {
-            int concertRand = random.nextInt(2);
-            detailedChoice = "concerts";
+            int concertRand = random.nextInt(3);
 
             if(concertRand == 0)
             {
@@ -254,17 +255,18 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 famousSong = getCountry()[randomNum].getFamousSong();
             }
 
-            displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
-            displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-            displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+            displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
+            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }
         else if(detailedChoice.equalsIgnoreCase("activities"))
         {
-            int activityRand = random.nextInt(3);
+            int activityRand = random.nextInt(4);
             detailedChoice = "activities";
 
             if(activityRand == 0)
@@ -292,11 +294,12 @@ public class DetailedChoicesActivity extends AppCompatActivity {
                 description = getWinter()[randomNum].getLocation();
             }
 
-            displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
-            displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-            displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-            displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+            displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
+            displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
+            displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
+            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);
         }

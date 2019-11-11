@@ -11,16 +11,15 @@
         android:id="@+id/filterDisplayLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".FilterDisplayActivity">
+        tools:context=".DisplayActivity">
 
         <Button
-            android:id="@+id/newFilterButton"
+            android:id="@+id/secondButton"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:background="@drawable/transparent_bg_bordered_button"
             android:fontFamily="@font/roboto_medium"
-            android:onClick="newFilterOnClick"
-            android:text="NEW FILTER"
+            android:onClick="secondButtonOnClick"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +38,7 @@
             android:text="ADD TO FAVORITES"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/newFilterButton"
+            app:layout_constraintBottom_toTopOf="@+id/secondButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"

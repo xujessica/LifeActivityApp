@@ -12,10 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Random;
-
-public class FilterDisplayActivity extends AppCompatActivity {
+public class DisplayActivity extends AppCompatActivity {
 
     public static final String MY_DISPLAY_CHOICE = "displayChoice";
     public static final String MY_RESTAURANT_NAME = "name";
@@ -24,6 +21,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
     public static final String MY_ENTERTAINMENT_NAME = "entertainment";
     public static final String MY_FAMOUS_SONG = "song";
     public static final String MY_ENTERTAINMENT_TYPE = "entertainmentType";
+    public static final String MY_RANDOM_TYPE = "randomType";
     String displayChoice;
     ConstraintLayout filterDisplayLayout;
     String restaurantName;
@@ -31,6 +29,9 @@ public class FilterDisplayActivity extends AppCompatActivity {
     String entertainmentType;
     String info;
     String song;
+    Boolean randomType;
+    Button secondButton;
+    Intent intent;
 
     public void onFavoritesClick (View v) {
         Intent intent = new Intent (this, FavoritesActivity.class);
@@ -46,9 +47,9 @@ public class FilterDisplayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_filter_display);
+        setContentView(R.layout.activity_display);
 
-        Intent intent = getIntent();
+        intent = getIntent();
         displayChoice = intent.getStringExtra(MY_DISPLAY_CHOICE); // movie, concerts, or activtieis
         restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME); // Names
         entertainmentName = intent.getStringExtra(MY_ENTERTAINMENT_NAME); // Avengers Movie
@@ -56,15 +57,18 @@ public class FilterDisplayActivity extends AppCompatActivity {
         info = intent.getStringExtra(MY_DESCRIPTION); // Description
         double ratingStars = intent.getExtras().getDouble(MY_RATING_STARS); // ratingStars
         song = intent.getStringExtra(MY_FAMOUS_SONG); // Description
+        randomType = intent.getBooleanExtra(MY_RANDOM_TYPE, false);
 
 
         TextView filterDisplayTitle = (TextView) findViewById(R.id.filterDisplayTitle);
         TextView name = (TextView) findViewById(R.id.name);
         TextView rating = (TextView) findViewById(R.id.rating);
         TextView description = (TextView) findViewById(R.id.description);
+        secondButton = (Button) findViewById(R.id.secondButton);
         filterDisplayLayout = (ConstraintLayout) findViewById(R.id.filterDisplayLayout);
 
         setBackground();
+        setButtons();
 
         if (displayChoice.equalsIgnoreCase("breakfast")) {
             filterDisplayTitle.setText("BREAKFAST");
@@ -133,26 +137,32 @@ public class FilterDisplayActivity extends AppCompatActivity {
     }
 
 
-    public void newFilterOnClick(View v) {
-        if (displayChoice.equalsIgnoreCase("breakfast") ||
-                displayChoice.equalsIgnoreCase("lunch") ||
-                        displayChoice.equalsIgnoreCase("dinner")) {
-            Intent pastIntent = new Intent(this, EatFiltersActivity.class);
-            pastIntent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, displayChoice);
-            startActivity(pastIntent);
+    public void secondButtonOnClick(View v) {
+        if (randomType != true) {
+            if (displayChoice.equalsIgnoreCase("breakfast") ||
+                    displayChoice.equalsIgnoreCase("lunch") ||
+                    displayChoice.equalsIgnoreCase("dinner")) {
+                Intent pastIntent = new Intent(this, EatFiltersActivity.class);
+                pastIntent.putExtra(EatFiltersActivity.MY_EAT_CHOICE, displayChoice);
+                startActivity(pastIntent);
+            }
+            if (displayChoice.equalsIgnoreCase("movies") ||
+                    displayChoice.equalsIgnoreCase("concerts") ||
+                    displayChoice.equalsIgnoreCase("activities")) {
+                Intent pastIntent = new Intent(this, EntertainmentFiltersActivity.class);
+                pastIntent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, displayChoice);
+                startActivity(pastIntent);
+            }
         }
-        if (displayChoice.equalsIgnoreCase("movies") ||
-                displayChoice.equalsIgnoreCase("concerts") ||
-                displayChoice.equalsIgnoreCase("activities")) {
-            Intent pastIntent = new Intent(this, EntertainmentFiltersActivity.class);
-            pastIntent.putExtra(EntertainmentFiltersActivity.MY_ENTERTAINMENT_CHOICES, displayChoice);
-            startActivity(pastIntent);
+        else {
+            Intent displayIntent = new Intent (this, DetailedChoicesActivity.class);
+            displayIntent.putExtra(MY_DISPLAY_CHOICE, displayChoice);
+            startActivity(displayIntent);
         }
     }
 
 
     public void addToFavoritesOnClick(View v) {
-
         if (entertainmentName == null) {
             MainActivity.favoriteStrings.add(restaurantName);
         }
@@ -168,7 +178,7 @@ public class FilterDisplayActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
 
         toast.show();
-        toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL,
+        toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
                 0, 0);
     }
 
@@ -260,6 +270,15 @@ public class FilterDisplayActivity extends AppCompatActivity {
                 }
             }
 
+        }
+    }
+
+    public void setButtons() {
+        if (randomType == true) {
+            secondButton.setText("Return");
+        }
+        else {
+            secondButton.setText("New Filter");
         }
     }
 
