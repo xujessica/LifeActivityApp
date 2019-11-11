@@ -56,49 +56,49 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
 
         for (int i = 0; i < Restaurants.breakfastPlaces.length; i++) {
             if (Restaurants.breakfastPlaces[i].getRestaurant().equalsIgnoreCase(name)) {
-                rating.setText(String.valueOf(Restaurants.breakfastPlaces[i].getRating()));
+                rating.setText(String.valueOf(Restaurants.breakfastPlaces[i].getRating()) + " stars");
                 description.setText(Restaurants.breakfastPlaces[i].getDescription());
             }
         }
 
         for (int i = 0; i < Restaurants.lunchPlaces.length; i++) {
             if (Restaurants.lunchPlaces[i].getRestaurant().equalsIgnoreCase(name)) {
-                rating.setText(String.valueOf(Restaurants.lunchPlaces[i].getRating()));
+                rating.setText(String.valueOf(Restaurants.lunchPlaces[i].getRating()) + " stars");
                 description.setText(Restaurants.lunchPlaces[i].getDescription());
             }
         }
 
         for (int i = 0; i < Restaurants.dinnerPlaces.length; i++) {
             if (Restaurants.dinnerPlaces[i].getRestaurant().equalsIgnoreCase(name)) {
-                rating.setText(String.valueOf(Restaurants.dinnerPlaces[i].getRating()));
+                rating.setText(String.valueOf(Restaurants.dinnerPlaces[i].getRating()) + " stars");
                 description.setText(Restaurants.dinnerPlaces[i].getDescription());
             }
         }
 
         for (int i = 0; i < Movies.Action.length; i++) {
             if (Movies.Action[i].getName().equalsIgnoreCase(name)) {
-                rating.setText(String.valueOf(Movies.Action[i].getRating()));
+                rating.setText(String.valueOf(Movies.Action[i].getRating()) + " stars");
                 description.setText(Movies.Action[i].getDescription());
             }
         }
 
         for (int i = 0; i < Movies.Comedy.length; i++) {
             if (Movies.Comedy[i].getName().equalsIgnoreCase(name)) {
-                rating.setText(String.valueOf(Movies.Comedy[i].getRating()));
+                rating.setText(String.valueOf(Movies.Comedy[i].getRating()) + " stars");
                 description.setText(Movies.Comedy[i].getDescription());
             }
         }
 
         for (int i = 0; i < Movies.Romance.length; i++) {
             if (Movies.Romance[i].getName().equalsIgnoreCase(name)) {
-                rating.setText(String.valueOf(Movies.Romance[i].getRating()));
+                rating.setText(String.valueOf(Movies.Romance[i].getRating()) + " stars");
                 description.setText(Movies.Romance[i].getDescription());
             }
         }
 
         for (int i = 0; i < Movies.Kids.length; i++) {
             if (Movies.Kids[i].getName().equalsIgnoreCase(name)) {
-                rating.setText(String.valueOf(Movies.Kids[i].getRating()));
+                rating.setText(String.valueOf(Movies.Kids[i].getRating()) + " stars");
                 description.setText(Movies.Kids[i].getDescription());
             }
         }
@@ -136,15 +136,15 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
             }
         }
 
-        for (int i = 0; i < Activities.Summer.length; i++) {
-            if (Activities.Summer[i].getName().equalsIgnoreCase(name)) {
-                description.setText(Activities.Summer[i].getLocation());
+        for (int i = 0; i < Activities.Fall.length; i++) {
+            if (Activities.Fall[i].getName().equalsIgnoreCase(name)) {
+                description.setText(Activities.Fall[i].getLocation());
             }
         }
 
-        for (int i = 0; i < Activities.Summer.length; i++) {
-            if (Activities.Summer[i].getName().equalsIgnoreCase(name)) {
-                description.setText(Activities.Summer[i].getLocation());
+        for (int i = 0; i < Activities.Winter.length; i++) {
+            if (Activities.Winter[i].getName().equalsIgnoreCase(name)) {
+                description.setText(Activities.Winter[i].getLocation());
             }
         }
 

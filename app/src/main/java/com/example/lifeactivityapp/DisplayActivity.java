@@ -76,48 +76,123 @@ public class DisplayActivity extends AppCompatActivity {
             filterDisplayTitle.setTextSize(40);
 
             name.setText(restaurantName);
-            description.setText(info);
-            rating.setText(ratingStars + " stars");
+            for (int i = 0; i < Restaurants.breakfastPlaces.length; i++) {
+                if (Restaurants.breakfastPlaces[i].getRestaurant().equalsIgnoreCase(restaurantName)) {
+                    rating.setText(String.valueOf(Restaurants.breakfastPlaces[i].getRating()) + " stars");
+                    description.setText(Restaurants.breakfastPlaces[i].getDescription());
+                }
+            }
         }
         if (displayChoice.equalsIgnoreCase("lunch")) {
             filterDisplayTitle.setText("LUNCH");
             filterDisplayTitle.setTextSize(60);
 
             name.setText(restaurantName);
-            description.setText(info);
-            rating.setText(ratingStars + " stars");
+            for (int i = 0; i < Restaurants.lunchPlaces.length; i++) {
+                if (Restaurants.lunchPlaces[i].getRestaurant().equalsIgnoreCase(restaurantName)) {
+                    rating.setText(String.valueOf(Restaurants.lunchPlaces[i].getRating()) + " stars");
+                    description.setText(Restaurants.lunchPlaces[i].getDescription());
+                }
+            }
         }
         if (displayChoice.equalsIgnoreCase("dinner")) {
             filterDisplayTitle.setText("DINNER");
             filterDisplayTitle.setTextSize(50);
 
             name.setText(restaurantName);
-            description.setText(info);
-            rating.setText(ratingStars + " stars");
+            for (int i = 0; i < Restaurants.dinnerPlaces.length; i++) {
+                if (Restaurants.dinnerPlaces[i].getRestaurant().equalsIgnoreCase(restaurantName)) {
+                    rating.setText(String.valueOf(Restaurants.dinnerPlaces[i].getRating()) + " stars");
+                    description.setText(Restaurants.dinnerPlaces[i].getDescription());
+                }
+            }
         }
         if (displayChoice.equalsIgnoreCase("movies")) {
             filterDisplayTitle.setText("MOVIES");
             filterDisplayTitle.setTextSize(50);
 
             name.setText(entertainmentName);
-            description.setText(info);
-            rating.setText(ratingStars + " stars");
+            for (int i = 0; i < Movies.Action.length; i++) {
+                if (Movies.Action[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    rating.setText(String.valueOf(Movies.Action[i].getRating()) + " stars");
+                    description.setText(Movies.Action[i].getDescription());
+                }
+            }
+        }
+        for (int i = 0; i < Movies.Comedy.length; i++) {
+            if (Movies.Comedy[i].getName().equalsIgnoreCase(entertainmentName)) {
+                rating.setText(String.valueOf(Movies.Comedy[i].getRating()) + " stars");
+                description.setText(Movies.Comedy[i].getDescription());
+            }
+        }
+
+        for (int i = 0; i < Movies.Romance.length; i++) {
+            if (Movies.Romance[i].getName().equalsIgnoreCase(entertainmentName)) {
+                rating.setText(String.valueOf(Movies.Romance[i].getRating()) + " stars");
+                description.setText(Movies.Romance[i].getDescription());
+            }
+        }
+
+        for (int i = 0; i < Movies.Kids.length; i++) {
+            if (Movies.Kids[i].getName().equalsIgnoreCase(entertainmentName)) {
+                rating.setText(String.valueOf(Movies.Kids[i].getRating()) + " stars");
+                description.setText(Movies.Kids[i].getDescription());
+            }
         }
         if (displayChoice.equalsIgnoreCase("concerts")) {
             filterDisplayTitle.setText("CONCERTS");
             filterDisplayTitle.setTextSize(50);
 
             name.setText(entertainmentName);
-            description.setText(info);
-            rating.setText(song);
+            for (int i = 0; i < Concerts.Rap.length; i++) {
+                if (Concerts.Rap[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    rating.setText(String.valueOf(Concerts.Rap[i].getFamousSong()));
+                    description.setText(Concerts.Rap[i].getDescription());
+                }
+            }
+
+            for (int i = 0; i < Concerts.Pop.length; i++) {
+                if (Concerts.Pop[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    rating.setText(String.valueOf(Concerts.Pop[i].getFamousSong()));
+                    description.setText(Concerts.Pop[i].getDescription());
+                }
+            }
+
+            for (int i = 0; i < Concerts.Country.length; i++) {
+                if (Concerts.Country[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    rating.setText(String.valueOf(Concerts.Country[i].getFamousSong()));
+                    description.setText(Concerts.Country[i].getDescription());
+                }
+            }
         }
         if (displayChoice.equalsIgnoreCase("activities")) {
             filterDisplayTitle.setText("ACTIVITIES");
             filterDisplayTitle.setTextSize(40);
 
             name.setText(entertainmentName);
-            description.setText(info);
-            rating.setVisibility(View.INVISIBLE);;
+            for (int i = 0; i < Activities.Spring.length; i++) {
+                if (Activities.Spring[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    description.setText(Activities.Spring[i].getLocation());
+                }
+            }
+
+            for (int i = 0; i < Activities.Summer.length; i++) {
+                if (Activities.Summer[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    description.setText(Activities.Summer[i].getLocation());
+                }
+            }
+
+            for (int i = 0; i < Activities.Fall.length; i++) {
+                if (Activities.Fall[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    description.setText(Activities.Fall[i].getLocation());
+                }
+            }
+
+            for (int i = 0; i < Activities.Winter.length; i++) {
+                if (Activities.Winter[i].getName().equalsIgnoreCase(entertainmentName)) {
+                    description.setText(Activities.Winter[i].getLocation());
+                }
+            }
         }
 
 

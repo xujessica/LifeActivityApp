@@ -2,5 +2,10 @@
 <resources>
 
     <dimen name="favoritesTitleFontSize">55sp</dimen>
+    <dimen name="normalMargin">12dp</dimen>
+    <dimen name="nameHeight">73dp</dimen>
+    <dimen name="ratingHeight">79dp</dimen>
+    <dimen name="ratingWidth">294dp</dimen>
+    <dimen name="descriptionHeight">212dp</dimen>
 
 </resources>
