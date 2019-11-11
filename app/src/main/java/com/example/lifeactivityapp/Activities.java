@@ -23,7 +23,8 @@ public class Activities {
     };
 
     public static final Activities[] Summer = {
-            new Activities("Get ice cream", "outdoors"),
+            new Activities("Camp Out Inside", "indoors"),
+            new Activities("Eat Ice Cream", "indoors"),
             new Activities("Mini golf", "outdoors"),
             new Activities("Go camping", "outdoors"),
             new Activities("See a drive-in movie", "outdoors"),
@@ -37,7 +38,7 @@ public class Activities {
             new Activities("Have a bonfire", "outdoors"),
             new Activities("Visit a haunted house", "indoors"),
             new Activities("Pick apples", "outdoors"),
-            new Activities("Carve pumpkins", "outdoors"),
+            new Activities("Carve pumpkins", "indoors"),
             new Activities("Bake a pie", "indoors"),
             new Activities("Watch a scary movie", "indoors"),
             new Activities("Visit a corn maze", "outdoors"),
@@ -77,4 +78,13 @@ public class Activities {
 
 
     public String toString(){ return name;}
+
+    public boolean isIndoors(){
+        if(location.equals("indoors"))
+            return true;
+        return false;
+    }
+
+
+
 }

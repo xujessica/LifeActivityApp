@@ -156,6 +156,10 @@ public class FilterDisplayActivity extends AppCompatActivity {
         Intent favIntent = new Intent(this,FavoritesActivity.class);
         favIntent.putExtra(FavoritesActivity.MY_RESTAURANT_NAME, restaurantName);
         favIntent.putExtra(FavoritesActivity.MY_MEAL_CHOICE, displayChoice);
+        favIntent.putExtra(FavoritesActivity.MY_RESTAURANT_NAME, restaurantName);
+        favIntent.putExtra(FavoritesActivity.MY_RESTAURANT_NAME, restaurantName);
+
+
         startActivity(favIntent);
     }
 

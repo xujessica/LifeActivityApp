@@ -8,6 +8,16 @@
     tools:context=".EntertainmentFiltersActivity"
     android:background="@drawable/red_gradient">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="104dp"
+        android:text="Please Input Your Preference"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
+
     <include
         android:id="@+id/actionBar"
         layout="@layout/action_bar"
@@ -20,42 +30,43 @@
         android:id="@+id/apply"
         android:layout_width="140dp"
         android:layout_height="70dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/transparent_bg_bordered_button"
         android:onClick="onClickApply"
-        android:text="Button"
+        android:text="Display"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="222dp"
-        android:layout_height="131dp"
-        android:layout_marginTop="55dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apply">
+        android:layout_width="223dp"
+        android:layout_height="113dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/apply"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onSecondRadioButtonClicked"
             android:text="RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onSecondRadioButtonClicked"
             android:text="RadioButton" />
 
         <RadioButton
             android:id="@+id/radioButton8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onSecondRadioButtonClicked"
             android:text="RadioButton" />
     </RadioGroup>
 
@@ -63,10 +74,9 @@
         android:id="@+id/radioGroup1"
         android:layout_width="218dp"
         android:layout_height="170dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="92dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionBar">
 
         <RadioButton
@@ -105,5 +115,15 @@
             android:text="RadioButton" />
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="112dp"
+        android:text="Please Input Your Preference"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

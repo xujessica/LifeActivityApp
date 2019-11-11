@@ -8,11 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Filter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -32,16 +32,18 @@ import static com.example.lifeactivityapp.Movies.getRomance;
 public class EntertainmentFiltersActivity extends AppCompatActivity {
 
     public static final String MY_ENTERTAINMENT_CHOICES = "entertainmentChoices";
-    String str, detailedChoice;
+    String str, str2, detailedChoice;
     Intent displayIntents;
     Random randomGenerator;
-    ArrayList<Movies> newArray;
+    //ArrayList<Movies> newArray;
     String name = "";
     String description = "";
     double rating = 0.0;
     String famousSong = " ";
     Random random;
     String idk = "";
+    String str5;
+    boolean checked, checked1;
 
 
     @Override
@@ -49,7 +51,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entertainment_filters);
 
-        ConstraintLayout layoutEF = (ConstraintLayout) findViewById(R.id.layoutEF);
+        ConstraintLayout layoutEF = findViewById(R.id.layoutEF);
         layoutEF.setBackgroundResource(R.drawable.red_gradient);
 
         randomGenerator = new Random();
@@ -75,16 +77,18 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
 
     public void defineOptions(){
 
-        RadioButton b1 = (RadioButton) findViewById(R.id.radioButton);
-        RadioButton b2 = (RadioButton) findViewById(R.id.radioButton2);
-        RadioButton b3 = (RadioButton) findViewById(R.id.radioButton3);
-        RadioButton b4 = (RadioButton) findViewById(R.id.radioButton4);
-        RadioButton b5 = (RadioButton) findViewById(R.id.radioButton5);
+        RadioButton b1 = findViewById(R.id.radioButton);
+        RadioButton b2 = findViewById(R.id.radioButton2);
+        RadioButton b3 = findViewById(R.id.radioButton3);
+        RadioButton b4 = findViewById(R.id.radioButton4);
+        RadioButton b5 = findViewById(R.id.radioButton5);
 
-        RadioButton b6 = (RadioButton) findViewById(R.id.radioButton6);
-        RadioButton b7 = (RadioButton) findViewById(R.id.radioButton7);
-        RadioButton b8 = (RadioButton) findViewById(R.id.radioButton8);
-        RadioGroup rg = (RadioGroup) findViewById(R.id.radioGroup2);
+        RadioButton b6 = findViewById(R.id.radioButton6);
+        RadioButton b7 = findViewById(R.id.radioButton7);
+        RadioButton b8 = findViewById(R.id.radioButton8);
+        RadioGroup rg = findViewById(R.id.radioGroup2);
+
+        TextView tv2  = findViewById(R.id.textView2);
 
         if(detailedChoice.equalsIgnoreCase("movies")){
             b1.setText("Action");
@@ -92,7 +96,9 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             b3.setText("Romance");
             b4.setText("Kids");
             b5.setVisibility(View.INVISIBLE);
-            rg.setVisibility(View.GONE);
+            b6.setText("Rating: < 6.9");
+            b7.setText("Rating: 7.0 - 7.9");
+            b8.setText("Rating: 8.0 - 8.9");
         }
         if(detailedChoice.equalsIgnoreCase("concerts")){
             b1.setText("Rap");
@@ -101,6 +107,8 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             b4.setVisibility(View.INVISIBLE);
             b5.setVisibility(View.INVISIBLE);
             rg.setVisibility(View.GONE);
+            tv2.setVisibility(View.GONE);
+
         }
         if(detailedChoice.equalsIgnoreCase("activities")){
             b1.setText("Spring");
@@ -108,56 +116,110 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             b3.setText("Fall");
             b4.setText("Winter");
             b5.setVisibility(View.INVISIBLE);
-            rg.setVisibility(View.GONE);
+            b6.setText("Indoor");
+            b7.setText("Outdoor");
+            b8.setVisibility(View.GONE);
         }
     }
 
-   public void onRadioButtonClicked(View view){
-        boolean checked = ((RadioButton) view).isChecked();
+   public void onRadioButtonClicked(View view) {
+       checked = ((RadioButton) view).isChecked();
 
-        switch(view.getId()){
-            case R.id.radioButton:
-                if(checked)
-                    str = "first";
-                break;
-            case R.id.radioButton2:
-                if(checked)
-                    str = "second";
-                break;
-            case R.id.radioButton3:
-                if(checked)
-                    str = "third";
-                break;
-            case R.id.radioButton4:
-                if(checked)
-                    str = "fourth";
-                break;
-            case R.id.radioButton5:
-                if(checked)
-                    str = "fifth";
-                break;
-        }
-    }
+       switch (view.getId()) {
+           case R.id.radioButton:
+               if (checked)
+                   str = "first";
+               break;
+           case R.id.radioButton2:
+               if (checked)
+                   str = "second";
+               break;
+           case R.id.radioButton3:
+               if (checked)
+                   str = "third";
+               break;
+           case R.id.radioButton4:
+               if (checked)
+                   str = "fourth";
+               break;
+       }
+   }
+
+   public void onSecondRadioButtonClicked(View view) {
+       checked1 = ((RadioButton) view).isChecked();
+
+       switch(view.getId()){
+           case R.id.radioButton6:
+               if(checked1)
+                   str2 = "fifth";
+               break;
+           case R.id.radioButton7:
+               if(checked1)
+                   str2 = "sixth";
+               break;
+           case R.id.radioButton8:
+               if(checked1)
+                   str2 = "seventh";
+               break;
+       }
+
+   }
+
+   public void displayToast(){
+       Context context = getApplicationContext();
+       CharSequence text = "Choose All Options!";
+       int duration = Toast.LENGTH_SHORT;
+
+       Toast toast = Toast.makeText(context, text, duration);
+
+       toast.show();
+       toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL, 0, 0);
+
+   }
+
+
 
     public void onClickApply(View view){
 
-        selectOneMovie();
-        selectOneConcert();
-        selectOneActivity();
+        if(detailedChoice.equalsIgnoreCase("movies") || detailedChoice.equalsIgnoreCase("activities")){
+            if(checked && checked1){
+                selectOneActivity();
+                selectOneMovie();
 
-        Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
+                Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
 
 
-        displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
-        displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
-        displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
-        displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-        displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
-        displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+                displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
+                displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
+                displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+                displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
+                displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
 
-        startActivity(displayIntent);
+                startActivity(displayIntent);
+            }
+            else
+                displayToast();
+        }
+        else
+            if(checked){
+                selectOneConcert();
 
-    }
+                Intent displayIntent = new Intent(this, FilterDisplayActivity.class);
+
+
+                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
+                displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
+                displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
+                displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
+                displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
+                displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+
+                startActivity(displayIntent);
+            }else
+                displayToast();
+        }
+
 
 
     public void selectOneMovie(){
@@ -166,38 +228,234 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         int rmLength = getRomance().length;
         int kmLength = getKids().length;
 
+        //try {
 
-        if(detailedChoice.equalsIgnoreCase("movies")){
-            if(str.equalsIgnoreCase("first")){
-                int randomNum = random.nextInt(amLength);
-                name = getAction()[randomNum].toString();
-                description = getAction()[randomNum].getDescription();
-                rating = getAction()[randomNum].getRating();
-            }
-            if(str.equalsIgnoreCase("second")){
-                int randomNum = random.nextInt(cmLength);
-                name = getComedy()[randomNum].toString();
-                description = getComedy()[randomNum].getDescription();
-                rating = getComedy()[randomNum].getRating();
-            }
-            if(str.equalsIgnoreCase("third")){
-                int randomNum = random.nextInt(rmLength);
-                name = getRomance()[randomNum].toString();
-                description = getRomance()[randomNum].getDescription();
-                rating = getRomance()[randomNum].getRating();
-            }
-            if(str.equalsIgnoreCase("fourth")){
-                int randomNum = random.nextInt(kmLength);
-                name = getKids()[randomNum].toString();
-                description = getKids()[randomNum].getDescription();
-                rating = getKids()[randomNum].getRating();
-            }
-        }
+            if (detailedChoice.equalsIgnoreCase("movies")) {
 
+                // Action
+                if (str.equalsIgnoreCase("first")) {
+                    if (str2.equalsIgnoreCase("fifth")) {
+                        int randomNum = random.nextInt(amLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getAction()[randomNum].findIf6_9()) {
+                                name = getAction()[randomNum].toString();
+                                description = getAction()[randomNum].getDescription();
+                                rating = getAction()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(amLength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("sixth")) {
+                        int randomNum = random.nextInt(amLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getAction()[randomNum].findIf7_9()) {
+                                name = getAction()[randomNum].toString();
+                                description = getAction()[randomNum].getDescription();
+                                rating = getAction()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(amLength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("seventh")) {
+                        int randomNum = random.nextInt(amLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getAction()[randomNum].findIf8_9()) {
+                                name = getAction()[randomNum].toString();
+                                description = getAction()[randomNum].getDescription();
+                                rating = getAction()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(amLength);
+                            }
+                            i++;
+                        }
+                    }
+                }
+
+                // Comedy
+
+                if (str.equalsIgnoreCase("second")) {
+                    if (str2.equalsIgnoreCase("fifth")) {
+                        int randomNum = random.nextInt(cmLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getComedy()[randomNum].findIf6_9()) {
+                                name = getComedy()[randomNum].toString();
+                                description = getComedy()[randomNum].getDescription();
+                                rating = getComedy()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(cmLength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("sixth")) {
+                        int randomNum = random.nextInt(cmLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getComedy()[randomNum].findIf7_9()) {
+                                name = getComedy()[randomNum].toString();
+                                description = getComedy()[randomNum].getDescription();
+                                rating = getComedy()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(cmLength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("seventh")) {
+                        int randomNum = random.nextInt(cmLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getComedy()[randomNum].findIf8_9()) {
+                                name = getComedy()[randomNum].toString();
+                                description = getComedy()[randomNum].getDescription();
+                                rating = getComedy()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(cmLength);
+                            }
+                            i++;
+                        }
+                    }
+                }
+
+                // Romance
+
+                if (str.equalsIgnoreCase("third")) {
+                    if (str2.equalsIgnoreCase("fifth")) {
+                        int randomNum = random.nextInt(rmLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getRomance()[randomNum].findIf6_9()) {
+                                name = getRomance()[randomNum].toString();
+                                description = getRomance()[randomNum].getDescription();
+                                rating = getRomance()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(rmLength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("sixth")) {
+                        int randomNum = random.nextInt(rmLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getRomance()[randomNum].findIf7_9()) {
+                                name = getRomance()[randomNum].toString();
+                                description = getRomance()[randomNum].getDescription();
+                                rating = getRomance()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(rmLength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("seventh")) {
+                        int randomNum = random.nextInt(rmLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getRomance()[randomNum].findIf8_9()) {
+                                name = getRomance()[randomNum].toString();
+                                description = getRomance()[randomNum].getDescription();
+                                rating = getRomance()[randomNum].getRating();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(rmLength);
+                            }
+                            i++;
+                        }
+                    }
+                }
+
+            }
+
+            // Kids
+
+            if (str.equalsIgnoreCase("fourth")) {
+                if (str2.equalsIgnoreCase("fifth")) {
+                    int randomNum = random.nextInt(kmLength);
+                    int i = 0;
+                    while (i < 50) {
+                        if (getKids()[randomNum].findIf6_9()) {
+                            name = getKids()[randomNum].toString();
+                            description = getKids()[randomNum].getDescription();
+                            rating = getKids()[randomNum].getRating();
+                            i = 100;
+                        } else {
+                            randomNum = random.nextInt(kmLength);
+                        }
+                        i++;
+                    }
+                }
+                if (str2.equalsIgnoreCase("sixth")) {
+                    int randomNum = random.nextInt(kmLength);
+                    int i = 0;
+                    while (i < 50) {
+                        if (getKids()[randomNum].findIf7_9()) {
+                            name = getKids()[randomNum].toString();
+                            description = getKids()[randomNum].getDescription();
+                            rating = getKids()[randomNum].getRating();
+                            i = 100;
+                        } else {
+                            randomNum = random.nextInt(kmLength);
+                        }
+                        i++;
+                    }
+                }
+                if (str2.equalsIgnoreCase("seventh")) {
+                    int randomNum = random.nextInt(kmLength);
+                    int i = 0;
+                    while (i < 50) {
+                        if (getKids()[randomNum].findIf8_9()) {
+                            name = getKids()[randomNum].toString();
+                            description = getKids()[randomNum].getDescription();
+                            rating = getKids()[randomNum].getRating();
+                            i = 100;
+                        } else {
+                            randomNum = random.nextInt(kmLength);
+                        }
+                        i++;
+                    }
+                }
+            }
+
+        /*}catch (NullPointerException e) {
+            Context context = getApplicationContext();
+            CharSequence text = "Choose Both Options!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+
+            toast.show();
+            toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
+                    0, 0);
+
+            str5 = "catch thrown";
+        }*/
 
 
 
     }
+
+
+
+
+
+
 
     public void selectOneConcert(){
 
@@ -205,27 +463,30 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         int pcLength = getPop().length;
         int ccLength = getCountry().length;
         // Concerts
-        if(detailedChoice.equalsIgnoreCase("concerts")){
-            if(str.equalsIgnoreCase("first")){
-                int randomNum = random.nextInt(rcLength);
-                name = getRap()[randomNum].toString();
-                description = getRap()[randomNum].getDescription();
-                famousSong = getRap()[randomNum].getFamousSong();
+            if (detailedChoice.equalsIgnoreCase("concerts")) {
+                if (str.equalsIgnoreCase("first")) {
+                    int randomNum = random.nextInt(rcLength);
+                    name = getRap()[randomNum].toString();
+                    description = getRap()[randomNum].getDescription();
+                    famousSong = getRap()[randomNum].getFamousSong();
+                }
+                if (str.equalsIgnoreCase("second")) {
+                    int randomNum = random.nextInt(pcLength);
+                    name = getPop()[randomNum].toString();
+                    description = getPop()[randomNum].getDescription();
+                    famousSong = getRap()[randomNum].getFamousSong();
+                }
+                if (str.equalsIgnoreCase("third")) {
+                    int randomNum = random.nextInt(ccLength);
+                    name = getCountry()[randomNum].toString();
+                    description = getCountry()[randomNum].getDescription();
+                    famousSong = getCountry()[randomNum].getFamousSong();
+                }
             }
-            if(str.equalsIgnoreCase("second")){
-                int randomNum = random.nextInt(pcLength);
-                name = getPop()[randomNum].toString();
-                description = getPop()[randomNum].getDescription();
-                famousSong = getRap()[randomNum].getFamousSong();
-            }
-            if(str.equalsIgnoreCase("third")){
-                int randomNum = random.nextInt(ccLength);
-                name = getCountry()[randomNum].toString();
-                description = getCountry()[randomNum].getDescription();
-                famousSong = getCountry()[randomNum].getFamousSong();
-            }
-        }
+
+
     }
+
 
     public void selectOneActivity(){
         int spLength = getSpring().length;
@@ -233,34 +494,153 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         int fALength = getFall().length;
         int wALength = getWinter().length;
 
+        //try {
+            // Activities
+            if (detailedChoice.equalsIgnoreCase("activities")) {
+                if (str.equalsIgnoreCase("first")) {
+                    if (str2.equalsIgnoreCase("fifth")) {
+                        int randomNum = random.nextInt(spLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getSpring()[randomNum].isIndoors()) {
+                                name = getSpring()[randomNum].toString();
+                                description = getSpring()[randomNum].getLocation();
+                                idk = getSpring()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(spLength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("sixth")) {
+                        int randomNum = random.nextInt(spLength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (!getSpring()[randomNum].isIndoors()) {
+                                name = getSpring()[randomNum].toString();
+                                description = getSpring()[randomNum].getLocation();
+                                idk = getSpring()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(spLength);
+                            }
+                            i++;
+                        }
+                    }
 
-        // Activities
-        if(detailedChoice.equalsIgnoreCase("activities")){
-            if(str.equalsIgnoreCase("first")){
-                int randomNum = random.nextInt(spLength);
-                name = getSpring()[randomNum].toString();
-                description = getSpring()[randomNum].getLocation();
-                idk = getSpring()[randomNum].getIDK();
+                }
+                if (str.equalsIgnoreCase("second")) {
+                    if (str2.equalsIgnoreCase("fifth")) {
+                        int randomNum = random.nextInt(sALength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getSummer()[randomNum].isIndoors()) {
+                                name = getSummer()[randomNum].toString();
+                                description = getSummer()[randomNum].getLocation();
+                                idk = getSummer()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(sALength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("sixth")) {
+                        int randomNum = random.nextInt(sALength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (!getSummer()[randomNum].isIndoors()) {
+                                name = getSummer()[randomNum].toString();
+                                description = getSummer()[randomNum].getLocation();
+                                idk = getSummer()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(sALength);
+                            }
+                            i++;
+                        }
+                    }
+                }
+                if (str.equalsIgnoreCase("third")) {
+                    if (str2.equalsIgnoreCase("fifth")) {
+                        int randomNum = random.nextInt(fALength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getFall()[randomNum].isIndoors()) {
+                                name = getFall()[randomNum].toString();
+                                description = getFall()[randomNum].getLocation();
+                                idk = getFall()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(fALength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("sixth")) {
+                        int randomNum = random.nextInt(fALength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (!getFall()[randomNum].isIndoors()) {
+                                name = getFall()[randomNum].toString();
+                                description = getFall()[randomNum].getLocation();
+                                idk = getFall()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(fALength);
+                            }
+                            i++;
+                        }
+                    }
+                }
+                if (str.equalsIgnoreCase("fourth")) {
+                    if (str2.equalsIgnoreCase("fifth")) {
+                        int randomNum = random.nextInt(wALength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (getWinter()[randomNum].isIndoors()) {
+                                name = getWinter()[randomNum].toString();
+                                description = getWinter()[randomNum].getLocation();
+                                idk = getWinter()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(wALength);
+                            }
+                            i++;
+                        }
+                    }
+                    if (str2.equalsIgnoreCase("sixth")) {
+                        int randomNum = random.nextInt(wALength);
+                        int i = 0;
+                        while (i < 50) {
+                            if (!getWinter()[randomNum].isIndoors()) {
+                                name = getWinter()[randomNum].toString();
+                                description = getWinter()[randomNum].getLocation();
+                                idk = getWinter()[randomNum].getIDK();
+                                i = 100;
+                            } else {
+                                randomNum = random.nextInt(wALength);
+                            }
+                            i++;
+                        }
+                    }
+                }
             }
-            if(str.equalsIgnoreCase("second")){
-                int randomNum = random.nextInt(sALength);
-                name = getSummer()[randomNum].toString();
-                description = getSummer()[randomNum].getLocation();
-                idk = getSummer()[randomNum].getIDK();
-            }
-            if(str.equalsIgnoreCase("third")){
-                int randomNum = random.nextInt(fALength);
-                name = getFall()[randomNum].toString();
-                description = getFall()[randomNum].getLocation();
-                idk = getFall()[randomNum].getIDK();
-            }
-            if(str.equalsIgnoreCase("fourth")){
-                int randomNum = random.nextInt(wALength);
-                name = getWinter()[randomNum].toString();
-                description = getWinter()[randomNum].getLocation();
-                idk = getWinter()[randomNum].getIDK();
-            }
-        }
+        /*}
+        catch (NullPointerException e) {
+            Context context = getApplicationContext();
+            CharSequence text = "Choose Both Options!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(context, text, duration);
+
+            toast.show();
+            toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
+                    0, 0);
+
+            str5 = "catch thrown";
+        }*/
     }
 
 
