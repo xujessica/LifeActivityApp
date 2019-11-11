@@ -10,12 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".FavoritesDisplayActivity"></activity>
-        <activity android:name=".FavoritesActivity" />
-        <activity android:name=".FilterDisplayActivity" />
+        <activity android:name=".FavoritesActivity"/>
+        <activity android:name=".DisplayActivity" />
         <activity android:name=".EntertainmentFiltersActivity" />
         <activity android:name=".EatFiltersActivity" />
         <activity android:name=".DetailedChoicesActivity" />
-        <activity android:name=".RandomActivity" />
         <activity android:name=".ChoicesActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
