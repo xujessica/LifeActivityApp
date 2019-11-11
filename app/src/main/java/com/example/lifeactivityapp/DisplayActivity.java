@@ -68,9 +68,6 @@ public class DisplayActivity extends AppCompatActivity {
         secondButton = (Button) findViewById(R.id.secondButton);
         filterDisplayLayout = (ConstraintLayout) findViewById(R.id.filterDisplayLayout);
 
-//        rating.setMovementMethod(new ScrollingMovementMethod());
-//        description.setMovementMethod(new ScrollingMovementMethod());
-
         setBackground();
         setButtons();
 

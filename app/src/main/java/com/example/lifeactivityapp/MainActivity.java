@@ -136,21 +136,25 @@ public class MainActivity extends AppCompatActivity {
                     name = action[randomNum].toString();
                     description = action[randomNum].getDescription();
                     rating = action[randomNum].getRating();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "action");
                 } else if (movieRand == 1) {
                     int randomNum = random.nextInt(comedy.length);
                     name = comedy[randomNum].toString();
                     description = comedy[randomNum].getDescription();
                     rating = comedy[randomNum].getRating();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "comedy");
                 } else if (movieRand == 2) {
                     int randomNum = random.nextInt(romance.length);
                     name = romance[randomNum].toString();
                     description = romance[randomNum].getDescription();
                     rating = romance[randomNum].getRating();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "romance");
                 } else if (movieRand == 3) {
                     int randomNum = random.nextInt(kids.length);
                     name = kids[randomNum].toString();
                     description = kids[randomNum].getDescription();
                     rating = kids[randomNum].getRating();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "kids");
                 }
             }
             //Concerts
@@ -163,16 +167,19 @@ public class MainActivity extends AppCompatActivity {
                     name = rap[randomNum].toString();
                     description = rap[randomNum].getDescription();
                     famousSong = rap[randomNum].getFamousSong();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "rap");
                 } else if (concertRand == 1) {
                     int randomNum = random.nextInt(pop.length);
                     name = pop[randomNum].toString();
                     description = pop[randomNum].getDescription();
                     famousSong = pop[randomNum].getFamousSong();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "pop");
                 } else if (concertRand == 2) {
                     int randomNum = random.nextInt(country.length);
                     name = country[randomNum].toString();
                     description = country[randomNum].getDescription();
                     famousSong = country[randomNum].getFamousSong();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "country");
                 }
 
 
@@ -186,25 +193,29 @@ public class MainActivity extends AppCompatActivity {
                     int randomNum = random.nextInt(spring.length);
                     name = spring[randomNum].toString();
                     description = spring[randomNum].getLocation();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "spring");
                 } else if (activityRand == 1) {
                     int randomNum = random.nextInt(summer.length);
                     name = summer[randomNum].toString();
                     description = summer[randomNum].getLocation();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "summer");
                 } else if (activityRand == 2) {
                     int randomNum = random.nextInt(fall.length);
                     name = fall[randomNum].toString();
                     description = fall[randomNum].getLocation();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "fall");
                 } else if (activityRand == 3) {
                     int randomNum = random.nextInt(winter.length);
                     name = winter[randomNum].toString();
                     description = winter[randomNum].getLocation();
+                    displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_TYPE, "winter");
                 }
             }
             displayIntent.putExtra(DisplayActivity.MY_ENTERTAINMENT_NAME, name); // Avengers
             displayIntent.putExtra(DisplayActivity.MY_DESCRIPTION, description);
             displayIntent.putExtra(DisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
             displayIntent.putExtra(DisplayActivity.MY_RATING_STARS, rating);
-            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, rating);
+            displayIntent.putExtra(DisplayActivity.MY_FAMOUS_SONG, famousSong);
             displayIntent.putExtra(DisplayActivity.MY_RANDOM_TYPE, randomType);
 
             startActivity(displayIntent);

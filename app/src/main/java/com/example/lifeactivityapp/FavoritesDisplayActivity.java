@@ -103,6 +103,27 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
             }
         }
 
+        for (int i = 0; i < Concerts.Rap.length; i++) {
+            if (Concerts.Rap[i].getName().equalsIgnoreCase(name)) {
+                rating.setText(String.valueOf(Concerts.Rap[i].getFamousSong()));
+                description.setText(Concerts.Rap[i].getDescription());
+            }
+        }
+
+        for (int i = 0; i < Concerts.Pop.length; i++) {
+            if (Concerts.Pop[i].getName().equalsIgnoreCase(name)) {
+                rating.setText(String.valueOf(Concerts.Pop[i].getFamousSong()));
+                description.setText(Concerts.Pop[i].getDescription());
+            }
+        }
+
+        for (int i = 0; i < Concerts.Country.length; i++) {
+            if (Concerts.Country[i].getName().equalsIgnoreCase(name)) {
+                rating.setText(String.valueOf(Concerts.Country[i].getFamousSong()));
+                description.setText(Concerts.Country[i].getDescription());
+            }
+        }
+
         for (int i = 0; i < Activities.Spring.length; i++) {
             if (Activities.Spring[i].getName().equalsIgnoreCase(name)) {
                 description.setText(Activities.Spring[i].getLocation());
@@ -137,16 +158,6 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
                     MainActivity.favoritesArray.remove(i);
                 }
             }
-
-            Context context = getApplicationContext();
-            CharSequence text = "Removed from Favorites";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-
-            toast.show();
-            toast.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL,
-                    0, 0);
 
             Intent displayIntent = new Intent(this, FavoritesActivity.class);
             startActivity(displayIntent);
