@@ -40,6 +40,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
     double rating = 0.0;
     String famousSong = " ";
     Random random;
+    String type;
     boolean checked, checked1;
 
 
@@ -188,9 +189,11 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
                 displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
                 displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
+                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, famousSong);
+                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_TYPE, type);
 
                 startActivity(displayIntent);
+
             }
             else
                 displayToast();
@@ -206,7 +209,8 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
                 displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
                 displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, rating);
+                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, famousSong);
+                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_TYPE, type);
 
                 startActivity(displayIntent);
             }else
@@ -227,6 +231,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
 
                 // Action
                 if (str.equalsIgnoreCase("first")) {
+                    type = "Action";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(amLength);
                         int i = 0;
@@ -277,6 +282,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 // Comedy
 
                 if (str.equalsIgnoreCase("second")) {
+                    type = "Comedy";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(cmLength);
                         int i = 0;
@@ -327,6 +333,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 // Romance
 
                 if (str.equalsIgnoreCase("third")) {
+                    type = "Romance";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(rmLength);
                         int i = 0;
@@ -379,6 +386,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             // Kids
 
             if (str.equalsIgnoreCase("fourth")) {
+                type = "Kids";
                 if (str2.equalsIgnoreCase("fifth")) {
                     int randomNum = random.nextInt(kmLength);
                     int i = 0;
@@ -458,18 +466,21 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         // Concerts
             if (detailedChoice.equalsIgnoreCase("concerts")) {
                 if (str.equalsIgnoreCase("first")) {
+                    type = "Rap";
                     int randomNum = random.nextInt(rcLength);
                     name = getRap()[randomNum].toString();
                     description = getRap()[randomNum].getDescription();
                     famousSong = getRap()[randomNum].getFamousSong();
                 }
                 if (str.equalsIgnoreCase("second")) {
+                    type = "Pop";
                     int randomNum = random.nextInt(pcLength);
                     name = getPop()[randomNum].toString();
                     description = getPop()[randomNum].getDescription();
                     famousSong = getRap()[randomNum].getFamousSong();
                 }
                 if (str.equalsIgnoreCase("third")) {
+                    type = "Country";
                     int randomNum = random.nextInt(ccLength);
                     name = getCountry()[randomNum].toString();
                     description = getCountry()[randomNum].getDescription();
@@ -490,6 +501,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         //try {
             // Activities
             if (detailedChoice.equalsIgnoreCase("activities")) {
+                type = "Spring";
                 if (str.equalsIgnoreCase("first")) {
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(spLength);
@@ -522,6 +534,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
 
                 }
                 if (str.equalsIgnoreCase("second")) {
+                    type = "Summer";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(sALength);
                         int i = 0;
@@ -552,6 +565,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                     }
                 }
                 if (str.equalsIgnoreCase("third")) {
+                    type = "Fall";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(fALength);
                         int i = 0;
@@ -582,6 +596,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                     }
                 }
                 if (str.equalsIgnoreCase("fourth")) {
+                    type = "Winter";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(wALength);
                         int i = 0;

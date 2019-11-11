@@ -54,7 +54,7 @@ public class FavoritesDisplayActivity extends AppCompatActivity {
 
     public void checkObject() {
 
-        MainActivity.favoritesArray.get(index).getClass();
+        String classType = MainActivity.favoritesArray.get(index).getClass().toString();
 
         for (int i = 0; i < Restaurants.breakfastPlaces.length; i++) {
             if (Restaurants.breakfastPlaces[i].getRestaurant().equalsIgnoreCase(name)) {
