@@ -19,49 +19,24 @@ import java.util.ArrayList;
 
 public class FavoritesActivity extends AppCompatActivity {
 
-    private static final String MY_DESCRIPTION = " ";
-    public static final String MY_RESTAURANT_NAME = "restaurantName";
-    public static final String MY_MEAL_CHOICE = "mealChoice";
-    public static final String MY_ENTERTAINMENT_NAME = "restaurantName";
-    //public static final String  = "mealChoice";
-    public ArrayList<Object> favoritesArray;
-    public static ArrayList<String> favoriteStrings;
     ListView favoritesChoices;
-    String mealChoice;
-    String restaurantName;
-    String displayName;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
-
-        Intent intent = getIntent();
-        mealChoice = intent.getStringExtra(MY_MEAL_CHOICE);
-        restaurantName = intent.getStringExtra(MY_RESTAURANT_NAME);
         favoritesChoices = (ListView) findViewById(R.id.favoritesChoices);
-        favoritesArray = new ArrayList<>();
-        favoriteStrings = new ArrayList<>();
-
-        String info = intent.getStringExtra(MY_DESCRIPTION); // Description
-        //double ratingStars = intent.getExtras().getDouble(MY_RATING_STARS); // ratingStars
-        //String song = intent.getStringExtra(FAMOUS_SONG); // Description
-        //String idk = intent.getStringExtra(IDK); // Description
 
 
 
         try {
-            addObject(restaurantName, mealChoice);
 
-            if (favoriteStrings.size() == 0) {
+            if (MainActivity.favoriteStrings.isEmpty()) {
                 throw new NullPointerException();
             }
 
             final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>
-                    (this, android.R.layout.simple_list_item_1, favoriteStrings);
+                    (this, android.R.layout.simple_list_item_1, MainActivity.favoriteStrings);
             favoritesChoices.setAdapter(arrayAdapter);
 
             AdapterView.OnItemClickListener itemClickListener =
@@ -69,12 +44,13 @@ public class FavoritesActivity extends AppCompatActivity {
                         public void onItemClick(AdapterView<?> favoritesChoices,
                                                 View itemView, int position, long id) {
 
-                            String name = favoriteStrings.get(position).toString();
+                            String name = MainActivity.favoriteStrings.get(position).toString();
+                            int index = (int)id;
 
                             Intent intent = new Intent(FavoritesActivity.this,
                                     FavoritesDisplayActivity.class);
                             intent.putExtra(FavoritesDisplayActivity.MY_OBJECT_NAME, name);
-                            intent.putExtra(FavoritesDisplayActivity.MY_MEAL_CHOICE, mealChoice);
+                            intent.putExtra(FavoritesDisplayActivity.MY_INDEX, index);
                             startActivity(intent);
                         }
                     };
@@ -103,32 +79,6 @@ public class FavoritesActivity extends AppCompatActivity {
     public void onHomeClick (View v) {
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
-    }
-
-
-    public void addObject(String restaurantName, String mealChoice) {
-
-        Restaurants[] array;
-        if (mealChoice.equalsIgnoreCase("breakfast")) {
-            array = Restaurants.breakfastPlaces;
-        }
-
-        else if (mealChoice.equalsIgnoreCase("lunch")) {
-            array = Restaurants.lunchPlaces;
-        }
-
-        else {
-            array = Restaurants.dinnerPlaces;
-        }
-
-
-        for (int i = 0; i < array.length; i++) {
-            if (restaurantName.equalsIgnoreCase(array[i].getRestaurant())) {
-                favoritesArray.add(array[i]);
-                displayName = array[i].getRestaurant();
-                favoriteStrings.add(displayName);
-            }
-        }
     }
 
 

@@ -35,14 +35,12 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
     String str, str2, detailedChoice;
     Intent displayIntents;
     Random randomGenerator;
-    //ArrayList<Movies> newArray;
     String name = "";
     String description = "";
     double rating = 0.0;
     String famousSong = " ";
     Random random;
-    String idk = "";
-    String str5;
+    String type;
     boolean checked, checked1;
 
 
@@ -88,7 +86,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         RadioButton b8 = findViewById(R.id.radioButton8);
         RadioGroup rg = findViewById(R.id.radioGroup2);
 
-        TextView tv2  = findViewById(R.id.textView2);
 
         if(detailedChoice.equalsIgnoreCase("movies")){
             b1.setText("Action");
@@ -107,7 +104,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             b4.setVisibility(View.INVISIBLE);
             b5.setVisibility(View.INVISIBLE);
             rg.setVisibility(View.GONE);
-            tv2.setVisibility(View.GONE);
 
         }
         if(detailedChoice.equalsIgnoreCase("activities")){
@@ -193,10 +189,11 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
                 displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
                 displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
-                displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, famousSong);
+                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_TYPE, type);
 
                 startActivity(displayIntent);
+
             }
             else
                 displayToast();
@@ -212,8 +209,8 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 displayIntent.putExtra(FilterDisplayActivity.MY_DESCRIPTION, description);
                 displayIntent.putExtra(FilterDisplayActivity.MY_DISPLAY_CHOICE, detailedChoice); // movies
                 displayIntent.putExtra(FilterDisplayActivity.MY_RATING_STARS, rating);
-                displayIntent.putExtra(FilterDisplayActivity.FAMOUS_SONG, rating);
-                displayIntent.putExtra(FilterDisplayActivity.IDK, rating);
+                displayIntent.putExtra(FilterDisplayActivity.MY_FAMOUS_SONG, famousSong);
+                displayIntent.putExtra(FilterDisplayActivity.MY_ENTERTAINMENT_TYPE, type);
 
                 startActivity(displayIntent);
             }else
@@ -234,6 +231,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
 
                 // Action
                 if (str.equalsIgnoreCase("first")) {
+                    type = "Action";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(amLength);
                         int i = 0;
@@ -284,6 +282,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 // Comedy
 
                 if (str.equalsIgnoreCase("second")) {
+                    type = "Comedy";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(cmLength);
                         int i = 0;
@@ -334,6 +333,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                 // Romance
 
                 if (str.equalsIgnoreCase("third")) {
+                    type = "Romance";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(rmLength);
                         int i = 0;
@@ -386,6 +386,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
             // Kids
 
             if (str.equalsIgnoreCase("fourth")) {
+                type = "Kids";
                 if (str2.equalsIgnoreCase("fifth")) {
                     int randomNum = random.nextInt(kmLength);
                     int i = 0;
@@ -465,18 +466,21 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         // Concerts
             if (detailedChoice.equalsIgnoreCase("concerts")) {
                 if (str.equalsIgnoreCase("first")) {
+                    type = "Rap";
                     int randomNum = random.nextInt(rcLength);
                     name = getRap()[randomNum].toString();
                     description = getRap()[randomNum].getDescription();
                     famousSong = getRap()[randomNum].getFamousSong();
                 }
                 if (str.equalsIgnoreCase("second")) {
+                    type = "Pop";
                     int randomNum = random.nextInt(pcLength);
                     name = getPop()[randomNum].toString();
                     description = getPop()[randomNum].getDescription();
                     famousSong = getRap()[randomNum].getFamousSong();
                 }
                 if (str.equalsIgnoreCase("third")) {
+                    type = "Country";
                     int randomNum = random.nextInt(ccLength);
                     name = getCountry()[randomNum].toString();
                     description = getCountry()[randomNum].getDescription();
@@ -497,6 +501,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
         //try {
             // Activities
             if (detailedChoice.equalsIgnoreCase("activities")) {
+                type = "Spring";
                 if (str.equalsIgnoreCase("first")) {
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(spLength);
@@ -505,7 +510,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getSpring()[randomNum].isIndoors()) {
                                 name = getSpring()[randomNum].toString();
                                 description = getSpring()[randomNum].getLocation();
-                                idk = getSpring()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(spLength);
@@ -520,7 +524,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getSpring()[randomNum].isIndoors()) {
                                 name = getSpring()[randomNum].toString();
                                 description = getSpring()[randomNum].getLocation();
-                                idk = getSpring()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(spLength);
@@ -531,6 +534,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
 
                 }
                 if (str.equalsIgnoreCase("second")) {
+                    type = "Summer";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(sALength);
                         int i = 0;
@@ -538,7 +542,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getSummer()[randomNum].isIndoors()) {
                                 name = getSummer()[randomNum].toString();
                                 description = getSummer()[randomNum].getLocation();
-                                idk = getSummer()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(sALength);
@@ -553,7 +556,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getSummer()[randomNum].isIndoors()) {
                                 name = getSummer()[randomNum].toString();
                                 description = getSummer()[randomNum].getLocation();
-                                idk = getSummer()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(sALength);
@@ -563,6 +565,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                     }
                 }
                 if (str.equalsIgnoreCase("third")) {
+                    type = "Fall";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(fALength);
                         int i = 0;
@@ -570,7 +573,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getFall()[randomNum].isIndoors()) {
                                 name = getFall()[randomNum].toString();
                                 description = getFall()[randomNum].getLocation();
-                                idk = getFall()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(fALength);
@@ -585,7 +587,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getFall()[randomNum].isIndoors()) {
                                 name = getFall()[randomNum].toString();
                                 description = getFall()[randomNum].getLocation();
-                                idk = getFall()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(fALength);
@@ -595,6 +596,7 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                     }
                 }
                 if (str.equalsIgnoreCase("fourth")) {
+                    type = "Winter";
                     if (str2.equalsIgnoreCase("fifth")) {
                         int randomNum = random.nextInt(wALength);
                         int i = 0;
@@ -602,7 +604,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (getWinter()[randomNum].isIndoors()) {
                                 name = getWinter()[randomNum].toString();
                                 description = getWinter()[randomNum].getLocation();
-                                idk = getWinter()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(wALength);
@@ -617,7 +618,6 @@ public class EntertainmentFiltersActivity extends AppCompatActivity {
                             if (!getWinter()[randomNum].isIndoors()) {
                                 name = getWinter()[randomNum].toString();
                                 description = getWinter()[randomNum].getLocation();
-                                idk = getWinter()[randomNum].getIDK();
                                 i = 100;
                             } else {
                                 randomNum = random.nextInt(wALength);
